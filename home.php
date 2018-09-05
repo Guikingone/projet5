@@ -23,7 +23,7 @@ require 'Article.php';
         {
         ?>
             <div>
-                <h2><?= htmlspecialchars($data['title']);?></h2>
+                <h2><a href="single.php?idArt=<?= htmlspecialchars($data['id']);?>"><?= htmlspecialchars($data['title']);?></a></h2>
                 <p><?= htmlspecialchars($data['content']);?></p>
                 <p><?= htmlspecialchars($data['author']);?></p>
                 <p>Créé le : <?= htmlspecialchars($data['date_added']);?></p>
