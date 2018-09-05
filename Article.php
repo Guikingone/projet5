@@ -1,20 +1,18 @@
 <?php
 
-class Article
+class Article extends Database
 {
     public function getArticles()
     {
-        $db = new Database();
-        return $db->getConnection()->query('SELECT id, title, content, author, date_added FROM article ORDER BY id DESC');
+        $sql = 'SELECT id, title, content, author, date_added FROM article ORDER BY id DESC';
+        $result = $this->sql($sql);
+        return $result;
     }
 
     public function getArticle($idArt)
     {
-        $db = new Database();
-        $sql = $db->getConnection()->prepare('SELECT id, title, content, author, date_added FROM article WHERE id = ?');
-        $sql->execute([
-            $idArt
-        ]);
-        return $sql;
+        $sql = 'SELECT id, title, content, author, date_added FROM article WHERE id = ?';
+        $result = $this->sql($sql, [$idArt]);
+        return $result;
     }
 }
