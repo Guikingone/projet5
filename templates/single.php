@@ -20,15 +20,14 @@
     <div id="comments" class="text-left" style="margin-left: 50px">
         <h3>Commentaires</h3>
         <?php
-        while($datas = $comments->fetch())
+        foreach ($comments as $comment)
         {
             ?>
-            <h4><?= htmlspecialchars($datas['pseudo']);?></h4>
-            <p><?= htmlspecialchars($datas['content']);?></p>
-            <p>Posté le <?= htmlspecialchars($datas['date_added']);?></p>
+            <h4><?= htmlspecialchars($comment->getPseudo());?></h4>
+            <p><?= htmlspecialchars($comment->getContent());?></p>
+            <p>Posté le <?= htmlspecialchars($comment->getDateAdded());?></p>
             <?php
         }
-        $comments->closeCursor();
         ?>
     </div>
 </div>
