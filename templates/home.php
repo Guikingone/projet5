@@ -10,8 +10,6 @@
         <h1>Mon blog</h1>
         <p>En construction</p>
         <?php
-        $article = new \App\src\DAO\ArticleDAO();
-        $articles = $article->getArticles();
         while($data = $articles->fetch())
         {
         ?>
