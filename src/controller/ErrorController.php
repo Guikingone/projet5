@@ -6,11 +6,11 @@ class ErrorController
 {
     public function unknown()
     {
-        require '../templates/unknown.php';
+        require '../templates/base.php';
     }
 
     public function error()
     {
-        require '../templates/error.php';
+        require '../templates/base.php';
     }
 }
