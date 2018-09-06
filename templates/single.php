@@ -9,19 +9,13 @@
 <div>
     <h1>Mon blog</h1>
     <p>En construction</p>
-    <?php
-    $data = $article->fetch()
-    ?>
-        <div>
-            <h2><?= htmlspecialchars($data['title']);?></h2>
-            <p><?= htmlspecialchars($data['content']);?></p>
-            <p><?= htmlspecialchars($data['author']);?></p>
-            <p>Créé le : <?= htmlspecialchars($data['date_added']);?></p>
-        </div>
-        <br>
-    <?php
-    $article->closeCursor();
-    ?>
+    <div>
+        <h2><?= htmlspecialchars($article->getTitle());?></h2>
+        <p><?= htmlspecialchars($article->getContent());?></p>
+        <p><?= htmlspecialchars($article->getAuthor());?></p>
+        <p>Créé le : <?= htmlspecialchars($article->getDateAdded());?></p>
+    </div>
+    <br>
     <a href="../public/index.php">Retour à la liste des articles</a>
     <div id="comments" class="text-left" style="margin-left: 50px">
         <h3>Commentaires</h3>
