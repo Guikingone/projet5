@@ -1,9 +1,3 @@
-<?php
-require '../config/Autoloader.php';
-\App\config\Autoloader::register();
-
-?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -21,13 +15,13 @@ require '../config/Autoloader.php';
         while($data = $articles->fetch())
         {
         ?>
-            <div>
-                <h2><a href="single.php?idArt=<?= htmlspecialchars($data['id']);?>"><?= htmlspecialchars($data['title']);?></a></h2>
-                <p><?= htmlspecialchars($data['content']);?></p>
-                <p><?= htmlspecialchars($data['author']);?></p>
-                <p>Créé le : <?= htmlspecialchars($data['date_added']);?></p>
-            </div>
-            <br>
+        <div>
+            <h2><a href="../public/index.php?route=article&idArt=<?= htmlspecialchars($data['id']);?>"><?= htmlspecialchars($data['title']);?></a></h2>
+            <p><?= htmlspecialchars($data['content']);?></p>
+            <p><?= htmlspecialchars($data['author']);?></p>
+            <p>Créé le : <?= htmlspecialchars($data['date_added']);?></p>
+        </div>
+        <br>
         <?php
         }
         $articles->closeCursor();

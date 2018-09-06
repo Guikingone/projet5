@@ -1,10 +1,3 @@
-<?php
-require '../config/Autoloader.php';
-\App\config\Autoloader::register();
-
-?>
-
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -31,7 +24,7 @@ require '../config/Autoloader.php';
     <?php
     $article->closeCursor();
     ?>
-    <a href="home.php">Retour à la liste des articles</a>
+    <a href="../public/index.php">Retour à l'accueil</a>
     <div id="comments" class="text-left" style="margin-left: 50px">
         <h3>Commentaires</h3>
         <?php
