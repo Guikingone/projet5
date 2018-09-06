@@ -1,8 +1,9 @@
 <?php
-require '../src/DAO/DAO.php';
-require '../src/DAO/ArticleDAO.php';
-require '../src/DAO/CommentDAO.php';
+require '../config/Autoloader.php';
+\App\config\Autoloader::register();
+
 ?>
+
 
 <!DOCTYPE html>
 <html lang="fr">
