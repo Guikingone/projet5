@@ -40,7 +40,7 @@ class Router
         }
         catch (Exception $e)
         {
-            $this->errorController->error();
+            $this->errorController->error(); 
         }
     }
 }
