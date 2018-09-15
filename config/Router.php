@@ -30,6 +30,10 @@ class Router
                 else if($_GET['route'] === 'saveArticle') {
                     $this->backController->saveArticle($_POST);
                 }
+                else if($_GET['route'] === 'register') {
+                    $this->backController->register();
+                }
+
                 else{
                     $this->errorController->unknown();
                 }

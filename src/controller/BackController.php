@@ -25,4 +25,9 @@ class BackController
             'post' => $post
         ]);
     }
+
+    public function register()
+    {
+        $this->view->render('register');
+    }
 }
