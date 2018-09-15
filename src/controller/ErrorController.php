@@ -1,6 +1,7 @@
 <?php
 
 namespace App\src\controller;
+use App\src\model\View;
 
 class ErrorController
 {

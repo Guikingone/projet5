@@ -27,13 +27,15 @@ class BackController
         ]);
     }
 
-    public function register($user)
+    public function register($post)
     {
         if(isset($post['submit'])) {
             $userDAO = new UserDAO();
-            $userDAO->register($user);
+            $userDAO->register($post);
             header('Location: ../public/index.php');
         }
-        $this->view->render('register');
+        $this->view->render('register', [
+            'post' => $post
+        ]);
     }
 }
