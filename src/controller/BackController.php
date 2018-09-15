@@ -3,6 +3,7 @@
 namespace App\src\controller;
 
 use App\src\DAO\ArticleDAO;
+use App\src\DAO\UserDAO;
 use App\src\model\View;
 
 class BackController
@@ -26,9 +27,11 @@ class BackController
         ]);
     }
 
-    public function register()
+    public function register($user)
     {
         if(isset($post['submit'])) {
+            $userDAO = new UserDAO();
+            $userDAO->register($user);
             header('Location: ../public/index.php');
         }
         $this->view->render('register');

@@ -31,7 +31,7 @@ class Router
                     $this->backController->saveArticle($_POST);
                 }
                 else if($_GET['route'] === 'register') {
-                    $this->backController->register();
+                    $this->backController->register($_POST);
                 }
 
                 else{

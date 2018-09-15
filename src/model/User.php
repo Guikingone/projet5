@@ -9,6 +9,8 @@ class User
     private $name;
     
     private $pseudo;
+
+    private $email;
     
     private $password;
     
@@ -60,6 +62,22 @@ class User
     public function setPseudo($pseudo)
     {
         $this->pseudo = $pseudo;
+    }
+
+        /**
+     * @return mixed
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param mixed $email
+     */
+    public function setEmail($email)
+    {
+        $this->pseudo = $email;
     }
 
     /**
