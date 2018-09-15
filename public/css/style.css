@@ -2,3 +2,17 @@ nav
 {
     margin-bottom: 20px;
 }
+
+/*********
+*Register Form
+**********/
+.signIn
+{
+    width: 300px;
+    border: 15px solid rgb(49, 49, 49);
+    border-radius: 5px;
+    box-shadow: 10px 10px 5px grey;
+    padding: 25px;
+    margin: auto;
+    text-align: ;
+}

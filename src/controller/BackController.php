@@ -28,6 +28,9 @@ class BackController
 
     public function register()
     {
+        if(isset($post['submit'])) {
+            header('Location: ../public/index.php');
+        }
         $this->view->render('register');
     }
 }
