@@ -16,6 +16,8 @@ class User
     
     private $date_inscription;
 
+    private $admin;
+
    /**
      * @return mixed
      */
@@ -110,5 +112,21 @@ class User
     public function setDateInscription($date_inscription)
     {
         $this->date_inscription = $date_inscription;
+    }
+
+        /**
+     * @return mixed
+     */
+    public function getAdmin()
+    {
+        return $this->date_admin;
+    }
+
+    /**
+     * @param mixed $date_inscription
+     */
+    public function setDateAdmin($date_admin)
+    {
+        $this->date_admin = $date_admin;
     }
 }

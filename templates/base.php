@@ -20,10 +20,10 @@
               <a class="nav-link" href="../public/index.php">Accueil<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href ="../public/index.php?route=register"'>Enregistrement</a>
+              <a class="nav-link" href="../public/index.php?route=register">Enregistrement</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link disabled" href="#">Disabled</a>
+              <a class="nav-link disabled" href="../public/index.php?route=connection">Se connecter</a>
             </li>
           </ul>
         </div>

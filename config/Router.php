@@ -32,6 +32,8 @@ class Router
                 }
                 else if($_GET['route'] === 'register') {
                     $this->backController->register($_POST);
+                }else if($_GET['route'] === 'connection') {
+                    $this->backController->connection($_POST);
                 }
 
                 else{

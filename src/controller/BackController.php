@@ -38,4 +38,17 @@ class BackController
             'post' => $post
         ]);
     }
+
+    public function connection($post)
+    {
+        if(isset($post['submit'])) {
+            $userDAO = new UserDAO();
+            $userDAO->connection($post);
+            header('Location: ../public/index.php');
+        }
+        $this->view->render('connection_form', [
+            'post' => $post
+        ]);
+
+    }
 }

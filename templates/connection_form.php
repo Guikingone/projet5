@@ -1,17 +1,10 @@
 <?php
-$this->title = "S'enregistrer sur le site !";
+$this->title = "Connexion au site !";
 ?>
 <h1>Mon blog</h1>
 <p>En construction</p>
 <div class="signIn">
-    <form method="post" action="../public/index.php?route=register">
-        <div>
-            <label for="name">Nom :</label>
-            <input type="text" id="name" name="name" value="<?php
-            if(isset($post['name'])){
-                echo $post['name'];}
-        ?>" required>
-        </div>
+    <form method="post" action="../public/index.php?route=connection">
         <div>
             <label for="pseudo">Pseudo :</label>
             <input type="text" id="pseudo" name="pseudo" value="<?php
@@ -32,10 +25,6 @@ $this->title = "S'enregistrer sur le site !";
             if(isset($post['password'])){
                 echo $post['password'];}
         ?>" required>
-        </div>
-        <div>
-            <label for="password2">Confirmer mdp :</label>
-            <input type="password" id="password2" name="password2" required>
         </div>
         <div>
             <input type="submit" value="Envoyer" id="submit" name="submit">
