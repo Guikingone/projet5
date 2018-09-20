@@ -125,7 +125,7 @@ class User
     /**
      * @param mixed $date_inscription
      */
-    public function setDateAdmin($date_admin)
+    public function setAdmin($date_admin)
     {
         $this->date_admin = $date_admin;
     }

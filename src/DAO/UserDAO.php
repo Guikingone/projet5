@@ -26,10 +26,10 @@ class UserDAO extends DAO
         }
     }
 
-    public function correctPassword($password)
+    public function correctPassword()
     {
         $this->password_verify($_POST['password'], $result['password']);
-        if (!$resultat)
+        if (!$result)
         {
             echo 'Mauvais identifiant ou mot de passe !';
         }
@@ -38,7 +38,7 @@ class UserDAO extends DAO
             if ($isPasswordCorrect) 
             {
                 session_start();
-                $_SESSION['id'] = $resultat['id'];
+                $_SESSION['id'] = $result['id'];
                 $_SESSION['pseudo'] = $pseudo;
                 echo 'Vous êtes connecté !';
             }

@@ -43,7 +43,7 @@ class BackController
     {
         if(isset($post['submit'])) {
             $userDAO = new UserDAO();
-            $userDAO->connection($post);
+            $userDAO->correctPassword($post)->connection($post);
             header('Location: ../public/index.php');
         }
         $this->view->render('connection_form', [
