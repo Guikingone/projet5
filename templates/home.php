@@ -3,7 +3,6 @@ $this->title = "Accueil";
 ?>
 <h1>Mon blog</h1>
 <p>En construction</p>
-<a href="../public/index.php?route=saveArticle">Ajouter un article</a> 
 <?php
 foreach ($articles as $article)
 {
@@ -16,5 +15,10 @@ foreach ($articles as $article)
     </div>
     <br>
 <?php
+}
+if (isset($_SESSION['user']['pseudo']) && ($var = $_SESSION['user']['pseudo']) && ($var == 7)) {
+    echo 'ca marche';
+} else {
+    echo 'error';
 }
 ?>

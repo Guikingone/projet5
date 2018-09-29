@@ -12,6 +12,8 @@ class Comment
     
     private $dateAdded;
 
+    private $published;
+
     /**
      * @return mixed
      */
@@ -74,5 +76,21 @@ class Comment
     public function setDateAdded($dateAdded)
     {
         $this->dateAdded = $dateAdded;
+    }
+
+        /**
+     * @return mixed
+     */
+    public function getPublished()
+    {
+        return $this->published;
+    }
+
+    /**
+     * @param mixed $published
+     */
+    public function setpublished($published)
+    {
+        $this->published = $published;
     }
 }

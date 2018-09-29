@@ -36,6 +36,18 @@ class Router
                 else if($_GET['route'] === 'connection') {
                     $this->backController->connection($_POST);
                 }
+                else if($_GET['route'] === 'admin') {
+                    $this->frontController->admin($_POST);
+                }
+                else if($_GET['route'] === 'postModif') {
+                    $this->frontController->postModif($_POST);
+                }
+                else if($_GET['route'] === 'commentModif') {
+                    $this->frontController->commentModif($_POST);
+                }
+                else if($_GET['route'] === 'unpublishedComment') {
+                    $this->frontController->unpublishedComment($_POST);
+                }
 
                 else{
                     $this->errorController->unknown();

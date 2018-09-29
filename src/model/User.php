@@ -2,7 +2,7 @@
 
 namespace App\src\model;
 
-class User
+class User implements \Serializable
 {
     private $id;
 
@@ -14,7 +14,7 @@ class User
     
     private $password;
     
-    private $date_inscription;
+    private $dateInscription;
 
     private $admin;
 
@@ -103,15 +103,15 @@ class User
      */
     public function getDateInscription()
     {
-        return $this->date_inscription;
+        return $this->dateInscription;
     }
 
     /**
-     * @param mixed $date_inscription
+     * @param mixed $dateInscription
      */
-    public function setDateInscription($date_inscription)
+    public function setDateInscription($dateInscription)
     {
-        $this->date_inscription = $date_inscription;
+        $this->dateInscription = $dateInscription;
     }
 
         /**
@@ -119,14 +119,36 @@ class User
      */
     public function getAdmin()
     {
-        return $this->date_admin;
+        return $this->admin;
     }
 
     /**
-     * @param mixed $date_inscription
+     * @param mixed $admin
      */
-    public function setAdmin($date_admin)
+    public function setAdmin($admin)
     {
-        $this->date_admin = $date_admin;
+        $this->admin = $admin;
+    }
+
+    public function serialize()
+    {
+        return serialize([
+            'id'=> $this->id,
+            'name'=>$this->name,
+            'pseudo'=>$this->pseudo,
+            'email'=>$this->email,
+            'admin'=>$this->admin
+        ]);
+    }
+
+    public function unserialize($serialized)
+    {
+        list(
+            'id'=> $this->id,
+            'name'=>$this->name,
+            'pseudo'=>$this->pseudo,
+            'email'=>$this->email,
+            'admin'=>$this->admin
+        ) = unserialize($serialized);
     }
 }

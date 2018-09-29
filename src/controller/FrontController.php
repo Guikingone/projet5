@@ -36,4 +36,25 @@ class FrontController
             'comments' => $comments
         ]);
     }
+
+    public function postModif()
+    {
+        $articles = $this->articleDAO->getArticles();
+        $this->view->render('postModif', [
+            'articles' => $articles
+        ]);
+    }
+
+    public function commentModif()
+    {
+        $comments = $this->commentDAO->getComments();
+        $this->view->render('commentModif', [
+            'comments' => $comments
+        ]);
+    }
+
+    public function admin()
+    {
+        $this->view->render('admin');
+    }
 }

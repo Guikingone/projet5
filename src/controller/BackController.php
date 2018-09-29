@@ -31,7 +31,7 @@ class BackController
     {
         if(isset($post['submit'])) {
             $userDAO = new UserDAO();
-            $userDAO->register($post);
+            $userDAO->register($post['name'], $post['pseudo'], $post['email'], $post['password'], $post['password2']);
             header('Location: ../public/index.php');
         }
         $this->view->render('register', [
@@ -43,12 +43,11 @@ class BackController
     {
         if(isset($post['submit'])) {
             $userDAO = new UserDAO();
-            $userDAO->correctPassword($post)->connection($post);
+            $userDAO->correctPassword($post['username'], $post['email'], $post['password']);
             header('Location: ../public/index.php');
         }
         $this->view->render('connection_form', [
             'post' => $post
         ]);
-
     }
 }
