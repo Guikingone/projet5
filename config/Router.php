@@ -30,6 +30,9 @@ class Router
                 else if($_GET['route'] === 'saveArticle') {
                     $this->backController->saveArticle($_POST);
                 }
+                else if($_GET['route'] === 'saveComment') {
+                    $this->backController->saveComment($_POST);
+                }
                 else if($_GET['route'] === 'register') {
                     $this->backController->register($_POST);
                 }
@@ -45,8 +48,29 @@ class Router
                 else if($_GET['route'] === 'commentModif') {
                     $this->frontController->commentModif($_POST);
                 }
+                else if($_GET['route'] === 'unpublishedCommentList') {
+                    $this->frontController->unpublishedCommentList($_POST);
+                }
                 else if($_GET['route'] === 'unpublishedComment') {
-                    $this->frontController->unpublishedComment($_POST);
+                    $this->frontController->unpublishedComment($_GET['idCom']);
+                }
+                else if($_GET['route'] === 'comment') {
+                    $this->frontController->getComment($_GET['idCom']);
+                }
+                else if($_GET['route'] === 'modifyComment') {
+                    $this->backController->modifyComment($_POST);
+                }
+                else if($_GET['route'] === 'deleteComment') {
+                    $this->backController->deleteComment($_POST);
+                }
+                else if($_GET['route'] === 'disconnect') {
+                    $this->frontController->disconnect($_POST);
+                }
+                else if($_GET['route'] === 'contact') {
+                    $this->backController->contact($_POST);
+                }
+                else if($_GET['route'] === 'publishComment') {
+                    $this->backController->publishComment($_POST);
                 }
 
                 else{

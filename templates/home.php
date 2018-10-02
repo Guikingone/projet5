@@ -7,7 +7,7 @@ $this->title = "Accueil";
 foreach ($articles as $article)
 {
 ?>
-    <div>
+    <div class="article">
         <h2><a href="../public/index.php?route=article&idArt=<?= htmlspecialchars($article->getId());?>"><?= htmlspecialchars($article->getTitle());?></a></h2>
         <p><?= htmlspecialchars($article->getContent());?></p>
         <p><?= htmlspecialchars($article->getAuthor());?></p>
@@ -15,10 +15,5 @@ foreach ($articles as $article)
     </div>
     <br>
 <?php
-}
-if (isset($_SESSION['user']['pseudo']) && ($var = $_SESSION['user']['pseudo']) && ($var == 7)) {
-    echo 'ca marche';
-} else {
-    echo 'error';
 }
 ?>

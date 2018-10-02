@@ -3,8 +3,10 @@
 namespace App\src\controller;
 
 use App\src\DAO\ArticleDAO;
+use App\src\DAO\CommentDAO;
 use App\src\DAO\UserDAO;
 use App\src\model\View;
+use App\src\model\Contact;
 
 class BackController
 {
@@ -27,6 +29,18 @@ class BackController
         ]);
     }
 
+    public function saveComment($post)
+    {
+        if(isset($post['submit'])) {
+            $commentDAO = new CommentDAO();
+            $commentDAO->saveComment($post);
+            header('Location: ../public/index.php');
+        }
+        $this->view->render('form_comment', [
+            'post' => $post
+        ]);
+    }
+
     public function register($post)
     {
         if(isset($post['submit'])) {
@@ -43,10 +57,57 @@ class BackController
     {
         if(isset($post['submit'])) {
             $userDAO = new UserDAO();
-            $userDAO->correctPassword($post['username'], $post['email'], $post['password']);
+            $userDAO->connection($post['username'], $post['email'], $post['password']);
             header('Location: ../public/index.php');
         }
         $this->view->render('connection_form', [
+            'post' => $post
+        ]);
+    }
+
+    public function contact($post) {
+        if(isset($post['submit'])) {
+            $contactForm = new Contact();
+            $contactForm->buildContact($post['username'], $post['email'], $post['subject'], $post['text']);
+            header('Location: ../public/index.php');
+        }
+        $this->view->render('contact', [
+            'post' => $post
+        ]);
+    }
+
+    public function publishComment($post)
+    {
+        if(isset($post['submit'])) {
+            $commentDAO = new CommentDAO();
+            $commentDAO->publishComment($post);
+            header('Location: ../public/index.php?route=admin');
+        }
+        $this->view->render('unpublishedComment', [
+            'post' => $post
+        ]);
+    }
+
+    public function modifyComment($post)
+    {
+        if(isset($post['submit'])) {
+            $commentDAO = new CommentDAO();
+            $commentDAO->modifyComment($post);
+            header('Location: ../public/index.php?route=admin');
+        }
+        $this->view->render('comment', [
+            'post' => $post
+        ]);
+    }
+
+    public function deleteComment($post)
+    {
+        if(isset($post['submit'])) {
+            $commentDAO = new CommentDAO();
+            $commentDAO->deleteComment($post);
+            header('Location: ../public/index.php?route=admin');
+        }
+        $this->view->render('comment', [
             'post' => $post
         ]);
     }

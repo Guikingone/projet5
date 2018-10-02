@@ -22,13 +22,16 @@
             <li class="nav-item">
               <a class="nav-link" href="../public/index.php?route=register">Enregistrement</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../public/index.php?route=contact">Contact</a>
+            </li>
             <?php
             if (isset($_SESSION['user']['pseudo'])) { ?>
               <li class="nav-item">
               <a class="nav-link"> Bonjour :  <?= $_SESSION['user']['pseudo']; ?></a>
               </li>
               <li class="nav-item">
-              <a class="nav-link" href="../public/index.php?route=">Deconnexion</a>
+              <a class="nav-link" href="../public/index.php?route=disconnect">Deconnexion</a>
               </li>
             <?php } else { ?>
               <li class="nav-item">
@@ -47,7 +50,10 @@
     
     </header>
     <div id="content">
-        <?= $_SESSION['message']; ?>
+    <?php if (isset($_SESSION['message'])) {
+      echo $_SESSION['message'];
+
+    } ?>
         <?= $content ?>
     </div>
     <footer></footer>

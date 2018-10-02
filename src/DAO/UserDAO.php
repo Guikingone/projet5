@@ -32,20 +32,8 @@ class UserDAO extends DAO
         $this->sql($sql, [$name, $pseudo, $email, password_hash($password, PASSWORD_DEFAULT)]);
     }
 
-    public function connection($user)
-    {
-        $sql = 'SELECT id, name, pseudo, email, password, date_inscription, admin FROM user';
-        $result = $this->sql($sql);
-        $row = $result->fetch();
-        if($row) {
-            return $this->buildObject($row);
 
-        } else {
-            echo 'Aucun utilisateur avec ce pseudo est enregistré';
-        }
-    }
-
-    public function correctPassword($userName, $email, $password)
+    public function connection($userName, $email, $password)
     {
         $result = $this->sql('SELECT password, email FROM user AS u WHERE u.pseudo = :username', [':username' => $userName])->fetch();
 

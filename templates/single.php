@@ -3,7 +3,7 @@ $this->title = "Article";
 ?>
 <h1>Mon blog</h1>
 <p>En construction</p>
-<div>
+<div class="article">
     <h2><?= htmlspecialchars($article->getTitle());?></h2>
     <p><?= htmlspecialchars($article->getContent());?></p>
     <p><?= htmlspecialchars($article->getAuthor());?></p>
@@ -22,5 +22,13 @@ $this->title = "Article";
         <p>Posté le <?= htmlspecialchars($comment->getDateAdded());?></p>
         <?php
     }
+    if (isset($_SESSION['user']['pseudo'])) { ?>
+    <div>
+        <a href="../public/index.php?route=saveComment&idArt=<?= htmlspecialchars($article->getId());?>">Poster un commentaire</a>
+    </div>        
+    <?php } else { ?>
+        <p>Vous devez être connecté pour poster un commentaire</p>
+        <a href="../public/index.php?route=connection">Se connecter</a>
+    <?php }
     ?>
 </div>

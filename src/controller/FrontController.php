@@ -53,8 +53,37 @@ class FrontController
         ]);
     }
 
+    public function unpublishedCommentList()
+    {
+        $comments = $this->commentDAO->getUnpublishedComments();
+        $this->view->render('unpublishedCommentList', [
+            'comments' => $comments
+        ]);
+    }
+
+    public function unpublishedComment($id)
+    {
+        $comment = $this->commentDAO->getUnpublishedComment($id);
+        $this->view->render('unpublishedComment', [
+            'comment' => $comment
+        ]);
+    }
+
+    public function getComment($id)
+    {
+        $comment = $this->commentDAO->getComment($id);
+        $this->view->render('Comment', [
+            'comment' => $comment
+        ]);
+    }
+
     public function admin()
     {
         $this->view->render('admin');
+    }
+
+    public function disconnect()
+    {
+        $this->view->render('disconnect');
     }
 }
