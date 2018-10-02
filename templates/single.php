@@ -6,8 +6,7 @@ $this->title = "Article";
 <div class="article">
     <h2><?= htmlspecialchars($article->getTitle());?></h2>
     <p><?= htmlspecialchars($article->getContent());?></p>
-    <p><?= htmlspecialchars($article->getAuthor());?></p>
-    <p>Créé le : <?= htmlspecialchars($article->getDateAdded());?></p>
+    <p>Créé par : <?= htmlspecialchars($article->getAuthor());?> | <?= htmlspecialchars($article->getDateAdded());?> | <?php if (htmlspecialchars($article->getEdited()) != NULL) { ?> <em>(Modifié le <?php echo htmlspecialchars($article->getEdited());} ?>)</em></p>
 </div>
 <br>
 <a href="../public/index.php">Retour à la liste des articles</a>
