@@ -14,7 +14,7 @@ $this->title = "Publier un article";
                 if(isset($_GET['idCom'])){
                     echo $_GET['idCom'];}
             ?>" hidden><br>
-        <input type="submit" value="Envoyer" id="submit" name="submit">
+        <input type="submit" value="Publier" id="submit" name="submit">
     </form>
     <a href="../public/index.php?route=admin">Retour à l'administration</a>
 </div>

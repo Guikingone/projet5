@@ -5,6 +5,7 @@
     <title><?= $title ?></title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Chakra+Petch" rel="stylesheet">
     <link rel="stylesheet" href="../public/css/style.css">
 </head>
 <body>
@@ -50,11 +51,12 @@
     
     </header>
     <div id="content">
-    <?php if (isset($_SESSION['message'])) {
+    <div>Message du system : <?php if (isset($_SESSION['message'])) {
       echo $_SESSION['message'];
-
-    } ?>
-        <?= $content ?>
+    } else { ?>
+    <em>Pas de message pour le moment...</em> </div>
+    <?php } ?>
+    <?= $content ?>
     </div>
     <footer></footer>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

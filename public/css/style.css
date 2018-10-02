@@ -5,7 +5,8 @@ nav
 
 body
 {
-    background-color: rgb(224, 224, 255); 
+    background-color: rgb(233, 233, 233);
+    font-family: 'Chakra Petch', sans-serif;
 }
 
 /*********
@@ -13,8 +14,16 @@ body
 **********/
 .article
 {
-    width: 300px;
     margin: auto;
+    background-color: rgb(214, 252, 255);
+    border: 5px solid rgb(49, 49, 49);
+    border-radius: 22px;
+    padding: 15px;
+}
+
+.article h2
+{
+    text-align: center;
 }
 
 /*********
@@ -41,5 +50,21 @@ body
     box-shadow: 10px 10px 5px rgb(0, 0, 0);
     padding: 25px;
     margin: auto;
-    background-color: rgb(247, 247, 247);
+    background-color: rgb(233, 233, 233);
+}
+
+/*********
+*Button
+**********/
+.button
+{
+    width: 150px;
+    padding: 15px;
+    margin: 10px;
+    text-align: center;
+}
+
+button:hover
+{
+    background-color: yellow;
 }

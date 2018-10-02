@@ -33,6 +33,8 @@ class CommentDAO extends DAO
         extract($comment);
         $sql = 'INSERT INTO comment (pseudo, content, article_id, date_added) VALUES (?, ?, ?, NOW())';
         $this->sql($sql, [$pseudo, $content, $articleId]);
+
+        $_SESSION['message'] = sprintf('Votre message a été enregistré, et est en attente de publication');
     }
 
     public function publishComment($comment)
@@ -53,7 +55,7 @@ class CommentDAO extends DAO
     {
         extract($comment);
         $sql = 'DELETE FROM comment WHERE id = ?';
-        $this->sql($sql, [$articleId]);
+        $this->sql($sql, [$commentId]);
     }
 
     public function getComments()

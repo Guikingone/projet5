@@ -100,6 +100,18 @@ class BackController
         ]);
     }
 
+    public function modifyArticle($post)
+    {
+        if(isset($post['submit'])) {
+            $articleDAO = new ArticleDAO();
+            $articleDAO->modifyArticle($post);
+            header('Location: ../public/index.php?route=admin');
+        }
+        $this->view->render('article', [
+            'post' => $post
+        ]);
+    }
+
     public function deleteComment($post)
     {
         if(isset($post['submit'])) {
@@ -108,6 +120,18 @@ class BackController
             header('Location: ../public/index.php?route=admin');
         }
         $this->view->render('comment', [
+            'post' => $post
+        ]);
+    }
+
+    public function deleteArticle($post)
+    {
+        if(isset($post['submit'])) {
+            $articleDAO = new ArticleDAO();
+            $articleDAO->deleteArticle($post);
+            header('Location: ../public/index.php?route=admin');
+        }
+        $this->view->render('article', [
             'post' => $post
         ]);
     }

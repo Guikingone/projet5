@@ -8,22 +8,22 @@ class UserDAO extends DAO
 {
     public function register($name, $pseudo, $email, $password, $password2)
     {
-        $result = $this->sql('SELECT pseudo FROM user AS u WHERE u.pseudo = :pseudo', [':pseudo' => $name])->fetch();
+        $result = $this->sql('SELECT pseudo FROM user AS u WHERE u.pseudo = :pseudo', [':pseudo' => $pseudo])->fetch();
 
         if (!empty($result)) {
-            $_SESSION['message'] = sprintf('The following username %s is already used, please choose another', $name);
+            $_SESSION['message'] = sprintf('Le pseudo suivant : %s est déjà utilisé, veuillez choisir un autre pseudo', $pseudo);
             return;
         }
         
         $resultMail = $this->sql('SELECT email FROM user AS u WHERE u.email = :email', [':email' => $email])->fetch();
 
         if (!empty($resultMail)) {
-            $_SESSION['message'] = sprintf('The following email %s is already used, please choose another', $name);
+            $_SESSION['message'] = sprintf('L\'email suivant : %s est déjà utilisé, veuillez choisir un autre email', $name);
             return;
         }
 
         if ($password != $password2) {
-            $_SESSION['message'] = sprintf('Passwords have to be similar', $userName);
+            $_SESSION['message'] = sprintf('Les mots de passe doivent être identiques', $userName);
             return;
         }
 
@@ -38,17 +38,17 @@ class UserDAO extends DAO
         $result = $this->sql('SELECT password, email FROM user AS u WHERE u.pseudo = :username', [':username' => $userName])->fetch();
 
         if (empty($result)) {
-            $_SESSION['message'] = sprintf('The following username %s doest not exist', $userName);
+            $_SESSION['message'] = sprintf('Le pseudo suivant : %s est inexistant', $userName);
             return;
         }
 
         if (!password_verify($password, $result['password'])) {
-            $_SESSION['message'] = sprintf('The following password %s is not valid', $password);
+            $_SESSION['message'] = sprintf('Le mot de passe est invalide', $password);
             return;
         }
 
         if ($email != $result['email']) {
-            $_SESSION['message'] = sprintf('The following email %s doest not exist', $email);
+            $_SESSION['message'] = sprintf('L\'email suivant : %s est invalide', $email);
             return;            
         }
         /** 
@@ -75,7 +75,7 @@ class UserDAO extends DAO
             'admin' => $result->getAdmin()
         ];
 
-        $_SESSION['message'] = sprintf('The following user %s is now connected', $userName);
+        $_SESSION['message'] = sprintf('Vous êtes maintenant connecté en tant que "%s"', $userName);
     }
 
     private function buildObject(array $row)

@@ -14,6 +14,8 @@ class Article
     
     private $date_added;
 
+    private $edited;
+
     /**
      * @return mixed
      */
@@ -92,5 +94,21 @@ class Article
     public function setDateAdded($date_added)
     {
         $this->date_added = $date_added;
+    }
+
+    /**
+    * @return mixed
+    */
+    public function getEdited()
+    {
+        return $this->edited;
+    }
+
+    /**
+     * @param mixed $date_added
+     */
+    public function setEdited($edited)
+    {
+        $this->edited = $edited;
     }
 }

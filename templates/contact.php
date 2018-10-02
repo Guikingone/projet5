@@ -28,7 +28,7 @@ $this->title = "Contactez moi";
         </div>
         <div>
             <label for="text">Votre message :</label>
-            <textarea rows="4" cols="30" id="text" name="text" value="<?php
+            <textarea rows="4" cols="25" id="text" name="text" value="<?php
             if(isset($post['text'])){
                 echo $post['text'];}
         ?>" required></textarea>

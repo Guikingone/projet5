@@ -8,7 +8,7 @@ class ArticleDAO extends DAO
 {
     public function getArticles()
     {
-        $sql = 'SELECT id, title, content, author, date_added FROM article ORDER BY id DESC';
+        $sql = 'SELECT id, title, content, author, date_added, edited FROM article ORDER BY id DESC';
         $result = $this->sql($sql);
         $articles = [];
         foreach ($result as $row) {
@@ -20,7 +20,7 @@ class ArticleDAO extends DAO
 
     public function getArticle($idArt)
     {
-        $sql = 'SELECT id, title, content, author, date_added FROM article WHERE id = ?';
+        $sql = 'SELECT id, title, content, author, date_added, edited FROM article WHERE id = ?';
         $result = $this->sql($sql, [$idArt]);
         $row = $result->fetch();
         if($row) {
@@ -37,6 +37,20 @@ class ArticleDAO extends DAO
         $this->sql($sql, [$title, $content, $author]);
     }
 
+    public function modifyArticle($article)
+    {
+        extract($article);
+        $sql = 'UPDATE article SET content = ?, title = ?, edited = NOW() WHERE id = ?';
+        $this->sql($sql, [$content, $title, $articleId]);
+    }
+
+    public function deleteArticle($article)
+    {
+        extract($article);
+        $sql = 'DELETE FROM article WHERE id = ?';
+        $this->sql($sql, [$articleId]);
+    }
+
     private function buildObject(array $row)
     {
         $article = new Article();
@@ -45,6 +59,7 @@ class ArticleDAO extends DAO
         $article->setContent($row['content']);
         $article->setDateAdded($row['date_added']);
         $article->setAuthor($row['author']);
+        $article->setEdited($row['edited']);
         return $article;
     }
 }

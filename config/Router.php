@@ -57,11 +57,20 @@ class Router
                 else if($_GET['route'] === 'comment') {
                     $this->frontController->getComment($_GET['idCom']);
                 }
+                else if($_GET['route'] === 'modifArticle') {
+                    $this->frontController->getArticle($_GET['idArt']);
+                }
                 else if($_GET['route'] === 'modifyComment') {
                     $this->backController->modifyComment($_POST);
                 }
+                else if($_GET['route'] === 'modifyArticle') {
+                    $this->backController->modifyArticle($_POST);
+                }
                 else if($_GET['route'] === 'deleteComment') {
                     $this->backController->deleteComment($_POST);
+                }
+                else if($_GET['route'] === 'deleteArticle') {
+                    $this->backController->deleteArticle($_POST);
                 }
                 else if($_GET['route'] === 'disconnect') {
                     $this->frontController->disconnect($_POST);

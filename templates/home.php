@@ -7,13 +7,14 @@ $this->title = "Accueil";
 foreach ($articles as $article)
 {
 ?>
-    <div class="article">
-        <h2><a href="../public/index.php?route=article&idArt=<?= htmlspecialchars($article->getId());?>"><?= htmlspecialchars($article->getTitle());?></a></h2>
-        <p><?= htmlspecialchars($article->getContent());?></p>
-        <p><?= htmlspecialchars($article->getAuthor());?></p>
-        <p>Créé le : <?= htmlspecialchars($article->getDateAdded());?></p>
+    <div class="container">
+        <div class="article">
+            <h2><a href="../public/index.php?route=article&idArt=<?= htmlspecialchars($article->getId());?>"><strong><?= htmlspecialchars($article->getTitle());?></strong></a></h2>
+            <p><?= htmlspecialchars($article->getContent());?></p>
+            <p>Créé par : <?= htmlspecialchars($article->getAuthor());?> | <?= htmlspecialchars($article->getDateAdded());?> | <?php if (htmlspecialchars($article->getEdited()) != NULL) { ?> <em>(Modifié le <?php echo htmlspecialchars($article->getEdited());} ?>)</em></p>
+        </div>
     </div>
-    <br>
+        <br>
 <?php
 }
 ?>

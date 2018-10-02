@@ -77,6 +77,14 @@ class FrontController
         ]);
     }
 
+    public function getArticle($id)
+    {
+        $article = $this->articleDAO->getArticle($id);
+        $this->view->render('articleModify', [
+            'article' => $article
+        ]);
+    }
+
     public function admin()
     {
         $this->view->render('admin');
