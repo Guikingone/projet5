@@ -32,7 +32,7 @@ $this->title = "Contactez moi";
             if(isset($post['text'])){
                 echo $post['text'];}
         ?>" required></textarea>
-        </div>
+        </div><br>
         <div>
             <input type="submit" value="Envoyer" id="submit" name="submit">
         </div>

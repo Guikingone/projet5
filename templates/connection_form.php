@@ -25,7 +25,7 @@ $this->title = "Connexion au site !";
             if(isset($post['password'])){
                 echo $post['password'];}
         ?>" required>
-        </div>
+        </div><br>
         <div>
             <input type="submit" value="Envoyer" id="submit" name="submit">
         </div>

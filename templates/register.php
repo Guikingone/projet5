@@ -36,7 +36,7 @@ $this->title = "S'enregistrer sur le site !";
         <div>
             <label for="password2">Confirmer mdp :</label>
             <input type="password" id="password2" name="password2" required>
-        </div>
+        </div><br>
         <div>
             <input type="submit" value="Envoyer" id="submit" name="submit">
         </div>
