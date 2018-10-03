@@ -7,6 +7,8 @@ class Article
     private $id;
 
     private $title;
+
+    private $chapeau;
     
     private $content;
     
@@ -46,6 +48,22 @@ class Article
     public function setTitle($title)
     {
         $this->title = $title;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getChapeau()
+    {
+        return $this->chapeau;
+    }
+
+    /**
+     * @param mixed $chapeau
+     */
+    public function setChapeau($chapeau)
+    {
+        $this->chapeau = $chapeau;
     }
 
     /**

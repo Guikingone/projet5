@@ -38,7 +38,7 @@ $this->title = "S'enregistrer sur le site !";
             <input type="password" id="password2" name="password2" required>
         </div><br>
         <div>
-            <input type="submit" value="Envoyer" id="submit" name="submit">
+            <input type="submit" class="btn btn-info" value="Envoyer" id="submit" name="submit">
         </div>
     </form>
 

@@ -12,12 +12,12 @@ $this->title = "Accueil";
                             <div class="presentation">
                                 <h1>Présentation</h1>
                                 <p>Bonjour, je m'appelle Dimitri Subrini. Et je suis le developpeur qu'il vous FAUT !</p>
-                                <p>Voici mon CV : <a href="../public/img/CVweb.pdf"><button>Télécharger</button></a></p>
+                                <p>Voici mon CV : <a href="../public/img/CVweb.pdf"><button class="btn btn-info">Télécharger</button></a></p>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="image">
-                                    <img src="../public/img/moi.jpg" alt="Moi !">
+                                <img src="../public/img/moi.jpg" alt="Moi !">
                             </div>
                         </div>
                     </div>
@@ -37,7 +37,7 @@ $this->title = "Accueil";
             <div class="col-lg-6 col-sm-12">
                 <div class="article">  
                     <h2><a href="../public/index.php?route=article&idArt=<?= htmlspecialchars($article->getId());?>"><strong><?= htmlspecialchars($article->getTitle());?></strong></a></h2>
-                    <p><?= htmlspecialchars($article->getContent());?></p>
+                    <p>Sujet : <?= htmlspecialchars($article->getChapeau());?></p>
                     <p>Créé par : <?= htmlspecialchars($article->getAuthor());?> | <?= htmlspecialchars($article->getDateAdded());?> | <?php if (htmlspecialchars($article->getEdited()) != NULL) { ?> <em>(Modifié le <?php echo htmlspecialchars($article->getEdited());} ?>)</em></p>
                  </div><br>                    
             </div>

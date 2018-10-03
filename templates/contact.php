@@ -34,7 +34,7 @@ $this->title = "Contactez moi";
         ?>" required></textarea>
         </div><br>
         <div>
-            <input type="submit" value="Envoyer" id="submit" name="submit">
+            <input type="submit" class="btn btn-info" value="Envoyer" id="submit" name="submit">
         </div>
     </form>
 

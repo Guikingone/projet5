@@ -5,6 +5,7 @@ $this->title = "Article";
 <p>En construction</p>
 <div class="article">
     <h2><?= htmlspecialchars($article->getTitle());?></h2>
+    <p>Sujet : <?= htmlspecialchars($article->getChapeau());?></p>
     <p><?= htmlspecialchars($article->getContent());?></p>
     <p>Créé par : <?= htmlspecialchars($article->getAuthor());?> | <?= htmlspecialchars($article->getDateAdded());?> | <?php if (htmlspecialchars($article->getEdited()) != NULL) { ?> <em>(Modifié le <?php echo htmlspecialchars($article->getEdited());} ?>)</em></p>
 </div>

@@ -8,7 +8,7 @@ class ArticleDAO extends DAO
 {
     public function getArticles()
     {
-        $sql = 'SELECT id, title, content, author, date_added, edited FROM article ORDER BY id DESC';
+        $sql = 'SELECT id, title, chapeau, content, author, date_added, edited FROM article ORDER BY id DESC';
         $result = $this->sql($sql);
         $articles = [];
         foreach ($result as $row) {
@@ -20,7 +20,7 @@ class ArticleDAO extends DAO
 
     public function getNewArticles()
     {
-        $sql = 'SELECT id, title, content, author, date_added, edited FROM article ORDER BY id DESC LIMIT 2';
+        $sql = 'SELECT id, title, chapeau, content, author, date_added, edited FROM article ORDER BY id DESC LIMIT 2';
         $result = $this->sql($sql);
         $articles = [];
         foreach ($result as $row) {
@@ -32,7 +32,7 @@ class ArticleDAO extends DAO
 
     public function getArticle($idArt)
     {
-        $sql = 'SELECT id, title, content, author, date_added, edited FROM article WHERE id = ?';
+        $sql = 'SELECT id, title, chapeau, content, author, date_added, edited FROM article WHERE id = ?';
         $result = $this->sql($sql, [$idArt]);
         $row = $result->fetch();
         if($row) {
@@ -45,15 +45,15 @@ class ArticleDAO extends DAO
     public function saveArticle($article)
     {
         extract($article);
-        $sql = 'INSERT INTO article (title, content, author, date_added) VALUES (?, ?, ?, NOW())';
-        $this->sql($sql, [$title, $content, $author]);
+        $sql = 'INSERT INTO article (title, chapeau, content, author, date_added) VALUES (?, ?, ?, ?, NOW())';
+        $this->sql($sql, [$title, $chapeau, $content, $author]);
     }
 
     public function modifyArticle($article)
     {
         extract($article);
-        $sql = 'UPDATE article SET content = ?, title = ?, edited = NOW() WHERE id = ?';
-        $this->sql($sql, [$content, $title, $articleId]);
+        $sql = 'UPDATE article SET  title = ?, author = ?, chapeau = ?, content = ?,edited = NOW() WHERE id = ?';
+        $this->sql($sql, [$title, $author, $chapeau, $content, $articleId]);
     }
 
     public function deleteArticle($article)
@@ -68,6 +68,7 @@ class ArticleDAO extends DAO
         $article = new Article();
         $article->setId($row['id']);
         $article->setTitle($row['title']);
+        $article->setChapeau($row['chapeau']);
         $article->setContent($row['content']);
         $article->setDateAdded($row['date_added']);
         $article->setAuthor($row['author']);

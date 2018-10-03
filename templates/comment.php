@@ -14,14 +14,14 @@ $this->title = "modifier un commentaire";
                 if(isset($_GET['idCom'])){
                     echo $_GET['idCom'];}
             ?>" hidden><br>
-        <input type="submit" value="Modifier" id="submit" name="submit">
+        <input type="submit" class="btn btn-info" value="Modifier" id="submit" name="submit">
     </form>
     <form method="post" action="../public/index.php?route=deleteComment">
         <input type="text" id="articleId" name="articleId" value="<?php
                 if(isset($_GET['idCom'])){
                     echo $_GET['idCom'];}
             ?>" hidden><br>
-        <input type="submit" value="Supprimer" id="submit" name="submit">
+        <input type="submit" class="btn btn-danger" value="Supprimer" id="submit" name="submit">
     </form> <br>
-    <a href="../public/index.php?route=admin"><button> Retour à l'administration</button></a>
+    <a href="../public/index.php?route=admin"><button class="btn btn-success"> Retour à l'administration</button></a>
 </div>
