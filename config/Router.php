@@ -27,6 +27,9 @@ class Router
                 if($_GET['route'] === 'article'){
                     $this->frontController->article($_GET['idArt']);
                 }
+                else if($_GET['route'] === 'allArticle') {
+                    $this->frontController->allArticle($_POST);
+                }
                 else if($_GET['route'] === 'saveArticle') {
                     $this->backController->saveArticle($_POST);
                 }
