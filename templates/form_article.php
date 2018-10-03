@@ -19,5 +19,5 @@ $this->title = "Ajouter un article";
         ?>"><br>
         <input type="submit" value="Envoyer" id="submit" name="submit">
     </form>
-    <a href="../public/index.php?route=admin">Retour à l'administration</a>
+    <a href="../public/index.php?route=admin"><button> Retour à l'administration</button></a>
 </div>

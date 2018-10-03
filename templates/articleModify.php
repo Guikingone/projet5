@@ -24,6 +24,7 @@ $this->title = "modifier un article";
                     echo $_GET['idArt'];}
             ?>" hidden><br>
         <input type="submit" value="Supprimer" id="submit" name="submit">
-    </form>
-    <a href="../public/index.php?route=admin">Retour à l'administration</a>
+    </form> <br>
+
+    <a href="../public/index.php?route=admin"><button> Retour à l'administration</button></a>
 </div>

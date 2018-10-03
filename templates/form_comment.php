@@ -24,6 +24,6 @@ $this->title = "Poster un commentaire";
     </div>        
     <?php } else { ?>
         <p>Vous devez être connecté pour poster un commentaire</p>
-        <a href="../public/index.php?route=connection">Se connecter</a>
+        <a href="../public/index.php?route=connection"><button>Se connecter</button></a>
     <?php }
     ?>
