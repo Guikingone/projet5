@@ -11,7 +11,7 @@ $this->title = "Article";
                 <h2><?= htmlspecialchars($article->getTitle());?></h2>
                 <p>Sujet : <?= htmlspecialchars($article->getChapeau());?></p><hr>
                 <p><?= htmlspecialchars($article->getContent());?></p><hr>
-                <p>Créé par : <?= htmlspecialchars($article->getAuthor());?> | <?= htmlspecialchars($article->getDateAdded());?> | <?php if (htmlspecialchars($article->getEdited()) != NULL) { ?> <em>(Modifié le <?php echo htmlspecialchars($article->getEdited());} ?>)</em></p>
+                <p>Créé par : <?= htmlspecialchars($article->getAuthor());?> | <?= htmlspecialchars($article->getDateAdded());?> | <?php if (htmlspecialchars($article->getEdited()) !== NULL) { ?> <em>(Modifié le <?php echo htmlspecialchars($article->getEdited());} ?>)</em></p>
             </div>
             <br>
             <a href="../public/index.php"><button class="btn btn-info">Retour à la liste des articles</button></a>
