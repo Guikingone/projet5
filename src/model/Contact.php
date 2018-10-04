@@ -88,15 +88,4 @@ class Contact
    
         mail($to, $subjects, $message, $headers);
     }
-
-    public function sendContact ($form)
-    {
-     $to      = 'dimitri.subrini@gmail.Com';
-     $subject = $form->getSubject();
-     $message = $form->getText();
-     $headers = 'From: '. $form->getEmail() . "\r\n" .
-     'X-Mailer: PHP/' . phpversion();
-
-     mail($to, $subject, $message, $headers);
-    }
 }

@@ -43,7 +43,7 @@ class Router
                     $this->backController->connection($_POST);
                 }
                 else if($_GET['route'] === 'admin') {
-                    $this->frontController->admin($_POST);
+                    $this->frontController->admin();
                 }
                 else if($_GET['route'] === 'postModif') {
                     $this->frontController->postModif($_POST);
