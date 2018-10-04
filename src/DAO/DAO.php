@@ -30,7 +30,7 @@ abstract class DAO
         //On lève une erreur si la connexion échoue
         catch(Exception $errorConnection)
         {
-            die ('Erreur de connection :'.$errorConnection->getMessage());
+            $_SESSION['message']= sprintf('Erreur de connection :'.$errorConnection->getMessage());
         }
     }
 
