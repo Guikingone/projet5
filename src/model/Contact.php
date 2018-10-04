@@ -80,12 +80,14 @@ class Contact
         $this->setSubject($_POST['subject']);
         $this->setText($_POST['text']);
 
-        $to      = 'dimitri.subrini@gmail.Com';
-        $subjects = $subject;
-        $message = $text;
-        $headers = 'From: '. $email . "\r\n" .
-        'X-Mailer: PHP/' . phpversion();
-   
-        mail($to, $subjects, $message, $headers);
+        /**
+        *         $to      = 'dimitri.subrini@gmail.Com';
+        *$subjects = $subject;
+        *$message = $text;
+        *$headers = 'From: '. $email . "\r\n" .
+        *'X-Mailer: PHP/' . phpversion();
+        *
+        *mail($to, $subjects, $message, $headers);
+        */
     }
 }

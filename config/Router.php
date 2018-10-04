@@ -28,7 +28,7 @@ class Router
                     $this->frontController->article($_GET['idArt']);
                 }
                 else if($_GET['route'] === 'allArticle') {
-                    $this->frontController->allArticle($_POST);
+                    $this->frontController->allArticle();
                 }
                 else if($_GET['route'] === 'saveArticle') {
                     $this->backController->saveArticle($_POST);
@@ -46,13 +46,13 @@ class Router
                     $this->frontController->admin();
                 }
                 else if($_GET['route'] === 'postModif') {
-                    $this->frontController->postModif($_POST);
+                    $this->frontController->postModif();
                 }
                 else if($_GET['route'] === 'commentModif') {
                     $this->frontController->commentModif($_POST);
                 }
                 else if($_GET['route'] === 'unpublishedCommentList') {
-                    $this->frontController->unpublishedCommentList($_POST);
+                    $this->frontController->unpublishedCommentList();
                 }
                 else if($_GET['route'] === 'unpublishedComment') {
                     $this->frontController->unpublishedComment($_GET['idCom']);
@@ -76,7 +76,7 @@ class Router
                     $this->backController->deleteArticle($_POST);
                 }
                 else if($_GET['route'] === 'disconnect') {
-                    $this->frontController->disconnect($_POST);
+                    $this->frontController->disconnect();
                 }
                 else if($_GET['route'] === 'contact') {
                     $this->backController->contact($_POST);

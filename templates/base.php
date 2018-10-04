@@ -43,7 +43,7 @@
                 <a class="nav-link" href="../public/index.php?route=connection">Se connecter</a>
                 </li>
               <?php }
-                if (isset($_SESSION['user']['admin']) && ($adminPass = $_SESSION['user']['admin']) && ($adminPass === 1)) { ?>
+                if (isset($_SESSION['user']['admin']) && ($adminPass = $_SESSION['user']['admin']) && ($adminPass == 1)) { ?>
                 <li class="nav-item">
                   <a class="nav-link" href="../public/index.php?route=admin">Administration</a>
                 </li>
