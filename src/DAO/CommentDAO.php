@@ -48,7 +48,7 @@ class CommentDAO extends DAO
     {
         extract($comment);
         $sql = 'UPDATE comment SET content = ? WHERE id = ?';
-        $this->sql($sql, [$content, $articleId]);
+        $this->sql($sql, [$content, $commentId]);
     }
 
     public function deleteComment($comment)

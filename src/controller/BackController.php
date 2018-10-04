@@ -45,7 +45,7 @@ class BackController
     {
         if(isset($post['submit'])) {
             $userDAO = new UserDAO();
-            $userDAO->register($post['name'], $post['pseudo'], $post['email'], $post['password'], $post['password2']);
+            $userDAO->register($post);
             header('Location: ../public/index.php');
         }
         $this->view->render('register', [

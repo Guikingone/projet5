@@ -6,30 +6,36 @@ use App\src\model\User;
 
 class UserDAO extends DAO
 {
-    public function register($name, $pseudo, $email, $password, $password2)
+    public function register($post)
     {
-        $result = $this->sql('SELECT pseudo FROM user AS u WHERE u.pseudo = :pseudo', [':pseudo' => $pseudo])->fetch();
+        $result = $this->sql('SELECT pseudo FROM user AS u WHERE u.pseudo = :pseudo', [':pseudo' => $post['pseudo']])->fetch();
 
         if (!empty($result)) {
-            $_SESSION['message'] = sprintf('Le pseudo suivant : %s est déjà utilisé, veuillez choisir un autre pseudo', $pseudo);
+            $_SESSION['message'] = sprintf('Le pseudo suivant : %s est déjà utilisé, veuillez choisir un autre pseudo', $post['pseudo']);
             return;
         }
         
-        $resultMail = $this->sql('SELECT email FROM user AS u WHERE u.email = :email', [':email' => $email])->fetch();
+        $resultMail = $this->sql('SELECT email FROM user AS u WHERE u.email = :email', [':email' => $post['email']])->fetch();
 
         if (!empty($resultMail)) {
-            $_SESSION['message'] = sprintf('L\'email suivant : %s est déjà utilisé, veuillez choisir un autre email', $name);
+            $_SESSION['message'] = sprintf('L\'email suivant : %s est déjà utilisé, veuillez choisir un autre email', $post['email']);
             return;
         }
 
-        if ($password != $password2) {
-            $_SESSION['message'] = sprintf('Les mots de passe doivent être identiques', $userName);
+        if (!preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $post['email'])) {
+            $_SESSION['message'] = sprintf('L\'adresse mail %s n\'est pas valide, veuillez en soumettre une valide', $post['email']);
+            return;
+        }
+
+        if ($post['password'] != $post['password2']) {
+            $_SESSION['message'] = sprintf('Les mots de passe doivent être identiques');
             return;
         }
 
         extract($user);
         $sql = 'INSERT INTO user (name, pseudo, email, password, date_inscription) VALUES (?, ?, ?, ?, NOW())';
-        $this->sql($sql, [$name, $pseudo, $email, password_hash($password, PASSWORD_DEFAULT)]);
+        $this->sql($sql, [$post['name'], $post['pseudo'], $post['email'], password_hash($post['password'], PASSWORD_DEFAULT)]);
+        $_SESSION['message'] = sprintf('Enregistrement fait avec succès, vous pouvez vous connecter.');
     }
 
 
@@ -51,13 +57,7 @@ class UserDAO extends DAO
             $_SESSION['message'] = sprintf('L\'email suivant : %s est invalide', $email);
             return;            
         }
-        /** 
-        *if (!preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $post['email'])) {
-        *    $_SESSION['message'] = sprintf('ca marche pas !', $email);
-        *    return;
-        *}
-        */
-
+        
         $user = $this->sql('SELECT id, name, pseudo, email, password, date_inscription AS dateInscription, admin FROM user AS u WHERE u.pseudo = :username', [':username' => $userName]);
         $user->setFetchMode(\PDO::FETCH_CLASS, User::class);
         $result = $user->fetch();

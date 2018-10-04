@@ -81,12 +81,12 @@ class Contact
         $this->setText($_POST['text']);
 
         $to      = 'dimitri.subrini@gmail.Com';
-        $subject = $subject;
+        $subjects = $subject;
         $message = $text;
         $headers = 'From: '. $email . "\r\n" .
         'X-Mailer: PHP/' . phpversion();
    
-        mail($to, $subject, $message, $headers);
+        mail($to, $subjects, $message, $headers);
     }
 
     public function sendContact ($form)

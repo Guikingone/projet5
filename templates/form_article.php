@@ -1,7 +1,7 @@
 <?php
 $this->title = "Ajouter un article";
 ?>
-<h1>Mon blog</h1>
+<h1>Mon blog</h1><hr>
 <p>En construction</p>
 
 <div class="container">

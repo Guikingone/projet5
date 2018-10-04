@@ -1,7 +1,7 @@
 <?php
 $this->title = "Poster un commentaire";
 ?>
-<h1>Mon blog</h1>
+<h1>Mon blog</h1><hr>
 <p>En construction</p>
 
 <div class="container">

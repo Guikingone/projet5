@@ -1,8 +1,8 @@
 <?php
 $this->title = "Administration";
 ?>
-<h1>Mon blog</h1>
-<p>Page Admin.</p>
+<h1>Mon blog</h1><hr>
+<p>Page Admin</p>
 
 <div class="container">
     <div class="row">
