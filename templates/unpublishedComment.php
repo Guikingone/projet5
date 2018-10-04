@@ -2,7 +2,7 @@
 $this->title = "Publier un article";
 ?>
 <h1>Mon blog</h1><hr>
-<p>En construction</p>
+<p>Publier un article</p>
 
 <div class="container">
     <div class="row">

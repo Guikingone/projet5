@@ -2,7 +2,7 @@
 $this->title = "S'enregistrer sur le site !";
 ?>
 <h1>Mon blog</h1><hr>
-<p>En construction</p>
+<p>S'enregistrer sur le site</p>
 <div class="signIn">
     <form method="post" action="../public/index.php?route=register">
         <div>

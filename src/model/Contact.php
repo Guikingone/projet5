@@ -73,21 +73,21 @@ class Contact
         $this->text = $text;
     }
 
-    public function buildContact ($username, $email, $subject, $text)
+    public function buildContact ($post)
     {
         $this->setUsername($_POST['username']);
         $this->setEmail($_POST['email']);
         $this->setSubject($_POST['subject']);
         $this->setText($_POST['text']);
 
-        /**
-        *         $to      = 'dimitri.subrini@gmail.Com';
-        *$subjects = $subject;
-        *$message = $text;
-        *$headers = 'From: '. $email . "\r\n" .
-        *'X-Mailer: PHP/' . phpversion();
-        *
-        *mail($to, $subjects, $message, $headers);
-        */
+        
+        $to      = 'dimitri.subrini@gmail.Com';
+        $subject = $post['subject'];
+        $message = $post['text'];
+        $headers = 'From: ' . $post['username'] . '' . $post['text'] . "\r\n" .
+        'X-Mailer: PHP/' . phpversion();
+        
+        mail($to, $subjects, $message, $headers);
+        
     }
 }
