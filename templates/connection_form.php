@@ -6,10 +6,10 @@ $this->title = "Connexion au site !";
 <div class="signIn">
     <form method="post" action="../public/index.php?route=connection">
         <div>
-            <label for="username">Pseudo :</label>
-            <input type="text" id="username" name="username" value="<?php
-            if(isset($post['username'])){
-                echo $post['username'];}
+            <label for="pseudo">Pseudo :</label>
+            <input type="text" id="pseudo" name="pseudo" value="<?php
+            if(isset($post['pseudo'])){
+                echo $post['pseudo'];}
         ?>" required>
         </div>
         <div>

@@ -27,7 +27,7 @@ class UserDAO extends DAO
             return;
         }
 
-        if ($post['password'] != $post['password2']) {
+        if ($post['password'] !== $post['password2']) {
             $_SESSION['message'] = sprintf('Les mots de passe doivent être identiques');
             return;
         }
@@ -39,31 +39,31 @@ class UserDAO extends DAO
     }
 
 
-    public function connection($userName, $email, $password)
+    public function connection($post)
     {
-        $result = $this->sql('SELECT password, email FROM user AS u WHERE u.pseudo = :username', [':username' => $userName])->fetch();
+        $result = $this->sql('SELECT password, email FROM user AS u WHERE u.pseudo = :pseudo', [':pseudo' => $post['pseudo']])->fetch();
 
         if (empty($result)) {
-            $_SESSION['message'] = sprintf('Le pseudo suivant : %s est inexistant', $userName);
+            $_SESSION['message'] = sprintf('Le pseudo suivant : %s est inexistant', $post['pseudo']);
             return;
         }
 
-        if (!password_verify($password, $result['password'])) {
-            $_SESSION['message'] = sprintf('Le mot de passe est invalide', $password);
+        if (!password_verify($post['password'], $result['password'])) {
+            $_SESSION['message'] = sprintf('Le mot de passe est invalide', $post['password']);
             return;
         }
 
-        if ($email != $result['email']) {
-            $_SESSION['message'] = sprintf('L\'email suivant : %s est invalide', $email);
+        if ($post['email'] !== $result['email']) {
+            $_SESSION['message'] = sprintf('L\'email suivant : %s est invalide', $post['email']);
             return;            
         }
         
-        $user = $this->sql('SELECT id, name, pseudo, email, password, date_inscription AS dateInscription, admin FROM user AS u WHERE u.pseudo = :username', [':username' => $userName]);
+        $user = $this->sql('SELECT id, name, pseudo, email, password, date_inscription AS dateInscription, admin FROM user AS u WHERE u.pseudo = :pseudo', [':pseudo' => $post['pseudo']]);
         $user->setFetchMode(\PDO::FETCH_CLASS, User::class);
         $result = $user->fetch();
 
         if (\is_null($result)) {
-            $_SESSION['message'] = sprintf('The following username %s doest not exist', $userName);
+            $_SESSION['message'] = sprintf('The following username %s doest not exist', $post['pseudo']);
             return;
         }
         $_SESSION['user'] = [
@@ -75,7 +75,7 @@ class UserDAO extends DAO
             'admin' => $result->getAdmin()
         ];
 
-        $_SESSION['message'] = sprintf('Vous êtes maintenant connecté en tant que "%s"', $userName);
+        $_SESSION['message'] = sprintf('Vous êtes maintenant connecté en tant que "%s"', $post['pseudo']);
     }
 
     private function buildObject(array $row)
