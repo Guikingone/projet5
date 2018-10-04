@@ -81,13 +81,13 @@ class Contact
         $this->setText($_POST['text']);
 
         
-        $to      = 'dimitri.subrini@gmail.Com';
-        $subject = $post['subject'];
-        $message = $post['text'];
-        $headers = 'From: ' . $post['username'] . '' . $post['text'] . "\r\n" .
+        $to      = 'dimitri.subrini@gmail.com';
+        $subject = 'Formulaire du blog : ' . $post['subject'];
+        $message = 'Message envoyé par : ' . $post['username'] . "\r\nSujet : " . $post['text'];
+        $headers = 'From: ' . $post['email'] . "\r\n" .
         'X-Mailer: PHP/' . phpversion();
         
-        mail($to, $subjects, $message, $headers);
+        mail($to, $subject, $message, $headers);
         
     }
 }

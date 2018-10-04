@@ -68,7 +68,7 @@ class BackController
     public function contact($post) {
         if(isset($post['submit'])) {
             $contactForm = new Contact();
-            $contactForm->buildContact($post['username'], $post['email'], $post['subject'], $post['text']);
+            $contactForm->buildContact($post);
             header('Location: ../public/index.php');
         }
         $this->view->render('contact', [
