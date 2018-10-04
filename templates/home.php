@@ -25,9 +25,7 @@ $this->title = "Accueil";
             </div>
         </div>
     </div>
-
 <p>Liste des derniers articles</p>
-
     <div class="container">
         <div class="row">
             <?php
@@ -44,4 +42,3 @@ $this->title = "Accueil";
             <?php } ?>
         </div>
     </div>
-

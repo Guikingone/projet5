@@ -20,3 +20,4 @@ $this->title = "Tous les articles";
             <?php } ?>
         </div>
     </div>
+    

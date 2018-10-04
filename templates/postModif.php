@@ -19,4 +19,3 @@ $this->title = "Modification article";
         ?>  
     </div>
 </div>
-

@@ -28,6 +28,3 @@ $this->title = "modifier un commentaire";
         </div>
     </div>
 </div>
-
-   
-

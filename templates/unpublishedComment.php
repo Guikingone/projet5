@@ -23,4 +23,3 @@ $this->title = "Publier un article";
         </div>
     </div>
 </div>
-

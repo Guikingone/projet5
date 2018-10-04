@@ -34,9 +34,3 @@ if ($comments != null) { ?>
             ?>
     </div>
 </div>
-
-
-
-
-
-

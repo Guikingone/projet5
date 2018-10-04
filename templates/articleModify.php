@@ -36,4 +36,3 @@ $this->title = "modifier un article";
         </div>
     </div>
 </div>
-

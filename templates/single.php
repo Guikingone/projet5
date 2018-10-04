@@ -41,4 +41,3 @@ $this->title = "Article";
         </div>
     </div>
 </div>
-

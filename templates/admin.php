@@ -28,7 +28,3 @@ $this->title = "Administration";
         </div>
     </div>
 </div>
-
-
-
-
