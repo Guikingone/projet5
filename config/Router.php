@@ -84,7 +84,6 @@ class Router
                 else if($_GET['route'] === 'publishComment') {
                     $this->backController->publishComment($_POST);
                 }
-
                 else{
                     $this->errorController->unknown();
                 }
@@ -95,7 +94,7 @@ class Router
         }
         catch (Exception $e)
         {
-            $this->errorController->error(); 
+            $this->errorController->error();
         }
     }
 }

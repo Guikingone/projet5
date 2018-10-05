@@ -14,6 +14,16 @@ class UserDAO extends DAO
             $_SESSION['message'] = sprintf('Le pseudo suivant : %s est déjà utilisé, veuillez choisir un autre pseudo', $post['pseudo']);
             return;
         }
+
+        if (!preg_match("#^[a-zA-Z0-9_]{3,16}$#", $post['pseudo'])) {
+            $_SESSION['message'] = sprintf('Le pseudo %s n\'est pas valide, veuillez en soumettre un valide', $post['pseudo']);
+            return;
+        }
+
+        if (!preg_match("#^[a-zA-Z0-9_]{3,16}$#", $post['name'])) {
+            $_SESSION['message'] = sprintf('Le nom %s n\'est pas valide, veuillez en soumettre un valide', $post['name']);
+            return;
+        }
         
         $resultMail = $this->sql('SELECT email FROM user AS u WHERE u.email = :email', [':email' => $post['email']])->fetch();
 
@@ -24,6 +34,11 @@ class UserDAO extends DAO
 
         if (!preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $post['email'])) {
             $_SESSION['message'] = sprintf('L\'adresse mail %s n\'est pas valide, veuillez en soumettre une valide', $post['email']);
+            return;
+        }
+
+        if (!preg_match("#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).{6,12}$#", $post['password'])) {
+            $_SESSION['message'] = sprintf('Le mot de passe %s n\'est pas valide, veuillez en soumettre un valide', $post['password']);
             return;
         }
 
@@ -48,8 +63,18 @@ class UserDAO extends DAO
             return;
         }
 
+        if (!preg_match("#^[a-zA-Z0-9_]{3,16}$#", $post['pseudo'])) {
+            $_SESSION['message'] = sprintf('Le pseudo %s n\'est pas valide, veuillez en soumettre un valide', $post['pseudo']);
+            return;
+        }
+
         if (!password_verify($post['password'], $result['password'])) {
             $_SESSION['message'] = sprintf('Le mot de passe est invalide', $post['password']);
+            return;
+        }
+
+        if (!preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $post['email'])) {
+            $_SESSION['message'] = sprintf('L\'adresse mail %s n\'est pas valide, veuillez en soumettre une valide', $post['email']);
             return;
         }
 
