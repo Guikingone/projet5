@@ -1,41 +1,45 @@
 <?php
 $this->title = "Contactez moi";
 ?>
-<h1>Mon blog</h1><hr>
-<p>En construction</p>
-<div class="signIn">
-    <form method="post" action="../public/index.php?route=contact">
-        <div>
-            <label for="username">Votre nom :</label>
-            <input type="text" id="username" name="username" value="<?php
-            if(isset($post['username'])){
-                echo $post['username'];}
-        ?>" required>
-        </div>
-        <div>
-            <label for="email">Email :</label>
-            <input type="email" id="email" name="email" value="<?php
-            if(isset($post['email'])){
-                echo $post['email'];}
-        ?>" required>
-        </div>
-        <div>
-            <label for="subject">Sujet :</label>
-            <input type="subject" id="subject" name="subject" value="<?php
-            if(isset($post['subject'])){
-                echo $post['subject'];}
-        ?>" required>
-        </div>
-        <div>
-            <label for="text">Votre message :</label>
-            <textarea rows="4" cols="25" id="text" name="text" value="<?php
-            if(isset($post['text'])){
-                echo $post['text'];}
-        ?>" required></textarea>
-        </div><br>
-        <div>
-            <input type="submit" class="btn btn-info" value="Envoyer" id="submit" name="submit">
-        </div>
-    </form>
-
+<div class="inner">
+    <h2>Formulaire de contact</h2>
+    <section>
+        <form method="post" action="../public/index.php?route=contact">
+            <div class="fields">
+                <div class="field half">
+                        <input type="text" id="username" name="username" value="<?php
+                        if(isset($post['username'])){
+                            echo $post['username'];}
+                    ?>" placeholder="Votre nom" required>
+                </div>
+            </div>
+            <div class="fields">
+                <div class="field half">
+                        <input type="email" id="email" name="email" value="<?php
+                        if(isset($post['email'])){
+                            echo $post['email'];}
+                    ?>" placeholder="Email" required>
+                </div>
+            </div>
+            <div class="fields">
+                <div class="field half">
+                    <input type="text" id="subject" name="subject" value="<?php
+                    if(isset($post['subject'])){
+                        echo $post['subject'];}
+                ?>"  placeholder="Sujet" required>
+                </div>
+            </div>
+            <div class="fields">
+                <div class="field half">
+                    <textarea rows="4" cols="100" id="text" name="text" value="<?php
+                    if(isset($post['text'])){
+                        echo $post['text'];}
+                ?>"  placeholder="Message" required></textarea>
+            </div>
+            </div><br>
+            <ul class="actions">
+                <li><input type="submit" class="primary" value="Envoyer" id="submit" name="submit"></li>
+            </ul>
+        </form>
+    </section>
 </div>

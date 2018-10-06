@@ -20,7 +20,7 @@ class ArticleDAO extends DAO
 
     public function getNewArticles()
     {
-        $sql = 'SELECT id, title, chapeau, content, author, date_added, edited FROM article ORDER BY id DESC LIMIT 2';
+        $sql = 'SELECT id, title, chapeau, content, author, date_added, edited FROM article ORDER BY id DESC LIMIT 3';
         $result = $this->sql($sql);
         $articles = [];
         foreach ($result as $row) {
@@ -47,6 +47,7 @@ class ArticleDAO extends DAO
         extract($article);
         $sql = 'INSERT INTO article (title, chapeau, content, author, date_added) VALUES (?, ?, ?, ?, NOW())';
         $this->sql($sql, [$title, $chapeau, $content, $author]);
+        $_SESSION['message'] = sprintf('L\'article a été enregistré avec succès');
     }
 
     public function modifyArticle($article)
@@ -54,6 +55,7 @@ class ArticleDAO extends DAO
         extract($article);
         $sql = 'UPDATE article SET  title = ?, author = ?, chapeau = ?, content = ?,edited = NOW() WHERE id = ?';
         $this->sql($sql, [$title, $author, $chapeau, $content, $articleId]);
+        $_SESSION['message'] = sprintf('L\'article a été modifié avec succès');
     }
 
     public function deleteArticle($article)
@@ -61,6 +63,7 @@ class ArticleDAO extends DAO
         extract($article);
         $sql = 'DELETE FROM article WHERE id = ?';
         $this->sql($sql, [$articleId]);
+        $_SESSION['message'] = sprintf('L\'article a été supprimé avec succès');
     }
 
     private function buildObject(array $row)

@@ -88,7 +88,7 @@ class UserDAO extends DAO
         $result = $user->fetch();
 
         if (\is_null($result)) {
-            $_SESSION['message'] = sprintf('The following username %s doest not exist', $post['pseudo']);
+            $_SESSION['message'] = sprintf('Le pseudo suivant : %s est inexistant', $post['pseudo']);
             return;
         }
         $_SESSION['user'] = [

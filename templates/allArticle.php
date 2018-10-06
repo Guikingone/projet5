@@ -1,22 +1,24 @@
 <?php
 $this->title = "Tous les articles";
 ?>
-<h1>Mon blog</h1><hr>
-<p>Liste des articles</p>
-
-<div class="container">
-        <div class="row">
-            <?php
+<div class="inner">
+    <h2>Liste des articles</h2>
+    <section class="tiles">
+        <?php
             foreach ($articles as $article)
-            {
-            ?>                
-            <div class="col-sm-12">
-                <div class="article">  
-                    <h2><a href="../public/index.php?route=article&idArt=<?= htmlspecialchars($article->getId());?>"><strong><?= htmlspecialchars($article->getTitle());?></strong></a></h2>
-                    <p>Sujet : <?= htmlspecialchars($article->getChapeau());?></p><hr>
-                    <p>Créé par : <?= htmlspecialchars($article->getAuthor());?> | <?= htmlspecialchars($article->getDateAdded());?> | <?php if (htmlspecialchars($article->getEdited()) !== NULL) { ?> <em>(Modifié le <?php echo htmlspecialchars($article->getEdited());} ?>)</em></p>
-                 </div><br>                    
-            </div>
-            <?php } ?>
-        </div>
-    </div>
+            { ?> 
+        <article class="style2">
+            <span class="image">
+                <img src="../public/img/pic20.jpg" alt="Article" />
+            </span>
+            <a href="../public/index.php?route=article&idArt=<?= htmlspecialchars($article->getId());?>">
+                <h2><?= htmlspecialchars($article->getTitle());?></h2>
+                <div class="content">
+                    <p>Sujet : <?= htmlspecialchars($article->getChapeau());?></p>
+                    <p>Ajouté le : <?= htmlspecialchars($article->getDateAdded());?></p>
+                    <p><?php if (htmlspecialchars($article->getEdited()) != NULL) { ?> <em>(Modifié le <?php echo htmlspecialchars($article->getEdited()); ?> ) <?php } ?></em></p>
+                </div>
+            </a>
+        </article><?php } ?>
+    </section>
+</div>

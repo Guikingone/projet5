@@ -1,36 +1,27 @@
 <?php
 $this->title = "Commentaires non publié";
-?>
-<h1>Mon blog</h1><hr>
-<p>Liste des commentaires en attente de publication</p>
-<?php
 if ($comments != null) { ?>
-
-<div class="jumbotron">
-    <div class="row">
-        <?php foreach ($comments as $comment)
-        {
-        ?>
-        <div class="col-sm-12">
-            <div>
-                <h2><?= htmlspecialchars($comment->getId());?>
+    <div class="inner">
+        <h2>Liste des commentaires en attente de publication</h2>
+        <section class="tiles">
+            <?php
+            foreach ($comments as $comment)
+            {
+            ?>
+            <article class="style2">
+                <h4><?= htmlspecialchars($comment->getId());?>
                 <a href="../public/index.php?route=unpublishedComment&idCom=<?= htmlspecialchars($comment->getId());?>">
-                <?= htmlspecialchars($comment->getContent());?></a></h2>
+                <?= htmlspecialchars($comment->getContent());?></a></h4>
                 <p>Par : <?= htmlspecialchars($comment->getPseudo());?>
                 | Créé le : <?= htmlspecialchars($comment->getDateAdded());?></p>
-            </div>
-            <br>
-        </div>
-            <?php } 
-            } else { ?>
-                <div class="jumbotron">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <p>Il n'y a pas de commentaires en attente de publication.</p>
-                        </div>
-                    </div>
-                </div> 
-            <?php }
-            ?>
+            </article><br>
+            <?php } ?> 
+        </section>
     </div>
-</div>
+    <?php } else { ?>
+    <div class="inner">
+        <h4>Désolé !</h4>
+        <h4>Il n'y a pas de commentaires en attente de publication.</h4>
+        <a href="../public/index.php?route=admin"><button class="btn btn-success"> Retour à l'administration</button></a>
+    </div>
+<?php } ?>

@@ -2,5 +2,9 @@
 session_destroy();
 $this->title = "Deconnexion";
 ?>
-<p>Vous vous êtes bien déconnecté</p>
-<a href="../public/index.php">Retour à la liste des articles</a>
+<div class="inner">
+    <h2>Vous vous êtes bien déconnecté</h2>
+    <div class="tiles">
+        <a href="../public/index.php"><button class="primary">Retour à la liste des articles</button></a>
+    </div>
+</div>

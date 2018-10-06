@@ -1,5 +1,9 @@
 <?php
 $this->title = "Erreur !";
 ?>
-<p>Une erreur inattendue est survenue !</p>
-<a href="../public/index.php">Retour à la liste des articles</a>
+<div class="inner">
+    <h2>Une erreur inattendue est survenue !</h2>
+    <div class="tiles">
+        <a href="../public/index.php"><button class="primary">Retour à la liste des articles</button></a>
+    </div>
+</div>

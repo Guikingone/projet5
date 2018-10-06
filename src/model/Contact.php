@@ -85,6 +85,11 @@ class Contact
             return;
         }
 
+        if (empty($post['username'] OR $post['email'] OR $post['subject'] OR $post['text'])) {
+            $_SESSION['message'] = sprintf('Vous devez remplir tous les champs');
+            return;
+        }
+
         $this->setUsername($_POST['username']);
         $this->setEmail($_POST['email']);
         $this->setSubject($_POST['subject']);
