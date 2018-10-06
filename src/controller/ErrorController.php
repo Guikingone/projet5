@@ -7,11 +7,11 @@ class ErrorController
 {
     public function unknown()
     {
-        require '../templates/base.php';
+        $this->view->render('unknown');
     }
 
     public function error()
     {
-        require '../templates/base.php';
+        $this->view->render('error');
     }
 }
