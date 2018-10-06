@@ -97,8 +97,8 @@ class Contact
 
         
         $to      = 'dimitri.subrini@gmail.com';
-        $subject = 'Formulaire du blog : ' . htmlspecialchar($post['subject']);
-        $message = 'Message envoyé par : ' . htmlspecialchar($post['username']) . "\r\nSujet : " . htmlspecialchar($post['text']);
+        $subject = 'Formulaire du blog : ' . $post['subject'];
+        $message = 'Message envoyé par : ' . $post['username'] . "\r\nSujet : " . $post['text'];
         $headers = 'From: ' . $post['email'] . "\r\n" .
         'X-Mailer: PHP/' . phpversion();
         
