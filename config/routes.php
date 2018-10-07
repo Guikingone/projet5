@@ -37,4 +37,8 @@ return [
         'path' => '/projet5/public/index/disconnect',
         'controller' => App\src\Controller\DisconnectController::class,
     ],
+    'admin' => [
+        'path' => '/projet5/public/index/admin',
+        'controller' => App\src\Controller\AdminController::class,
+    ],
 ];

@@ -46,7 +46,7 @@
               <?php } ?>
               <ul>
                 <li><a href="/projet5/public/index">Accueil</a></li>
-                <li><a href="../public/index/articles">Articles</a></li>
+                <li><a href="/projet5/public/index/articles">Articles</a></li>
                 
                 <li><a href="/projet5/public/index/contact">Contact</a></li>
                 <?php
@@ -58,7 +58,7 @@
                 <?php }
                   if (isset($_SESSION['user']['admin']) && ($adminPass = $_SESSION['user']['admin']) && ($adminPass == 1)) { ?>
                   <li>
-                    <a href="../public/index.php?route=admin">Administration</a>
+                    <a href="/projet5/public/index/admin">Administration</a>
                   </li>
                   <?php } ?>
               </ul>
