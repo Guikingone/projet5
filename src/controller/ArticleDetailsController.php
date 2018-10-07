@@ -23,8 +23,8 @@ class ArticleDetailsController
 
     public function __invoke(array $params = [])
     {
-        $article = $this->articleDAO->getArticle($id);
-        $comments = $this->commentDAO->getCommentsFromArticle($id);
+        $article = $this->articleDAO->getArticle($params['id']);
+        $comments = $this->commentDAO->getCommentsFromArticle($params['id']);
         $this->view->render('single', [
             'article' => $article,
             'comments' => $comments

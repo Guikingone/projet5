@@ -1,22 +1,19 @@
 <?php
 
-use App\src\Controller\HomeController;
-
-
 return [
     'home' => [
         'path' => '/projet5/public/index',
-        'controller' => HomeController::class
+        'controller' => App\src\Controller\HomeController::class
     ],
     'articles' => [
         'path' => '/projet5/public/index/articles',
         'controller' => App\src\Controller\ArticlesController::class
     ],
     'article_details' => [
-        'path' => '/projet5/public/index/article/{id}',
+        'path' => '/projet5/public/index/article-{id}',
         'controller' => App\src\Controller\ArticleDetailsController::class,
         'params' => [
-            'id' => '\w+'
+            'id' => '\d+'
         ]
     ],
     'contact' => [
