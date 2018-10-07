@@ -54,7 +54,7 @@
                   <li class="nav-item"><a class="nav-link" href="/projet5/public/index/disconnect">Deconnexion</a></li>
                 <?php } else { ?>
                   <li><a href="/projet5/public/index/register">Enregistrement</a></li>
-                  <li><a href="../public/index.php?route=connection">Se connecter</a></li>
+                  <li><a href="/projet5/public/index/connection">Se connecter</a></li>
                 <?php }
                   if (isset($_SESSION['user']['admin']) && ($adminPass = $_SESSION['user']['admin']) && ($adminPass == 1)) { ?>
                   <li>

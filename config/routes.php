@@ -29,4 +29,12 @@ return [
         'path' => '/projet5/public/index/register',
         'controller' => App\src\Controller\RegisterController::class,
     ],
+    'connection' => [
+        'path' => '/projet5/public/index/connection',
+        'controller' => App\src\Controller\ConnectionController::class,
+    ],
+    'disconnect' => [
+        'path' => '/projet5/public/index/disconnect',
+        'controller' => App\src\Controller\DisconnectController::class,
+    ],
 ];

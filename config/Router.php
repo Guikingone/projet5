@@ -33,12 +33,6 @@ class Router
                 else if($_GET['route'] === 'saveComment') {
                     $this->backController->saveComment($_POST);
                 }
-                else if($_GET['route'] === 'register') {
-                    $this->backController->register($_POST);
-                }
-                else if($_GET['route'] === 'connection') {
-                    $this->backController->connection($_POST);
-                }
                 else if($_GET['route'] === 'admin') {
                     $this->frontController->admin();
                 }
@@ -71,9 +65,6 @@ class Router
                 }
                 else if($_GET['route'] === 'deleteArticle') {
                     $this->backController->deleteArticle($_POST);
-                }
-                else if($_GET['route'] === 'disconnect') {
-                    $this->frontController->disconnect();
                 }
                 else if($_GET['route'] === 'publishComment') {
                     $this->backController->publishComment($_POST);
