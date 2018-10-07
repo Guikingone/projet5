@@ -1,0 +1,16 @@
+{
+    "name": "guillaumeloulier/router",
+    "authors": [
+        {
+            "name": "Loulier Guillaume",
+            "email": "guillaume.loulier@hotmail.fr"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Framework\\": "etc/",
+            "App\\": "src/"
+        }
+    },
+    "require": {}
+}

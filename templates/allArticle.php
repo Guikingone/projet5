@@ -9,9 +9,9 @@ $this->title = "Tous les articles";
             { ?> 
         <article class="style2">
             <span class="image">
-                <img src="../public/img/pic20.jpg" alt="Article" />
+                <img src="/projet5/public/img/pic20.jpg" alt="Article" />
             </span>
-            <a href="../public/index.php?route=article&idArt=<?= htmlspecialchars($article->getId());?>">
+            <a href="/projet5/public/index/article/<?= htmlspecialchars($article->getId());?>">
                 <h2><?= htmlspecialchars($article->getTitle());?></h2>
                 <div class="content">
                     <p>Sujet : <?= htmlspecialchars($article->getChapeau());?></p>

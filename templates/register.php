@@ -4,7 +4,7 @@ $this->title = "S'enregistrer sur le site !";
 <div class="inner">
     <h2>S'enregistrer sur le site</h2>
     <section>
-        <form method="post" action="../public/index.php?route=register">
+        <form method="post" action="/projet5/public/index/register">
             <div class="fields">
                 <div class="field half">
                 <input type="text" id="name" name="name" value="<?php

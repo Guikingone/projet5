@@ -24,11 +24,8 @@ class Router
         try{
             if(isset($_GET['route']))
             {
-                if($_GET['route'] === 'article'){
-                    $this->frontController->article($_GET['idArt']);
-                }
-                else if($_GET['route'] === 'allArticle') {
-                    $this->frontController->allArticle();
+                if($yo){
+                    
                 }
                 else if($_GET['route'] === 'saveArticle') {
                     $this->backController->saveArticle($_POST);
@@ -77,9 +74,6 @@ class Router
                 }
                 else if($_GET['route'] === 'disconnect') {
                     $this->frontController->disconnect();
-                }
-                else if($_GET['route'] === 'contact') {
-                    $this->backController->contact($_POST);
                 }
                 else if($_GET['route'] === 'publishComment') {
                     $this->backController->publishComment($_POST);

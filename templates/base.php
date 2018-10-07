@@ -7,9 +7,9 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <link href="https://fonts.googleapis.com/css?family=Chakra+Petch" rel="stylesheet">
       <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-      <link rel="stylesheet" href="../public/css/style.css">
-      <link rel="stylesheet" href="../public/css/main.css" />
-		  <noscript><link rel="stylesheet" href="../public/css/noscript.css" /></noscript>
+      <link rel="stylesheet" href="/projet5/public/css/style.css">
+      <link rel="stylesheet" href="/projet5/public/css/main.css" />
+		  <noscript><link rel="stylesheet" href="/projet5/public/css/noscript.css" /></noscript>
   </head>
 	<body class="is-preload">
 		<!-- Wrapper -->
@@ -20,8 +20,8 @@
 						<div class="inner">
 
 							<!-- Logo -->
-								<a href="../public/index.php" class="logo">
-									<span class="symbol"><img src="../public/img/logo.svg" alt="" /></span><span class="title">Blog Avenir2point0</span>
+								<a href="/projet5/public/index" class="logo">
+									<span class="symbol"><img src="/projet5/public/img/logo.svg" alt="" /></span><span class="title">Blog Avenir2point0</span>
                 </a>
                 <p>Message du system : <?php if (isset($_SESSION['message'])) {
                 echo $_SESSION['message'];
@@ -45,15 +45,15 @@
                   <h4> Bonjour :  <?= $_SESSION['user']['pseudo']; ?></h4>
               <?php } ?>
               <ul>
-                <li><a href="../public/index.php">Accueil</a></li>
-                <li><a href="../public/index.php?route=allArticle">Articles</a></li>
+                <li><a href="/projet5/public/index">Accueil</a></li>
+                <li><a href="../public/index/articles">Articles</a></li>
                 
-                <li><a href="../public/index.php?route=contact">Contact</a></li>
+                <li><a href="/projet5/public/index/contact">Contact</a></li>
                 <?php
                 if (isset($_SESSION['user']['pseudo'])) { ?>
-                  <li class="nav-item"><a class="nav-link" href="../public/index.php?route=disconnect">Deconnexion</a></li>
+                  <li class="nav-item"><a class="nav-link" href="/projet5/public/index/disconnect">Deconnexion</a></li>
                 <?php } else { ?>
-                  <li><a href="../public/index.php?route=register">Enregistrement</a></li>
+                  <li><a href="/projet5/public/index/register">Enregistrement</a></li>
                   <li><a href="../public/index.php?route=connection">Se connecter</a></li>
                 <?php }
                   if (isset($_SESSION['user']['admin']) && ($adminPass = $_SESSION['user']['admin']) && ($adminPass == 1)) { ?>
@@ -86,10 +86,10 @@
 					</footer>
     </div>
      <!-- Scripts -->
-			<script src="../public/js/jquery.min.js"></script>
-			<script src="../public/js/browser.min.js"></script>
-			<script src="../public/js/breakpoints.min.js"></script>
-			<script src="../public/js/util.js"></script>
-      <script src="../public/js/main.js"></script>
+			<script src="/projet5/public/js/jquery.min.js"></script>
+			<script src="/projet5/public/js/browser.min.js"></script>
+			<script src="/projet5/public/js/breakpoints.min.js"></script>
+			<script src="/projet5/public/js/util.js"></script>
+      <script src="/projet5/public/js/main.js"></script>
   </body>
 </html>
