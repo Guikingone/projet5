@@ -1,9 +1,7 @@
 <?php
 
 use App\src\Controller\HomeController;
-use App\src\Controller\ArticlesController;
-use App\src\Controller\ArticleDetailsController;
-use App\src\Controller\ContactController;
+
 
 return [
     'home' => [
@@ -18,7 +16,7 @@ return [
         'path' => '/projet5/public/index/article/{id}',
         'controller' => App\src\Controller\ArticleDetailsController::class,
         'params' => [
-            'id' => '\d+'
+            'id' => '\w+'
         ]
     ],
     'contact' => [
@@ -57,10 +55,7 @@ return [
         ]
     ],
     'modified_article' => [
-        'path' => '/projet5/public/index/admin/modified',
+        'path' => '/projet5/public/index/admin/modified_article',
         'controller' => App\src\Controller\ModifiedArticleController::class,
-        'params' => [
-            'id' => '\d+'
-        ]
     ],
 ];
