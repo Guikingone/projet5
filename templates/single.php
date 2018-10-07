@@ -5,9 +5,9 @@ $this->title = "Article";
     <h1><?= htmlspecialchars($article->getTitle());?></h1>
     <p>Sujet : <?= htmlspecialchars($article->getChapeau());?></p>
     <p><?= htmlspecialchars($article->getContent());?></p><hr>
-    <p>Créé par : <?= htmlspecialchars($article->getAuthor());?> | <?= htmlspecialchars($article->getDateAdded());?> | <?php if (htmlspecialchars($article->getEdited()) !== NULL) { ?> <em>(Modifié le <?php echo htmlspecialchars($article->getEdited());} ?>)</em></p>
+    <p>Créé par : <?= htmlspecialchars($article->getAuthor());?> | <?= htmlspecialchars($article->getDateAdded());?> | <?php if (htmlspecialchars($article->getEdited()) != NULL) { ?> <em>(Modifié le <?php echo htmlspecialchars($article->getEdited()); ?> ) <?php } ?></em></p>
     <br>
-    <a href="../public/index.php"><button class="primary">Retour à la liste des articles</button></a><hr>
+    <a href="/projet5/public/index"><button class="primary">Retour à la liste des articles</button></a><hr>
 </div>
 <div class="inner">
     <div class="jumbotron">

@@ -41,4 +41,26 @@ return [
         'path' => '/projet5/public/index/admin',
         'controller' => App\src\Controller\AdminController::class,
     ],
+    'create_article' => [
+        'path' => '/projet5/public/index/admin/create_article',
+        'controller' => App\src\Controller\SaveArticleController::class,
+    ],
+    'list_article' => [
+        'path' => '/projet5/public/index/admin/list_article',
+        'controller' => App\src\Controller\ListArticleController::class,
+    ],
+    'modif_article' => [
+        'path' => '/projet5/public/index/admin/modif_article/{id}',
+        'controller' => App\src\Controller\ModifArticleController::class,
+        'params' => [
+            'id' => '\d+'
+        ]
+    ],
+    'modified_article' => [
+        'path' => '/projet5/public/index/admin/modified',
+        'controller' => App\src\Controller\ModifiedArticleController::class,
+        'params' => [
+            'id' => '\d+'
+        ]
+    ],
 ];

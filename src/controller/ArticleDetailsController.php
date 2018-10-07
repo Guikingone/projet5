@@ -8,7 +8,7 @@ use App\src\DAO\ArticleDAO;
 use App\src\DAO\CommentDAO;
 use App\src\model\View;
 
-class ArticlesDetailsController
+class ArticleDetailsController
 {
     private $articleDAO;
     private $commentDAO;
@@ -17,6 +17,7 @@ class ArticlesDetailsController
     public function __construct()
     {
         $this->articleDAO = new ArticleDAO();
+        $this->commentDAO = new CommentDAO();
         $this->view = new View();
     }
 

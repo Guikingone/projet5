@@ -24,20 +24,9 @@ class Router
         try{
             if(isset($_GET['route']))
             {
-                if($yo){
-                    
-                }
-                else if($_GET['route'] === 'saveArticle') {
-                    $this->backController->saveArticle($_POST);
-                }
+                if($yo){}
                 else if($_GET['route'] === 'saveComment') {
                     $this->backController->saveComment($_POST);
-                }
-                else if($_GET['route'] === 'admin') {
-                    $this->frontController->admin();
-                }
-                else if($_GET['route'] === 'postModif') {
-                    $this->frontController->postModif();
                 }
                 else if($_GET['route'] === 'commentModif') {
                     $this->frontController->commentModif($_POST);

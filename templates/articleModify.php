@@ -6,7 +6,7 @@ $this->title = "modifier un article";
     <h2>Modification d'un article</h2>
     <section>
     <p>L'article a été publié par "<?php echo htmlspecialchars($article->getAuthor());?>" le <?php echo htmlspecialchars($article->getDateAdded());?></p>
-        <form method="post" action="../public/index.php?route=modifyArticle">
+        <form method="post" action="/projet5/public/index/admin/modif_article/<?php echo htmlspecialchars($article->getId());?>">
             <div class="fields">
                 <div class="field half">
                     <label for="title">Titre de l'article :</label>
@@ -28,13 +28,10 @@ $this->title = "modifier un article";
             <div class="fields">
                 <div class="field half">
                     <label for="content">Contenu de l'article :</label>
-                    <textarea rows="4" cols="100" id="content" name="content" value="" required><?php echo htmlspecialchars($article->getContent());?></textarea>
+                    <textarea rows="4" cols="100" id="content" name="content" value="" required><?php echo htmlspecialchars($article->getId());?></textarea>
                 </div>
             </div>
-            <input type="text" id="articleId" name="articleId" value="<?php
-                        if(isset($_GET['idArt'])){
-                            echo $_GET['idArt'];}
-                    ?>" hidden><br>
+            <input type="text" id="articleId" name="articleId" value="<?php htmlspecialchars($article->getId());?>" hidden><br>
             <ul class="actions">
                 <li><input type="submit" class="primary" value="Modifier" id="submit" name="submit"></li>
             </ul>
@@ -50,6 +47,6 @@ $this->title = "modifier un article";
                 </div>
             </div>
         </form>
-        <a href="../public/index.php?route=admin"><button class="btn btn-success"> Retour à l'administration</button></a><br>
+        <a href="/projet5/public/index/admin"><button class="btn btn-success"> Retour à l'administration</button></a><br>
     </section>
 </div>
