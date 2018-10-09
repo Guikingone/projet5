@@ -7,7 +7,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <link href="https://fonts.googleapis.com/css?family=Chakra+Petch" rel="stylesheet">
       <link href="https://cdnpublic/js.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-      <link rel="stylesheet" href="public/css/main.css" />
+      <link rel="stylesheet" href="/css/main.css" />
 		  <noscript><link rel="stylesheet" href="css/noscript.css" /></noscript>
   </head>
 	<body class="is-preload">
