@@ -32,10 +32,14 @@ class Router
 
     private function catchParams(array $params, string $request, Route &$route)
     {
+        if (isset($params) && !empty($params)) {
         foreach ($params as $key => $regex) {
             preg_match(sprintf('#%s#', $regex), $request, $result);
-            $route->addParam($key, $result[0]);
-            $route->setPath(strtr($route->getPath(), [sprintf('{%s}', $key) => $result[0]]));
+                if (!empty($result)) {
+                    $route->addParam($key, $result[0]);
+                    $route->setPath(strtr($route->getPath(), [sprintf('{%s}', $key) => $result[0]]));
+                }
+            }
         }
     }
 

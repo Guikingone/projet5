@@ -7,8 +7,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <link href="https://fonts.googleapis.com/css?family=Chakra+Petch" rel="stylesheet">
       <link href="https://cdnpublic/js.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-      <link rel="stylesheet" href="/css/main.css" />
-		  <noscript><link rel="stylesheet" href="css/noscript.css" /></noscript>
+      <link rel="stylesheet" type='text/css' href="css/main.css" />
+		  <noscript><link rel="stylesheet" type='text/css' href="css/noscript.css" /></noscript>
   </head>
 	<body class="is-preload">
 		<!-- Wrapper -->
@@ -73,7 +73,7 @@
 							<section>
 								<h2>Réseaux sociaux</h2>
 								<ul class="icons">
-									<li><a href="https://www.linkedin.com/in/dimitri-subrini-b48848156/" class="icon style2 fa-linkedin"><span class="label">Twitter</span></a></li>
+									<li><a href="https://www.linkedin.com/in/dimitri-subrini-b48848156/" class="icon style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
 									<li><a href="https://www.facebook.com/profile.php?id=1152429246" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
 									<li><a href="https://github.com/avenir2point0/projet5" class="icon style2 fa-github"><span class="label">GitHub</span></a></li>
 								</ul>
@@ -85,10 +85,10 @@
 					</footer>
     </div>
      <!-- Scripts -->
-			<script src="public/js/jquery.min.js"></script>
-			<script src="public/js/browser.min.js"></script>
-			<script src="public/js/breakpoints.min.js"></script>
-			<script src="public/js/util.js"></script>
-      <script src="public/js/main.js"></script>
+			<script src="js/jquery.min.js"></script>
+			<script src="js/browser.min.js"></script>
+			<script src="js/breakpoints.min.js"></script>
+			<script src="js/util.js"></script>
+      <script src="js/main.js"></script>
   </body>
 </html>

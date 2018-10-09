@@ -5,7 +5,7 @@ $this->title = "Accueil";
     <header>
         <h1>Bonjour à tous, je suis Dimitri Subrini<br />
         et je suis votre developpeur Web.<br /></h1>
-        <p><span class="image"><br /><img src="/projet5/public/img/moi.jpg" alt="C'est moi !" /></span><br />J'ai suivi la formation PHP/Symfony à Openclassrooms, j'ai plusieurs projets terminés et vous pouvez <a href="../public/img/CVweb.pdf">lire mon CV ici</a>.<br>
+        <p><span class="image"><br /><img src="img/moi.jpg" alt="C'est moi !" /></span><br />J'ai suivi la formation PHP/Symfony à Openclassrooms, j'ai plusieurs projets terminés et vous pouvez <a href="../public/img/CVweb.pdf">lire mon CV ici</a>.<br>
     Vous pouvez passer par le formulaire de contact pour me joindre ou passer par les liens sociaux en bas de la page. </p><br>
     </header>
     <h2>Liste des derniers articles</h2>            
@@ -16,7 +16,7 @@ $this->title = "Accueil";
             { ?> 
         <article class="style3">
             <span class="image">
-                <img src="/projet5/public/img/pic20.jpg" alt="Article" />
+                <img src="img/pic20.jpg" alt="Article" />
             </span>
             <a href="/article/<?= htmlspecialchars($article->getId());?>">
                 <h2><?= htmlspecialchars($article->getTitle());?></h2>
