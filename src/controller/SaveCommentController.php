@@ -4,24 +4,26 @@ declare(strict_types=1);
 
 namespace App\src\controller;
 
-use App\src\model\Contact;
+use App\src\DAO\CommentDAO;
 use App\src\model\View;
 
-class ContactController
+class SaveCommentController
 {
+    private $commentDAO;
+    private $view;
+
     public function __construct()
     {
+        $this->commentDAO = new CommentDAO();
         $this->view = new View();
-        $this->contactForm = new Contact();
     }
 
     public function __invoke()
     {
         if(isset($_POST['submit'])) {
-            $contactForm = new Contact();
-            $contactForm->buildContact($_POST);
+            $commentDAO = new CommentDAO();
+            $commentDAO->saveComment($_POST);
             header('Location: /');
         }
-        $this->view->render('contact');
     }
 }

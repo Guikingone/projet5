@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace App\src\controller;
 
-use App\src\DAO\ArticleDAO;
+use App\src\DAO\CommentDAO;
 
-class ModifiedArticleController
+class ModifyCommentController
 {
     public function __invoke()
     {
         if(isset($_POST['submit'])) {
-            $articleDAO = new ArticleDAO();
-            $articleDAO->modifyArticle($_POST);
+            $commentDAO = new CommentDAO();
+            $commentDAO->modifyComment($_POST);
             header('Location: /admin');
         }
     }

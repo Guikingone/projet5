@@ -5,9 +5,10 @@ declare(strict_types=1);
 namespace App\src\controller;
 
 use App\src\DAO\ArticleDAO;
+use App\src\DAO\CommentDAO;
 use App\src\model\View;
 
-class SaveArticleController
+class CreateCommentController
 {
     private $articleDAO;
     private $view;
@@ -18,13 +19,11 @@ class SaveArticleController
         $this->view = new View();
     }
 
-    public function __invoke()
+    public function __invoke(array $params = [])
     {
-        if(isset($_POST['submit'])) {
-            $articleDAO = new ArticleDAO();
-            $articleDAO->saveArticle($_POST);
-            header('Location: /admin');
-        }
-        $this->view->render('form_article');
+        $article = $this->articleDAO->getArticle($params['id']);
+        $this->view->render('form_comment', [
+            'article' => $article,
+        ]);
     }
 }

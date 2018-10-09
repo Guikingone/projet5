@@ -5,7 +5,7 @@ $this->title = "modifier un commentaire";
     <h2>Modification d'un commentaire</h2>
     <section>
     <p>Le commentaire a été publié par "<?php echo htmlspecialchars($comment->getPseudo());?>" le <?php echo htmlspecialchars($comment->getDateAdded());?></p>
-        <form method="post" action="../public/index.php?route=modifyComment">
+        <form method="post" action="/admin/modifyComment">
             <div class="fields">
                 <div class="field half">
                     <label for="content">Commentaire :</label>
@@ -14,27 +14,21 @@ $this->title = "modifier un commentaire";
             </div>
             <div class="fields">
                 <div class="field half">
-                    <input type="text" id="commentId" name="commentId" value="<?php
-                            if(isset($_GET['idCom'])){
-                                echo $_GET['idCom'];}
-                        ?>" hidden><br>                
+                    <input type="text" id="commentId" name="commentId" value="<?php echo htmlspecialchars($comment->getId()); ?>" hidden><br>                
                 </div>
             </div>
             <ul class="actions">
                 <li><input type="submit" class="primary" value="Modifier" id="submit" name="submit"></li>
             </ul>
         </form>
-        <form method="post" action="../public/index.php?route=deleteArticle">
+        <form method="post" action="/admin/deleteComment">
             <div class="fields">
                 <div class="field half">
-                    <input type="text" id="commentId" name="commentId" value="<?php
-                            if(isset($_GET['idCom'])){
-                                echo $_GET['idCom'];}
-                        ?>" hidden><br>
+                    <input type="text" id="commentId" name="commentId" value="<?php echo htmlspecialchars($comment->getId());?>" hidden><br>
                     <input type="submit" class="btn btn-danger" value="Supprimer" id="submit" name="submit">                
                 </div>
             </div>
         </form>
-        <a href="../public/index.php?route=admin"><button class="btn btn-success"> Retour à l'administration</button></a><br>
+        <a href="/admin"><button class="btn btn-success">Retour à l'administration</button></a><br>
     </section>
 </div>

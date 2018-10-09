@@ -11,7 +11,7 @@ $this->title = "Tous les articles";
             <span class="image">
                 <img src="/projet5/public/img/pic20.jpg" alt="Article" />
             </span>
-            <a href="/projet5/public/index/article/<?= htmlspecialchars($article->getId());?>">
+            <a href="/article/<?= htmlspecialchars($article->getId());?>">
                 <h2><?= htmlspecialchars($article->getTitle());?></h2>
                 <div class="content">
                     <p>Sujet : <?= htmlspecialchars($article->getChapeau());?></p>

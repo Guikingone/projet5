@@ -7,7 +7,7 @@ $this->title = "Article";
     <p><?= htmlspecialchars($article->getContent());?></p><hr>
     <p>Créé par : <?= htmlspecialchars($article->getAuthor());?> | <?= htmlspecialchars($article->getDateAdded());?> | <?php if (htmlspecialchars($article->getEdited()) != NULL) { ?> <em>(Modifié le <?php echo htmlspecialchars($article->getEdited()); ?> ) <?php } ?></em></p>
     <br>
-    <a href="/projet5/public/index"><button class="primary">Retour à la liste des articles</button></a><hr>
+    <a href="/articles"><button class="primary">Retour à la liste des articles</button></a><hr>
 </div>
 <div class="inner">
     <div class="jumbotron">
@@ -24,11 +24,11 @@ $this->title = "Article";
             }
             if (isset($_SESSION['user']['pseudo'])) { ?>
             <div>
-                <a href="../public/index.php?route=saveComment&idArt=<?= htmlspecialchars($article->getId());?>"><button class="primary">Poster un commentaire</button></a>
+                <a href="/saveComment/article<?= htmlspecialchars($article->getId());?>"><button class="primary">Poster un commentaire</button></a>
             </div>        
             <?php } else { ?>
                 <p>Vous devez être connecté pour poster un commentaire</p>
-                <a href="../public/index.php?route=connection">Se connecter</a>
+                <a href="/connection">Se connecter</a>
             <?php }
             ?>
         </div>

@@ -6,13 +6,13 @@ namespace App\src\controller;
 
 use App\src\DAO\ArticleDAO;
 
-class ModifiedArticleController
+class DeleteArticleController
 {
     public function __invoke()
     {
         if(isset($_POST['submit'])) {
             $articleDAO = new ArticleDAO();
-            $articleDAO->modifyArticle($_POST);
+            $articleDAO->deleteArticle($_POST);
             header('Location: /admin');
         }
     }

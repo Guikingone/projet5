@@ -20,7 +20,7 @@ class ConnectionController
         if(isset($_POST['submit'])) {
             $userDAO = new UserDAO();
             $userDAO->connection($_POST);
-            header('Location: /projet5/public/index');
+            header('Location: /');
         }
         $this->view->render('connection_form');
     }

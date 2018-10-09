@@ -6,10 +6,9 @@
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <link href="https://fonts.googleapis.com/css?family=Chakra+Petch" rel="stylesheet">
-      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-      <link rel="stylesheet" href="/projet5/public/css/style.css">
-      <link rel="stylesheet" href="/projet5/public/css/main.css" />
-		  <noscript><link rel="stylesheet" href="/projet5/public/css/noscript.css" /></noscript>
+      <link href="https://cdnpublic/js.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="public/css/main.css" />
+		  <noscript><link rel="stylesheet" href="css/noscript.css" /></noscript>
   </head>
 	<body class="is-preload">
 		<!-- Wrapper -->
@@ -20,8 +19,8 @@
 						<div class="inner">
 
 							<!-- Logo -->
-								<a href="/projet5/public/index" class="logo">
-									<span class="symbol"><img src="/projet5/public/img/logo.svg" alt="" /></span><span class="title">Blog Avenir2point0</span>
+								<a href="/" class="logo">
+									<span class="symbol"><img src="img/logo.svg" alt="" /></span><span class="title">Blog Avenir2point0</span>
                 </a>
                 <p>Message du system : <?php if (isset($_SESSION['message'])) {
                 echo $_SESSION['message'];
@@ -45,20 +44,20 @@
                   <h4> Bonjour :  <?= $_SESSION['user']['pseudo']; ?></h4>
               <?php } ?>
               <ul>
-                <li><a href="/projet5/public/index">Accueil</a></li>
-                <li><a href="/projet5/public/index/articles">Articles</a></li>
+                <li><a href="/">Accueil</a></li>
+                <li><a href="/articles">Articles</a></li>
                 
-                <li><a href="/projet5/public/index/contact">Contact</a></li>
+                <li><a href="/contact">Contact</a></li>
                 <?php
                 if (isset($_SESSION['user']['pseudo'])) { ?>
-                  <li class="nav-item"><a class="nav-link" href="/projet5/public/index/disconnect">Deconnexion</a></li>
+                  <li><a href="/disconnect">Deconnexion</a></li>
                 <?php } else { ?>
-                  <li><a href="/projet5/public/index/register">Enregistrement</a></li>
-                  <li><a href="/projet5/public/index/connection">Se connecter</a></li>
+                  <li><a href="/register">Enregistrement</a></li>
+                  <li><a href="/connection">Se connecter</a></li>
                 <?php }
                   if (isset($_SESSION['user']['admin']) && ($adminPass = $_SESSION['user']['admin']) && ($adminPass == 1)) { ?>
                   <li>
-                    <a href="/projet5/public/index/admin">Administration</a>
+                    <a href="/admin">Administration</a>
                   </li>
                   <?php } ?>
               </ul>
@@ -86,10 +85,10 @@
 					</footer>
     </div>
      <!-- Scripts -->
-			<script src="/projet5/public/js/jquery.min.js"></script>
-			<script src="/projet5/public/js/browser.min.js"></script>
-			<script src="/projet5/public/js/breakpoints.min.js"></script>
-			<script src="/projet5/public/js/util.js"></script>
-      <script src="/projet5/public/js/main.js"></script>
+			<script src="public/js/jquery.min.js"></script>
+			<script src="public/js/browser.min.js"></script>
+			<script src="public/js/breakpoints.min.js"></script>
+			<script src="public/js/util.js"></script>
+      <script src="public/js/main.js"></script>
   </body>
 </html>

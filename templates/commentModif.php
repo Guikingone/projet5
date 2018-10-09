@@ -10,12 +10,12 @@ $this->title = "Modification commentaire";
         ?>
         <article class="style2">
             <h4><?= htmlspecialchars($comment->getId());?>
-            <a href="../public/index.php?route=comment&idCom=<?= htmlspecialchars($comment->getId());?>">
+            <a href="/admin/comment/<?= htmlspecialchars($comment->getId());?>">
             <?= htmlspecialchars($comment->getContent());?></a></h4>
             <p>Par : <?= htmlspecialchars($comment->getPseudo());?>
             | Créé le : <?= htmlspecialchars($comment->getDateAdded());?></p>
         </article><br>
         <?php } ?> 
     </section>
-    <a href="../public/index.php?route=admin"><button class="btn btn-success"> Retour à l'administration</button></a>
+    <a href="/admin"><button class="btn btn-success"> Retour à l'administration</button></a>
 </div>
