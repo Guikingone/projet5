@@ -9,7 +9,7 @@ $this->title = "Tous les articles";
             { ?> 
         <article class="style2">
             <span class="image">
-                <img src="/projet5/public/img/pic20.jpg" alt="Article" />
+                <img src="/img/pic20.jpg" alt="Article" />
             </span>
             <a href="/article/<?= htmlspecialchars($article->getId());?>">
                 <h2><?= htmlspecialchars($article->getTitle());?></h2>

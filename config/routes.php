@@ -2,11 +2,11 @@
 
 return [
     'home' => [
-        'path' => '/',
+        'path' => '/index.php',
         'controller' => App\src\Controller\HomeController::class
     ],
     'articles' => [
-        'path' => '/articles',
+        'path' => '/index.php/articles',
         'controller' => App\src\Controller\ArticlesController::class
     ],
     'article_details' => [

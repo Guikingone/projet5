@@ -7,8 +7,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <link href="https://fonts.googleapis.com/css?family=Chakra+Petch" rel="stylesheet">
       <link href="https://cdnpublic/js.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-      <link rel="stylesheet" type='text/css' href="css/main.css" />
-		  <noscript><link rel="stylesheet" type='text/css' href="css/noscript.css" /></noscript>
+      <link rel="stylesheet" type='text/css' href="/css/main.css" />
+		  <noscript><link rel="stylesheet" type='text/css' href="/css/noscript.css" /></noscript>
   </head>
 	<body class="is-preload">
 		<!-- Wrapper -->
@@ -20,7 +20,7 @@
 
 							<!-- Logo -->
 								<a href="/" class="logo">
-									<span class="symbol"><img src="img/logo.svg" alt="" /></span><span class="title">Blog Avenir2point0</span>
+									<span class="symbol"><img src="/img/logo.svg" alt="" /></span><span class="title">Blog Avenir2point0</span>
                 </a>
                 <p>Message du system : <?php if (isset($_SESSION['message'])) {
                 echo $_SESSION['message'];
@@ -45,7 +45,7 @@
               <?php } ?>
               <ul>
                 <li><a href="/">Accueil</a></li>
-                <li><a href="/articles">Articles</a></li>
+                <li><a href="/index.php/articles">Articles</a></li>
                 
                 <li><a href="/contact">Contact</a></li>
                 <?php
@@ -85,10 +85,10 @@
 					</footer>
     </div>
      <!-- Scripts -->
-			<script src="js/jquery.min.js"></script>
-			<script src="js/browser.min.js"></script>
-			<script src="js/breakpoints.min.js"></script>
-			<script src="js/util.js"></script>
-      <script src="js/main.js"></script>
+			<script src="/js/jquery.min.js"></script>
+			<script src="/js/browser.min.js"></script>
+			<script src="/js/breakpoints.min.js"></script>
+			<script src="/js/util.js"></script>
+      <script src="/js/main.js"></script>
   </body>
 </html>

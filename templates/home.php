@@ -16,7 +16,7 @@ $this->title = "Accueil";
             { ?> 
         <article class="style3">
             <span class="image">
-                <img src="img/pic20.jpg" alt="Article" />
+                <img src="/img/pic20.jpg" alt="Article" />
             </span>
             <a href="/article/<?= htmlspecialchars($article->getId());?>">
                 <h2><?= htmlspecialchars($article->getTitle());?></h2>
