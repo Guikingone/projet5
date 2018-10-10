@@ -34,5 +34,5 @@ $this->title = "Connexion au site !";
                 <li><input type="submit" class="primary" value="Envoyer" id="submit" name="submit"></li>
             </ul>
     </form>
-
+    <a href="/index.php/forgotten_password">Mot de passe oublié ?</a>
 </div>

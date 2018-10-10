@@ -104,4 +104,15 @@ return [
         'path' => '/index.php/admin/publishComment',
         'controller' => App\src\Controller\PublishCommentController::class,
     ],
+    'password_forgotten' => [
+        'path' => '/index.php/forgotten_password',
+        'controller' => App\src\Controller\ForgottenPasswordController::class,
+    ],
+    'new_password_form' => [
+        'path' => '/index.php/newpassword?token={token}',
+        'controller' => App\src\Controller\NewPasswordFormController::class,
+        'params' => [
+            'token' => '\d+'
+        ]
+    ],
 ];
