@@ -5,7 +5,7 @@ $this->title = "modifier un commentaire";
     <h2>Modification d'un commentaire</h2>
     <section>
     <p>Le commentaire a été publié par "<?php echo htmlspecialchars($comment->getPseudo());?>" le <?php echo htmlspecialchars($comment->getDateAdded());?></p>
-        <form method="post" action="/admin/modifyComment">
+        <form method="post" action="/index.php/admin/modifyComment">
             <div class="fields">
                 <div class="field half">
                     <label for="content">Commentaire :</label>
@@ -21,7 +21,7 @@ $this->title = "modifier un commentaire";
                 <li><input type="submit" class="primary" value="Modifier" id="submit" name="submit"></li>
             </ul>
         </form>
-        <form method="post" action="/admin/deleteComment">
+        <form method="post" action="/index.php/admin/deleteComment">
             <div class="fields">
                 <div class="field half">
                     <input type="text" id="commentId" name="commentId" value="<?php echo htmlspecialchars($comment->getId());?>" hidden><br>

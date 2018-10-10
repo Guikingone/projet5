@@ -47,17 +47,17 @@
                 <li><a href="/">Accueil</a></li>
                 <li><a href="/index.php/articles">Articles</a></li>
                 
-                <li><a href="/contact">Contact</a></li>
+                <li><a href="/index.php/contact">Contact</a></li>
                 <?php
                 if (isset($_SESSION['user']['pseudo'])) { ?>
-                  <li><a href="/disconnect">Deconnexion</a></li>
+                  <li><a href="/index.php/disconnect">Deconnexion</a></li>
                 <?php } else { ?>
-                  <li><a href="/register">Enregistrement</a></li>
-                  <li><a href="/connection">Se connecter</a></li>
+                  <li><a href="/index.php/register">Enregistrement</a></li>
+                  <li><a href="/index.php/connection">Se connecter</a></li>
                 <?php }
                   if (isset($_SESSION['user']['admin']) && ($adminPass = $_SESSION['user']['admin']) && ($adminPass == 1)) { ?>
                   <li>
-                    <a href="/admin">Administration</a>
+                    <a href="/index.php/admin">Administration</a>
                   </li>
                   <?php } ?>
               </ul>

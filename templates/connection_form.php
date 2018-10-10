@@ -5,7 +5,7 @@ $this->title = "Connexion au site !";
 
 <div class="inner">
     <h2>Se connecter au Blog</h2>
-    <form method="post" action="/connection">
+    <form method="post" action="/index.php/connection">
         <div class="fields">
             <div class="field half">
                     <input type="text" id="pseudo" name="pseudo" value="<?php

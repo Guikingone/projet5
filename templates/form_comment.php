@@ -12,7 +12,7 @@ $this->title = "Poster un commentaire";
 </div>
     <section>
             <?php if (isset($_SESSION['user']['pseudo'])) { ?>
-                <form method="post" action="/saveComment">
+                <form method="post" action="/index.php/saveComment">
                 <div class="fields">
                     <div class="field half">
                     <input type="text" id="pseudo" name="pseudo" value="<?php
@@ -39,7 +39,7 @@ $this->title = "Poster un commentaire";
             </div>        
             <?php } else { ?>
                 <p>Vous devez être connecté pour poster un commentaire</p>
-                <a href="./connection"><button class="primary">Se connecter</button></a>
+                <a href="/index.php/connection"><button class="primary">Se connecter</button></a>
             <?php }
             ?>
     </section>

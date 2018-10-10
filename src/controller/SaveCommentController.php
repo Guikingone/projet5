@@ -23,7 +23,7 @@ class SaveCommentController
         if(isset($_POST['submit'])) {
             $commentDAO = new CommentDAO();
             $commentDAO->saveComment($_POST);
-            header('Location: /');
+            header('Location: /index.php');
         }
     }
 }

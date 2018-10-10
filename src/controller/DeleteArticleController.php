@@ -13,7 +13,7 @@ class DeleteArticleController
         if(isset($_POST['submit'])) {
             $articleDAO = new ArticleDAO();
             $articleDAO->deleteArticle($_POST);
-            header('Location: /admin');
+            header('Location: /index.php/admin');
         }
     }
 }

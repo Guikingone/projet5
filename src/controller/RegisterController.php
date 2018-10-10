@@ -20,7 +20,7 @@ class RegisterController
         if(isset($_POST['submit'])) {
             $userDAO = new UserDAO();
             $userDAO->register($_POST);
-            header('Location: /projet5/public/index');
+            header('Location: /index.php');
         }
         $this->view->render('register');
     }

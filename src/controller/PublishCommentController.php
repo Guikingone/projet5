@@ -13,7 +13,7 @@ class PublishCommentController
         if(isset($_POST['submit'])) {
             $commentDAO = new CommentDAO();
             $commentDAO->publishComment($_POST);
-            header('Location: /admin');
+            header('Location: /index.php/admin');
         }
     }
 }

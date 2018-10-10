@@ -10,7 +10,7 @@ if ($comments != null) { ?>
             ?>
             <article class="style2">
                 <h4><?= htmlspecialchars($comment->getId());?>
-                <a href="/admin/unpublishedComment/<?= htmlspecialchars($comment->getId());?>">
+                <a href="/index.php/admin/unpublishedComment/<?= htmlspecialchars($comment->getId());?>">
                 <?= htmlspecialchars($comment->getContent());?></a></h4>
                 <p>Par : <?= htmlspecialchars($comment->getPseudo());?>
                 | Créé le : <?= htmlspecialchars($comment->getDateAdded());?></p>
@@ -22,6 +22,6 @@ if ($comments != null) { ?>
     <div class="inner">
         <h4>Désolé !</h4>
         <h4>Il n'y a pas de commentaires en attente de publication.</h4>
-        <a href="/admin"><button class="btn btn-success"> Retour à l'administration</button></a>
+        <a href="/index.php/admin"><button class="btn btn-success"> Retour à l'administration</button></a>
     </div>
 <?php } ?>
