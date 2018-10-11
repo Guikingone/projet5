@@ -151,10 +151,8 @@ class UserDAO extends DAO
             return;
         }
 
-        $token = $_GET['token'];
-
         $result = $this->sql('SELECT token, password_is_editing FROM user AS u 
-        WHERE u.token = :token', [':token' =>  $_GET['token']],' 
+        WHERE u.token = :token', [':token' =>  $post['token']],' 
         && u.password_is_editing = 1')->fetch();
 
         if ($result['password_is_editing'] == 0) {
@@ -163,8 +161,8 @@ class UserDAO extends DAO
         }
 
         extract($post);
-        $sql = "UPDATE user SET  password = ? , token = null, password_is_editing = 0 WHERE token ='$token' OR 1 = 1 && password_is_editing = 1 ";
-        $this->sql($sql, [password_hash($post['password'], PASSWORD_DEFAULT)]);
+        $sql = "UPDATE user AS u SET  u.password = ? , u.token = null, u.password_is_editing = 0 WHERE u.token = :token && password_is_editing = 1 ";
+        $this->sql($sql, [password_hash($post['password'], PASSWORD_DEFAULT)], $post['token']);
         $_SESSION['message'] = sprintf('Le mot de passe a été changé');
         return;
     }

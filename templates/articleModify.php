@@ -39,10 +39,7 @@ $this->title = "modifier un article";
         <form method="post" action="/index.php/admin/deleteArticle">
             <div class="fields">
                 <div class="field half">
-                    <input type="text" id="articleId" name="articleId" value="<?php
-                            if(isset($_GET['idArt'])){
-                                echo $_GET['idArt'];}
-                        ?>" hidden><br>
+                    <input type="text" id="articleId" name="articleId" value="<?php echo htmlspecialchars($article->getId());?>" hidden><br>
                     <input type="submit" class="btn btn-danger" value="Supprimer" id="submit" name="submit">                
                 </div>
             </div>
