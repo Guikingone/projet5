@@ -120,14 +120,10 @@ class UserDAO extends DAO
         $token = random_int(100000000000000, 1000000000000000000);
         $link = "Cliquez sur <a href=/index.php/newpassword?token='".$token."'>Cliquez ici</a>";
 
-        
-        if ($post['submit']) {
-            extract($post);
-            $sql = 'UPDATE user SET  token = ?, password_is_editing = 1 WHERE pseudo = ?';
-            $this->sql($sql, [$token, $post['pseudo']]);
-            $_SESSION['message'] = sprintf('Un mail a été envoyé sur votre messagerie');
-            return;
-        }
+        extract($post);
+        $sql = 'UPDATE user SET  token = ?, password_is_editing = 1 WHERE pseudo = ?';
+        $this->sql($sql, [$token, $post['pseudo']]);
+        $_SESSION['message'] = sprintf('Un mail a été envoyé sur votre messagerie');
 
         $to      = 'dimitri.subrini@gmail.com';
         $subject = 'Email de récuperation de mot de passe';
@@ -161,8 +157,8 @@ class UserDAO extends DAO
         }
 
         extract($post);
-        $sql = "UPDATE user AS u SET  u.password = ? , u.token = null, u.password_is_editing = 0 WHERE u.token = :token && password_is_editing = 1 ";
-        $this->sql($sql, [password_hash($post['password'], PASSWORD_DEFAULT)], $post['token']);
+        $sql = "UPDATE user AS u SET  u.password = ? , u.token = null, u.password_is_editing = 0 WHERE u.token = ? && password_is_editing = 1 ";
+        $this->sql($sql, [password_hash($post['password'], PASSWORD_DEFAULT), $post['token']]);
         $_SESSION['message'] = sprintf('Le mot de passe a été changé');
         return;
     }

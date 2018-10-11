@@ -9,7 +9,6 @@ $this->title = "Poster un commentaire";
     <p><?= htmlspecialchars($article->getContent());?></p><hr>
     <p>Créé par : <?= htmlspecialchars($article->getAuthor());?> | <?= htmlspecialchars($article->getDateAdded());?> | <?php if (htmlspecialchars($article->getEdited()) != NULL) { ?> <em>(Modifié le <?php echo htmlspecialchars($article->getEdited()); ?> ) <?php } ?></em></p>
     <br>
-</div>
     <section>
             <?php if (isset($_SESSION['user']['pseudo'])) { ?>
                 <form method="post" action="/index.php/saveComment">
