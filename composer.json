@@ -1,16 +1,20 @@
 {
-    "name": "guillaumeloulier/router",
+    "name": "dimitrisubrini/router",
     "description": "test",
     "authors": [
         {
-            "name": "Loulier Guillaume",
-            "email": "guillaume.loulier@hotmail.fr"
+            "name": "Dimitri Subrini",
+            "email": "dimitri.subrini@gmail.com"
         }
     ],
     "autoload": {
         "psr-4": {
             "Framework\\": "etc/",
-            "App\\": "src/"
+            "App\\": "src/",
+            "App\\Controller\\": "src/Controller/",
+            "App\\DAO\\": "src/DAO/",
+            "App\\Model\\": "src/Model/",
+            "App\\Tool\\": "src/Tool/"
         }
     },
     "require": {}

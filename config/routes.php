@@ -2,115 +2,115 @@
 
 return [
     'home' => [
-        'path' => '/index.php',
-        'controller' => App\src\Controller\HomeController::class
+        'path' => '/',
+        'controller' => App\Controller\HomeController::class
     ],
     'articles' => [
-        'path' => '/index.php/articles',
-        'controller' => App\src\Controller\ArticlesController::class
+        'path' => '/articles',
+        'controller' => App\Controller\ArticlesController::class
     ],
     'article_details' => [
-        'path' => '/index.php/article/{id}',
-        'controller' => App\src\Controller\ArticleDetailsController::class,
+        'path' => '/article/{id}',
+        'controller' => App\Controller\ArticleDetailsController::class,
         'params' => [
             'id' => '\d+'
         ]
     ],
     'create_comment' => [
-        'path' => '/index.php/saveComment/article{id}',
-        'controller' => App\src\Controller\CreateCommentController::class,
+        'path' => '/saveComment/article{id}',
+        'controller' => App\Controller\CreateCommentController::class,
         'params' => [
             'id' => '\d+'
         ]
     ],
     'saved_comment' => [
-        'path' => '/index.php/saveComment',
-        'controller' => App\src\Controller\SaveCommentController::class,
+        'path' => '/saveComment',
+        'controller' => App\Controller\SaveCommentController::class,
     ],
     'contact' => [
-        'path' => '/index.php/contact',
-        'controller' => App\src\Controller\ContactController::class,
+        'path' => '/contact',
+        'controller' => App\Controller\ContactController::class,
     ],
     'register' => [
-        'path' => '/index.php/register',
-        'controller' => App\src\Controller\RegisterController::class,
+        'path' => '/register',
+        'controller' => App\Controller\RegisterController::class,
     ],
     'connection' => [
-        'path' => '/index.php/connection',
-        'controller' => App\src\Controller\ConnectionController::class,
+        'path' => '/connection',
+        'controller' => App\Controller\ConnectionController::class,
     ],
     'disconnect' => [
-        'path' => '/index.php/disconnect',
-        'controller' => App\src\Controller\DisconnectController::class,
+        'path' => '/disconnect',
+        'controller' => App\Controller\DisconnectController::class,
     ],
     'admin' => [
-        'path' => '/index.php/admin',
-        'controller' => App\src\Controller\AdminController::class,
+        'path' => '/admin',
+        'controller' => App\Controller\AdminController::class,
     ],
     'create_article' => [
-        'path' => '/index.php/admin/create_article',
-        'controller' => App\src\Controller\SaveArticleController::class,
+        'path' => '/admin/create_article',
+        'controller' => App\Controller\SaveArticleController::class,
     ],
     'list_article' => [
-        'path' => '/index.php/admin/list_article',
-        'controller' => App\src\Controller\ListArticleController::class,
+        'path' => '/admin/list_article',
+        'controller' => App\Controller\ListArticleController::class,
     ],
     'modif_article' => [
-        'path' => '/index.php/admin/modif_article/{id}',
-        'controller' => App\src\Controller\ModifArticleController::class,
+        'path' => '/admin/modif_article/{id}',
+        'controller' => App\Controller\ModifArticleController::class,
         'params' => [
             'id' => '\d+'
         ]
     ],
     'modified_article' => [
-        'path' => '/index.php/admin/modified_article',
-        'controller' => App\src\Controller\ModifiedArticleController::class,
+        'path' => '/admin/modified_article',
+        'controller' => App\Controller\ModifiedArticleController::class,
     ],
     'delete_article' => [
-        'path' => '/index.php/admin/deleteArticle',
-        'controller' => App\src\Controller\DeleteArticleController::class,
+        'path' => '/admin/deleteArticle',
+        'controller' => App\Controller\DeleteArticleController::class,
     ],
     'modify_comment_list' => [
-        'path' => '/index.php/admin/commentModif',
-        'controller' => App\src\Controller\ListCommentModifController::class,
+        'path' => '/admin/commentModif',
+        'controller' => App\Controller\ListCommentModifController::class,
     ],
     'modif_comment' => [
-        'path' => '/index.php/admin/comment/{id}',
-        'controller' => App\src\Controller\ModifCommentController::class,
+        'path' => '/admin/comment/{id}',
+        'controller' => App\Controller\ModifCommentController::class,
         'params' => [
             'id' => '\d+'
         ]
     ],
     'modify_comment' => [
-        'path' => '/index.php/admin/modifyComment',
-        'controller' => App\src\Controller\ModifyCommentController::class,
+        'path' => '/admin/modifyComment',
+        'controller' => App\Controller\ModifyCommentController::class,
     ],
     'delete_comment' => [
-        'path' => '/index.php/admin/deleteComment',
-        'controller' => App\src\Controller\DeleteCommentController::class,
+        'path' => '/admin/deleteComment',
+        'controller' => App\Controller\DeleteCommentController::class,
     ],
     'modify_unpublishedComment_list' => [
-        'path' => '/index.php/admin/unpublishedCommentList',
-        'controller' => App\src\Controller\UnpublishedCommentListController::class,
+        'path' => '/admin/unpublishedCommentList',
+        'controller' => App\Controller\UnpublishedCommentListController::class,
     ],
     'modif_unpublishedComment' => [
-        'path' => '/index.php/admin/unpublishedComment/{id}',
-        'controller' => App\src\Controller\UnpublishedCommentController::class,
+        'path' => '/admin/unpublishedComment/{id}',
+        'controller' => App\Controller\UnpublishedCommentController::class,
         'params' => [
             'id' => '\d+'
         ]
     ],
     'publish_comment' => [
-        'path' => '/index.php/admin/publishComment',
-        'controller' => App\src\Controller\PublishCommentController::class,
+        'path' => '/admin/publishComment',
+        'controller' => App\Controller\PublishCommentController::class,
     ],
     'password_forgotten' => [
-        'path' => '/index.php/forgotten_password',
-        'controller' => App\src\Controller\ForgottenPasswordController::class,
+        'path' => '/forgotten_password',
+        'controller' => App\Controller\ForgottenPasswordController::class,
     ],
     'new_password_form' => [
-        'path' => '/index.php/newpassword?token={token}',
-        'controller' => App\src\Controller\NewPasswordFormController::class,
+        'path' => '/newpassword?token={token}',
+        'controller' => App\Controller\NewPasswordFormController::class,
         'params' => [
             'token' => '\d+'
         ]

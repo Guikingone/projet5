@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\src\controller;
+namespace App\controller;
 
-use App\src\DAO\CommentDAO;
-use App\src\model\View;
+use App\DAO\CommentDAO;
+use App\Model\View;
 
 class ModifCommentController
 {

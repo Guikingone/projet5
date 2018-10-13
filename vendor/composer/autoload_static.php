@@ -13,6 +13,10 @@ class ComposerStaticInit466f39c37b349e741968af6d0f2c098b
         ),
         'A' => 
         array (
+            'App\\Tool\\' => 9,
+            'App\\Model\\' => 10,
+            'App\\DAO\\' => 8,
+            'App\\Controller\\' => 15,
             'App\\' => 4,
         ),
     );
@@ -21,6 +25,22 @@ class ComposerStaticInit466f39c37b349e741968af6d0f2c098b
         'Framework\\' => 
         array (
             0 => __DIR__ . '/../..' . '/etc',
+        ),
+        'App\\Tool\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/Tool',
+        ),
+        'App\\Model\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/Model',
+        ),
+        'App\\DAO\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/DAO',
+        ),
+        'App\\Controller\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/Controller',
         ),
         'App\\' => 
         array (

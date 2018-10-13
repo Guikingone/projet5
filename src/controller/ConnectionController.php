@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\src\controller;
+namespace App\controller;
 
-use App\src\DAO\UserDAO;
-use App\src\model\View;
+use App\DAO\UserDAO;
+use App\Model\View;
 
 class ConnectionController
 {

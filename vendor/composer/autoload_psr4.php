@@ -7,5 +7,9 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Framework\\' => array($baseDir . '/etc'),
+    'App\\Tool\\' => array($baseDir . '/src/Tool'),
+    'App\\Model\\' => array($baseDir . '/src/Model'),
+    'App\\DAO\\' => array($baseDir . '/src/DAO'),
+    'App\\Controller\\' => array($baseDir . '/src/Controller'),
     'App\\' => array($baseDir . '/src'),
 );

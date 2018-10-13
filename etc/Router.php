@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Framework;
 
-use App\src\Controller\NotFoundController;
+use App\Controller\NotFoundController;
 
 class Router
 {

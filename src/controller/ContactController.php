@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\src\controller;
+namespace App\controller;
 
-use App\src\model\Contact;
-use App\src\model\View;
+use App\model\Contact;
+use App\Model\View;
 
 class ContactController
 {
