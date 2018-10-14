@@ -4,7 +4,7 @@ $this->title = "Mot de passe oublié";
 <div class="inner">
     <h2>Changement de mot de passe oublié</h2>
     <section>
-        <form method="post" action="/index.php/newpassword?token=<?= htmlspecialchars($_GET['token']) ?>">
+        <form method="post" action="/newpassword?token=<?= htmlspecialchars($_GET['token']) ?>">
             <div class="fields">
                 <div class="field half">
                         <input type="password" id="password" name="password" value="<?php

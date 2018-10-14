@@ -5,7 +5,7 @@ $this->title = "Mot de passe oublié";
     <h2>Mot de passe oublié</h2>
     <h3>Veuillez rentrer des identifiants valides pour recevoir le mail de changement de mot de passe</h3>
     <section>
-        <form method="post" action="/index.php/forgotten_password">
+        <form method="post" action="/forgotten_password">
             <div class="fields">
                 <div class="field half">
                         <input type="text" id="pseudo" name="pseudo" value="<?php

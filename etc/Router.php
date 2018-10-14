@@ -47,8 +47,10 @@ class Router
     {
         $routes = require_once __DIR__ . '/../config/routes.php';
 
-        foreach ($routes as $route) {
-            $this->routes[] = new Route($route['path'], $route['controller'], $route['params'] ?? []);
+        if (is_array($routes)) {
+            foreach ($routes as $route) {
+                $this->routes[] = new Route($route['path'], $route['controller'], $route['params'] ?? []);
+            }
         }
     }
 }

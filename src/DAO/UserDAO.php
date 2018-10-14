@@ -3,6 +3,8 @@
 namespace App\DAO;
 
 use App\Model\User;
+use App\Tool\TokenGenerator;
+use App\Tool\Mailer;
 
 class UserDAO extends DAO
 {
@@ -117,22 +119,16 @@ class UserDAO extends DAO
             return;
         }
 
-        $token = random_int(100000000000000, 1000000000000000000);
-        $link = "Cliquez sur <a href=/index.php/newpassword?token='".$token."'>Cliquez ici</a>";
+        $token = '5252354';
+        $token = new TokenGenerator($token);
 
         extract($post);
         $sql = 'UPDATE user SET  token = ?, password_is_editing = 1 WHERE pseudo = ?';
         $this->sql($sql, [$token, $post['pseudo']]);
         $_SESSION['message'] = sprintf('Un mail a été envoyé sur votre messagerie');
 
-        $to      = 'dimitri.subrini@gmail.com';
-        $subject = 'Email de récuperation de mot de passe';
-        $message = 'Bonjour : ' . $post['pseudo'] . "\r\nSujet : Cliquez sur le lien ci-dessous pour changer votre mot de passe"
-         . $post['text'] . "\r\nhttp://blogprojet5.local/index.php/newpassword?token=" . $token;
-        $headers = "From: BlogProjet5\r\n" .
-        'X-Mailer: PHP/' . phpversion();
-        
-        mail($to, $subject, $message, $headers); 
+        $mail = new Mailer;
+        $mail->sendMail($post, $token);
     }
 
     public function changePassword ($post)

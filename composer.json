@@ -17,5 +17,7 @@
             "App\\Tool\\": "src/Tool/"
         }
     },
-    "require": {}
+    "require": {
+        "swiftmailer/swiftmailer": "6.0"
+    }
 }

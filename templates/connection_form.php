@@ -5,7 +5,7 @@ $this->title = "Connexion au site !";
 
 <div class="inner">
     <h2>Se connecter au Blog</h2>
-    <form method="post" action="/index.php/connection">
+    <form method="post" action="/connection">
         <div class="fields">
             <div class="field half">
                     <input type="text" id="pseudo" name="pseudo" value="<?php
@@ -34,5 +34,5 @@ $this->title = "Connexion au site !";
                 <li><input type="submit" class="primary" value="Envoyer" id="submit" name="submit"></li>
             </ul>
     </form>
-    <a href="/index.php/forgotten_password">Mot de passe oublié ?</a>
+    <a href="/forgotten_password">Mot de passe oublié ?</a>
 </div>
