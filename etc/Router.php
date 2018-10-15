@@ -53,4 +53,9 @@ class Router
             }
         }
     }
+
+    public function generate($routeName, array $params = [])
+    {
+        foreach ($this->routes as $key => $route);
+    }
 }

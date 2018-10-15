@@ -1,5 +1,6 @@
 <?php
 $this->title = "Accueil";
+
 ?>
 <div class="inner">
     <header>

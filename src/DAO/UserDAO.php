@@ -119,8 +119,7 @@ class UserDAO extends DAO
             return;
         }
 
-        $token = '5252354';
-        $token = new TokenGenerator($token);
+        $token = new TokenGenerator();
 
         extract($post);
         $sql = 'UPDATE user SET  token = ?, password_is_editing = 1 WHERE pseudo = ?';

@@ -6,16 +6,20 @@ class TokenGenerator
 {
     public $token;
 
-    public function __construct($token)
+    public function __construct()
     {
-        $this->token = $token;
-        $token = random_int(1000000000000000, 1000000000000000000);
-        var_dump($token);
+        $this->generateInt();
     }
     
     public function __toString()
     {
-        return $this->token;
+        return (String)$this->token;
+    }
+
+    public function generateInt() 
+    {
+        $nbr = random_int(1000000000000000, 1000000000000000000);
+        return $this->token = $nbr;
     }
 
 }

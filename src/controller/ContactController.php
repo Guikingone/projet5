@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\controller;
 
-use App\model\Contact;
+use App\Tool\Contact;
 use App\Model\View;
 
 class ContactController
@@ -20,7 +20,7 @@ class ContactController
         if(isset($_POST['submit'])) {
             $contactForm = new Contact();
             $contactForm->buildContact($_POST);
-            header('Location: /index.php');
+            header('Location: /');
         }
         $this->view->render('contact');
     }

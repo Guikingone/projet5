@@ -11,7 +11,7 @@ $this->title = "Modification article";
             <span class="image">
                 <img src="/img/pic20.jpg" alt="Article" />
             </span>
-            <a href="/index.php/admin/modif_article/<?= htmlspecialchars($article->getId());?>">
+            <a href="/admin/modif_article/<?= htmlspecialchars($article->getId());?>">
                 <h2><?= htmlspecialchars($article->getTitle());?></h2>
                 <div class="content">
                     <p>Sujet : <?= htmlspecialchars($article->getChapeau());?></p>
@@ -21,5 +21,5 @@ $this->title = "Modification article";
             </a>
         </article><?php } ?>
     </section><br>
-    <a href="/index.php/admin"><button class="btn btn-success">Retour à l'administration</button></a>
+    <a href="/admin"><button class="btn btn-success">Retour à l'administration</button></a>
 </div>
