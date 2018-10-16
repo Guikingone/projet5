@@ -19,7 +19,7 @@
 						<div class="inner">
 
 							<!-- Logo -->
-								<a href="/" class="logo">
+								<a href="<?= (new Framework\UrlGenerator)->generate('home') ?>" class="logo">
 									<span class="symbol"><img src="/img/logo.svg" alt="" /></span><span class="title">Blog Avenir2point0</span>
                 </a>
                 <p>Message du system : <?php if (isset($_SESSION['message'])) {
@@ -44,20 +44,20 @@
                   <h4> Bonjour :  <?= $_SESSION['user']['pseudo']; ?></h4>
               <?php } ?>
               <ul>
-                <li><a href="/">Accueil</a></li>
-                <li><a href="/articles">Articles</a></li>
+                <li><a href="<?= (new Framework\UrlGenerator)->generate('home') ?>">Accueil</a></li>
+                <li><a href="<?= (new Framework\UrlGenerator)->generate('articles') ?>">Articles</a></li>
                 
-                <li><a href="/contact">Contact</a></li>
+                <li><a href="<?= (new Framework\UrlGenerator)->generate('contact') ?>">Contact</a></li>
                 <?php
                 if (isset($_SESSION['user']['pseudo'])) { ?>
-                  <li><a href="/disconnect">Deconnexion</a></li>
+                  <li><a href="<?= (new Framework\UrlGenerator)->generate('disconnect') ?>">Deconnexion</a></li>
                 <?php } else { ?>
-                  <li><a href="/register">Enregistrement</a></li>
-                  <li><a href="/connection">Se connecter</a></li>
+                  <li><a href="<?= (new Framework\UrlGenerator)->generate('register') ?>">Enregistrement</a></li>
+                  <li><a href="<?= (new Framework\UrlGenerator)->generate('connection') ?>">Se connecter</a></li>
                 <?php }
                   if (isset($_SESSION['user']['admin']) && ($adminPass = $_SESSION['user']['admin']) && ($adminPass == 1)) { ?>
                   <li>
-                    <a href="/admin">Administration</a>
+                    <a href="<?= (new Framework\UrlGenerator)->generate('admin') ?>">Administration</a>
                   </li>
                   <?php } ?>
               </ul>

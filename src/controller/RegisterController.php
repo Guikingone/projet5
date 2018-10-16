@@ -20,7 +20,7 @@ class RegisterController
         if(isset($_POST['submit'])) {
             $userDAO = new UserDAO();
             $userDAO->register($_POST);
-            header('Location: /index.php');
+            header('Location:'.(new \Framework\UrlGenerator)->generate('home'));
         }
         $this->view->render('register');
     }

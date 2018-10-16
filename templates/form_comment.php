@@ -11,7 +11,7 @@ $this->title = "Poster un commentaire";
     <br>
     <section>
             <?php if (isset($_SESSION['user']['pseudo'])) { ?>
-                <form method="post" action="/saveComment">
+                <form method="post" action="<?= (new Framework\UrlGenerator)->generate('save_comment') ?>">
                 <div class="fields">
                     <div class="field half">
                     <input type="text" id="pseudo" name="pseudo" value="<?php
@@ -34,11 +34,11 @@ $this->title = "Poster un commentaire";
                     <input type="submit" class="primary" value="Envoyer" id="submit" name="submit">
                 </form>
             <div>
-                <a href="/articles"> <button class="btn btn-success">Retour à la liste des articles</button></a>
+                <a href="<?= (new Framework\UrlGenerator)->generate('articles') ?>"> <button class="btn btn-success">Retour à la liste des articles</button></a>
             </div>        
             <?php } else { ?>
                 <p>Vous devez être connecté pour poster un commentaire</p>
-                <a href="/connection"><button class="primary">Se connecter</button></a>
+                <a href="<?= (new Framework\UrlGenerator)->generate('connection') ?>"><button class="primary">Se connecter</button></a>
             <?php }
             ?>
     </section>

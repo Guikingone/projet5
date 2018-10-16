@@ -13,7 +13,7 @@ class DeleteCommentController
         if(isset($_POST['submit'])) {
             $commentDAO = new CommentDAO();
             $commentDAO->deleteComment($_POST);
-            header('Location: /index.php/admin');
+            header('Location:'.(new \Framework\UrlGenerator)->generate('admin'));
         }
     }
 }

@@ -45,7 +45,7 @@ class Router
 
     private function loadRoutes()
     {
-        $routes = require_once __DIR__ . '/../config/routes.php';
+        $routes = require __DIR__ . '/../config/routes.php';
 
         if (is_array($routes)) {
             foreach ($routes as $route) {

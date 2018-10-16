@@ -23,7 +23,7 @@ return [
             'id' => '\d+'
         ]
     ],
-    'saved_comment' => [
+    'save_comment' => [
         'path' => '/saveComment',
         'controller' => App\Controller\SaveCommentController::class,
     ],
@@ -104,7 +104,7 @@ return [
         'path' => '/admin/publishComment',
         'controller' => App\Controller\PublishCommentController::class,
     ],
-    'password_forgotten' => [
+    'forgotten_password' => [
         'path' => '/forgotten_password',
         'controller' => App\Controller\ForgottenPasswordController::class,
     ],

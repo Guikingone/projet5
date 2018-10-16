@@ -17,5 +17,5 @@ $this->title = "Modification commentaire";
         </article><br>
         <?php } ?> 
     </section>
-    <a href="/index.php/admin"><button class="btn btn-success"> Retour à l'administration</button></a>
+    <a href="<?= (new Framework\UrlGenerator)->generate('admin') ?>"><button class="btn btn-success"> Retour à l'administration</button></a>
 </div>

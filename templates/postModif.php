@@ -21,5 +21,5 @@ $this->title = "Modification article";
             </a>
         </article><?php } ?>
     </section><br>
-    <a href="/admin"><button class="btn btn-success">Retour à l'administration</button></a>
+    <a href="<?= (new Framework\UrlGenerator)->generate('admin') ?>"><button class="btn btn-success">Retour à l'administration</button></a>
 </div>

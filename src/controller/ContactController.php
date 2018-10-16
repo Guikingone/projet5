@@ -20,7 +20,7 @@ class ContactController
         if(isset($_POST['submit'])) {
             $contactForm = new Contact();
             $contactForm->buildContact($_POST);
-            header('Location: /');
+            header('Location:'.(new \Framework\UrlGenerator)->generate('home'));
         }
         $this->view->render('contact');
     }

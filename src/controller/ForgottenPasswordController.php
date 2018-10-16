@@ -20,7 +20,7 @@ class ForgottenPasswordController
         if(isset($_POST['submit'])) {
             $userDAO = new UserDAO();
             $userDAO->forgottenPassword($_POST);
-            header('Location: /');
+            header('Location:'.(new \Framework\UrlGenerator)->generate('home'));
         }
         $this->view->render('forgotten_password');
     }

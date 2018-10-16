@@ -7,7 +7,7 @@ $this->title = "Article";
     <p><?= htmlspecialchars($article->getContent());?></p><hr>
     <p>Créé par : <?= htmlspecialchars($article->getAuthor());?> | <?= htmlspecialchars($article->getDateAdded());?> | <?php if (htmlspecialchars($article->getEdited()) != NULL) { ?> <em>(Modifié le <?php echo htmlspecialchars($article->getEdited()); ?> ) <?php } ?></em></p>
     <br>
-    <a href="/articles"><button class="primary">Retour à la liste des articles</button></a><hr>
+    <a href="<?= (new Framework\UrlGenerator)->generate('articles') ?>"><button class="primary">Retour à la liste des articles</button></a><hr>
 </div>
 <div class="inner">
     <div class="jumbotron">
@@ -28,7 +28,7 @@ $this->title = "Article";
             </div>        
             <?php } else { ?>
                 <p>Vous devez être connecté pour poster un commentaire</p>
-                <a href="/connection">Se connecter</a>
+                <a href="<?= (new Framework\UrlGenerator)->generate('connection') ?>">Se connecter</a>
             <?php }
             ?>
         </div>

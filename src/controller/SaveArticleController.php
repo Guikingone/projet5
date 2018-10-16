@@ -23,7 +23,7 @@ class SaveArticleController
         if(isset($_POST['submit'])) {
             $articleDAO = new ArticleDAO();
             $articleDAO->saveArticle($_POST);
-            header('Location: /index.php/admin');
+            header('Location:'.(new \Framework\UrlGenerator)->generate('admin'));
         }
         $this->view->render('form_article');
     }

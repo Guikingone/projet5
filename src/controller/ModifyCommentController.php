@@ -13,7 +13,7 @@ class ModifyCommentController
         if(isset($_POST['submit'])) {
             $commentDAO = new CommentDAO();
             $commentDAO->modifyComment($_POST);
-            header('Location: /index.php/admin');
+            header('Location:'.(new \Framework\UrlGenerator)->generate('admin'));
         }
     }
 }

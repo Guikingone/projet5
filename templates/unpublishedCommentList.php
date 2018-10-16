@@ -22,6 +22,6 @@ if ($comments != null) { ?>
     <div class="inner">
         <h4>Désolé !</h4>
         <h4>Il n'y a pas de commentaires en attente de publication.</h4>
-        <a href="/index.php/admin"><button class="btn btn-success"> Retour à l'administration</button></a>
+        <a href="<?= (new Framework\UrlGenerator)->generate('admin') ?>"><button class="btn btn-success"> Retour à l'administration</button></a>
     </div>
 <?php } ?>

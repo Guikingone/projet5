@@ -4,7 +4,7 @@ $this->title = "Ajouter un article";
 <div class="inner">
     <h2>Ecrire un article</h2>
     <section>
-            <form method="post" action="/index.php/admin/create_article">
+            <form method="post" action="<?= (new Framework\UrlGenerator)->generate('create_article') ?>">
             <div class="fields">
                 <div class="field half">
                     <label for="title">Titre de l'article :</label>
@@ -41,6 +41,6 @@ $this->title = "Ajouter un article";
                 <li><input type="submit" class="primary" value="Créer" id="submit" name="submit"></li>
             </ul>
         </form>
-        <a href="/index.php/admin"><button class="btn btn-success">Retour à l'administration</button></a><br>
+        <a href="<?= (new Framework\UrlGenerator)->generate('admin') ?>"><button class="btn btn-success">Retour à l'administration</button></a><br>
     </section>
 </div>

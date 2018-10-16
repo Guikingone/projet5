@@ -20,7 +20,7 @@ class NewPasswordFormController
         if(isset($_POST['submit'])) {
             $userDAO = new UserDAO();
             $userDAO->changePassword($_POST);
-            header('Location: /');
+            header('Location:'.(new \Framework\UrlGenerator)->generate('home'));
         }
         $this->view->render('new_password_form');
     }

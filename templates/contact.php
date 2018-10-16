@@ -4,7 +4,7 @@ $this->title = "Contactez moi";
 <div class="inner">
     <h2>Formulaire de contact</h2>
     <section>
-        <form method="post" action="/contact">
+        <form method="post" action="<?= (new Framework\UrlGenerator)->generate('contact') ?>">
             <div class="fields">
                 <div class="field half">
                         <input type="text" id="username" name="username" value="<?php

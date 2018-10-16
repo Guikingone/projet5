@@ -13,7 +13,7 @@ class ModifiedArticleController
         if(isset($_POST['submit'])) {
             $articleDAO = new ArticleDAO();
             $articleDAO->modifyArticle($_POST);
-            header('Location: /index.php/admin');
+            header('Location:'.(new \Framework\UrlGenerator)->generate('admin'));
         }
     }
 }
