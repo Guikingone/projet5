@@ -18,7 +18,7 @@ $this->title = "Accueil";
             <span class="image">
                 <img src="/img/pic20.jpg" alt="Article" />
             </span>
-            <a href="/index.php/article/<?= htmlspecialchars($article->getId());?>">
+            <a href="<?= (new Framework\UrlGenerator)->generate('article_details', ['id' => $article->getId()]); ?>">
                 <h2><?= htmlspecialchars($article->getTitle());?></h2>
                 <div class="content">
                     <p>Sujet : <?= htmlspecialchars($article->getChapeau());?></p>

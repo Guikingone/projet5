@@ -24,7 +24,7 @@ $this->title = "Article";
             }
             if (isset($_SESSION['user']['pseudo'])) { ?>
             <div>
-                <a href="/saveComment/article<?= htmlspecialchars($article->getId());?>"><button class="primary">Poster un commentaire</button></a>
+                <a href="<?= (new Framework\UrlGenerator)->generate('create_comment', ['id' => $article->getId()]); ?>"><button class="primary">Poster un commentaire</button></a>
             </div>        
             <?php } else { ?>
                 <p>Vous devez être connecté pour poster un commentaire</p>

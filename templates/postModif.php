@@ -11,7 +11,7 @@ $this->title = "Modification article";
             <span class="image">
                 <img src="/img/pic20.jpg" alt="Article" />
             </span>
-            <a href="/admin/modif_article/<?= htmlspecialchars($article->getId());?>">
+            <a href="<?= (new Framework\UrlGenerator)->generate('modif_article', ['id' => $article->getId()]); ?>">
                 <h2><?= htmlspecialchars($article->getTitle());?></h2>
                 <div class="content">
                     <p>Sujet : <?= htmlspecialchars($article->getChapeau());?></p>

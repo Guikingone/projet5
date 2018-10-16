@@ -41,8 +41,8 @@ class UrlGenerator
     private function addParams($params, $path, $defaultParams = [])
     {
         foreach ($params as $key => $param) {
-            var_dump($key, $param);
+            $defaultParams = [$key => $param];
+            return implode([strtr($path, [sprintf('{%s}', $key) => $param])]);
         }
-        return '';
     }
 }
