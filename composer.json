@@ -1,6 +1,7 @@
 {
     "name": "dimitrisubrini/router",
     "description": "test",
+    "license": "MIT",
     "authors": [
         {
             "name": "Dimitri Subrini",
