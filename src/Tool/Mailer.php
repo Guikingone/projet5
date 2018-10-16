@@ -7,9 +7,9 @@ class Mailer
     public function sendMail($post, $token)
     {
         try {
-            $transport = (new \Swift_SmtpTransport('smtp.googlemail.com', 465, 'ssl'))
-                ->setUsername('dimitri.subrini@gmail.com')
-                ->setPassword('bahamut1666');
+            $transport = (new \Swift_SmtpTransport('votresmtp', 465, 'ssl'))
+                ->setUsername('votre mail')
+                ->setPassword('votre mdp');
          
             $mailer = new \Swift_Mailer($transport);
 
@@ -19,7 +19,7 @@ class Mailer
          
             $message->setFrom([$post['email'] => $post['pseudo']]);
          
-            $message->addTo('dimitri.subrini@gmail.com','Blog Avenir2point0');
+            $message->addTo('votre mail','votre nom de site');
 
             $message->setBody('Bonjour : '.$post['pseudo'].'<br>
                             Voici le lien que vous devez suivre pour remplacer le mot de passe
@@ -36,9 +36,9 @@ class Mailer
     public function sendMailContact($post)
     {
         try {
-            $transport = (new \Swift_SmtpTransport('smtp.googlemail.com', 465, 'ssl'))
-                ->setUsername('dimitri.subrini@gmail.com')
-                ->setPassword('bahamut1666');
+            $transport = (new \Swift_SmtpTransport('votresmtp', 465, 'ssl'))
+                ->setUsername('votre mail')
+                ->setPassword('votre mdp');
          
             $mailer = new \Swift_Mailer($transport);
 
@@ -48,7 +48,7 @@ class Mailer
          
             $message->setFrom([$post['email'] => $post['username']]);
          
-            $message->addTo('dimitri.subrini@gmail.com','Blog Avenir2point0');
+            $message->addTo('votre mail','votre nom de site');
 
             $message->setBody('Voici le message envoyé par le formulaire de contact : <br>'.$post['text'] .'', 'text/html');
          
