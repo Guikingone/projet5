@@ -84,20 +84,20 @@ class CommentDAO extends DAO
         return $comments;
     }
 
-    public function getUnpublishedComment($id)
+    public function getUnpublishedComment($commentId)
     {
         $sql = 'SELECT id, pseudo, content, published, date_added FROM comment WHERE id = ? && published = 0';
-        $result = $this->sql($sql, [$id]);
+        $result = $this->sql($sql, [$commentId]);
         $row = $result->fetch();
         if($row) {
             return $this->buildObject($row);
         }
     }
 
-    public function getComment($id)
+    public function getComment($commentId)
     {
         $sql = 'SELECT id, pseudo, content, published, date_added FROM comment WHERE id = ? && published = 1';
-        $result = $this->sql($sql, [$id]);
+        $result = $this->sql($sql, [$commentId]);
         $row = $result->fetch();
         if($row) {
             return $this->buildObject($row);

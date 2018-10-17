@@ -12,7 +12,7 @@ $this->title = "Publier un commentaire";
                     <textarea id="content" name="content"><?php echo htmlspecialchars($comment->getContent());?></textarea><br>
                 </div>
             </div>
-            <input type="text" id="articleId" name="articleId" value="<?php echo htmlspecialchars($comment->getId());?>" hidden><br>
+            <input type="text" id="commentId" name="commentId" value="<?php echo htmlspecialchars($comment->getId());?>" hidden><br>
             <input type="submit" class="primary" value="Publier" id="submit" name="submit">
         </form> <br>
         <a href="<?= (new Framework\UrlGenerator)->generate('admin') ?>"><button class="btn btn-success">Retour à l'administration</button></a>
