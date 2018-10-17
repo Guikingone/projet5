@@ -37,8 +37,6 @@ class ArticleDAO extends DAO
         $row = $result->fetch();
         if($row) {
             return $this->buildObject($row);
-        } else {
-            echo 'Aucun article existant avec cet identifiant';
         }
     }
 

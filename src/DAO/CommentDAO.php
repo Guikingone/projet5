@@ -91,8 +91,6 @@ class CommentDAO extends DAO
         $row = $result->fetch();
         if($row) {
             return $this->buildObject($row);
-        } else {
-            echo 'Aucun commentaire existant avec cet identifiant';
         }
     }
 
