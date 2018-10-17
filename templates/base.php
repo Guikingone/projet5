@@ -24,6 +24,7 @@
                 </a>
                 <p>Message du system : <?php if (isset($_SESSION['message'])) {
                 echo $_SESSION['message'];
+                
                 } else { ?>
                 <em>Pas de message pour le moment...</em> <?php } ?>
                 </p>

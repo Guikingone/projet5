@@ -28,7 +28,7 @@ class Mailer
             $mailer->send($message);
         } catch (Exception $e) {
 
-          echo $e->getMessage();
+          echo htmlentities($e)->getMessage();
 
         }
     }
@@ -55,7 +55,7 @@ class Mailer
             $mailer->send($message);
         } catch (Exception $e) {
 
-          echo $e->getMessage();
+          echo htmlentities($e)->getMessage();
 
         }
     }
