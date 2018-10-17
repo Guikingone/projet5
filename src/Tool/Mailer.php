@@ -25,7 +25,7 @@ class Mailer
                             Voici le lien que vous devez suivre pour remplacer le mot de passe
                             <a href="http://blogprojet5.local/newpassword?token='.$token.'">Cliquez ici</a>', 'text/html');
          
-            $result = $mailer->send($message);
+            $mailer->send($message);
         } catch (Exception $e) {
 
           echo $e->getMessage();
@@ -52,7 +52,7 @@ class Mailer
 
             $message->setBody('Voici le message envoyé par le formulaire de contact : <br>'.$post['text'] .'', 'text/html');
          
-            $result = $mailer->send($message);
+            $mailer->send($message);
         } catch (Exception $e) {
 
           echo $e->getMessage();

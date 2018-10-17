@@ -17,11 +17,13 @@ class ConnectionController
 
     public function __invoke()
     {
-        if(isset($_POST['submit'])) {
+        if(isset($post['submit'])) {
             $userDAO = new UserDAO();
-            $userDAO->connection($_POST);
+            $userDAO->connection($post);
             header('Location:'.(new \Framework\UrlGenerator)->generate('home'));
         }
-        $this->view->render('connection_form');
+        $this->view->render('connection_form', [
+            'post' => $post,
+        ]);
     }
 }
