@@ -34,11 +34,11 @@
 		var $form = $("form");
 
 		// Auto-resizing textareas.
-			$form.find('textarea').each(function() {
+			$form.find("textarea").each(function() {
 
 				var $this = $(this),
-					$wrapper = $('<div class="textarea-wrapper"></div>'),
-					$submits = $this.find('input[type="submit"]');
+					$wrapper = $("<div class='textarea-wrapper'></div>"),
+					$submits = $this.find("input[type='submit']");
 
 				$this
 					.wrap($wrapper)
@@ -81,7 +81,7 @@
 					.triggerHandler("--init");
 
 				// Fix.
-					if (browser.name == "ie"
+					if (browser.name === "ie"
 					||	browser.mobile)
 						$this
 							.css("max-height", "10em")
@@ -92,7 +92,7 @@
 	// Menu.
 		var $menu = $("#menu");
 
-		$menu.wrapInner('<div class="inner"></div>');
+		$menu.wrapInner("<div class='inner'></div>");
 
 		$menu._locked = false;
 
@@ -148,7 +148,7 @@
 					$menu._hide();
 
 				// Redirect.
-					if (href == "#menu")
+					if (href === "#menu")
 						return;
 
 					window.setTimeout(function() {
@@ -156,10 +156,10 @@
 					}, 350);
 
 			})
-			.append('<a class="close" href="#menu">Close</a>');
+			.append("<a class='close' href='#menu'>Close</a>");
 
 		$body
-			.on('click', 'a[href="#menu"]', function(event) {
+			.on("click", "a[href='#menu']", function(event) {
 
 				event.stopPropagation();
 				event.preventDefault();
@@ -168,17 +168,18 @@
 					$menu._toggle();
 
 			})
-			.on('click', function(event) {
+			.on("click", function(event) {
 
 				// Hide.
 					$menu._hide();
 
 			})
-			.on('keydown', function(event) {
+			.on("keydown", function(event) {
 
 				// Hide on escape.
-					if (event.keyCode === 27)
+					if (event.keyCode === 27) {
 						$menu._hide();
+					}
 
 			});
 
