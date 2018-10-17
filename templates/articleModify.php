@@ -1,7 +1,6 @@
 <?php
 $this->title = "modifier un article";
 ?>
-
 <div class="inner">
     <h2>Modification d'un article</h2>
     <section>

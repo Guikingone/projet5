@@ -1,8 +1,6 @@
 <?php
 $this->title = "Connexion au site !";
 ?>
-
-
 <div class="inner">
     <h2>Se connecter au Blog</h2>
     <form method="post" action="<?= (new Framework\UrlGenerator)->generate('connection') ?>">

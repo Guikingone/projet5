@@ -8,8 +8,7 @@ $this->title = "Accueil";
         <p><span class="image"><br /><img src="img/moi.jpg" alt="C'est moi !" /></span><br />J'ai suivi la formation PHP/Symfony à Openclassrooms, j'ai plusieurs projets terminés et vous pouvez <a href="../public/img/CVweb.pdf">lire mon CV ici</a>.<br>
     Vous pouvez passer par le formulaire de contact pour me joindre ou passer par les liens sociaux en bas de la page. </p><br>
     </header>
-    <h2>Liste des derniers articles</h2>            
-
+    <h2>Liste des derniers articles</h2>
     <section class="tiles">
         <?php
             foreach ($articles as $article)
@@ -28,5 +27,4 @@ $this->title = "Accueil";
             </a>
         </article><?php } ?>
     </section>
-    
 </div>

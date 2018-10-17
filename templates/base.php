@@ -13,11 +13,9 @@
 	<body class="is-preload">
 		<!-- Wrapper -->
 			<div id="wrapper">
-
 				<!-- Header -->
 					<header id="header">
 						<div class="inner">
-
 							<!-- Logo -->
 								<a href="<?= (new Framework\UrlGenerator)->generate('home') ?>" class="logo">
 									<span class="symbol"><img src="/img/logo.svg" alt="" /></span><span class="title">Blog Avenir2point0</span>
@@ -28,14 +26,12 @@
                 } else { ?>
                 <em>Pas de message pour le moment...</em> <?php } ?>
                 </p>
-
 							<!-- Nav -->
 								<nav>
 									<ul>
 										<li><a href="#menu">Menu</a></li>
 									</ul>
 								</nav>
-
 						</div>
 					</header>
             <!-- Menu -->
@@ -67,7 +63,6 @@
       <div id="main">
       <?= $content ?>
       </div>
-
      <!-- Footer -->
      <footer id="footer">
 						<div class="inner">
