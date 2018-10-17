@@ -27,8 +27,9 @@
 		});
 
 	// Touch?
-		if (browser.mobile)
+		if (browser.mobile) {
 			$body.addClass("is-touch");
+		}
 
 	// Forms.
 		var $form = $("form");
@@ -73,19 +74,21 @@
 					})
 					.on("keyup", function(event) {
 
-						if (event.keyCode === 9)
+						if (event.keyCode === 9) {
 							$this
 								.select();
+						}
 
 					})
 					.triggerHandler("--init");
 
 				// Fix.
 					if (browser.name === "ie"
-					||	browser.mobile)
+					||	browser.mobile) {
 						$this
 							.css("max-height", "10em")
 							.css("overflow-y", "auto");
+					}
 
 			});
 
@@ -98,8 +101,9 @@
 
 		$menu._lock = function() {
 
-			if ($menu._locked)
+			if ($menu._locked) {
 				return false;
+			}
 
 			$menu._locked = true;
 
@@ -113,22 +117,25 @@
 
 		$menu._show = function() {
 
-			if ($menu._lock())
+			if ($menu._lock()) {
 				$body.addClass("is-menu-visible");
+			}
 
 		};
 
 		$menu._hide = function() {
 
-			if ($menu._lock())
+			if ($menu._lock()) {
 				$body.removeClass("is-menu-visible");
+			}
 
 		};
 
 		$menu._toggle = function() {
 
-			if ($menu._lock())
+			if ($menu._lock()) {
 				$body.toggleClass("is-menu-visible");
+			}
 
 		};
 
@@ -148,8 +155,9 @@
 					$menu._hide();
 
 				// Redirect.
-					if (href === "#menu")
+					if (href === "#menu") {
 						return;
+					}
 
 					window.setTimeout(function() {
 						window.location.href = href;
