@@ -40,7 +40,7 @@ class CommentDAO extends DAO
     {
         extract($comment);
         $sql = 'UPDATE comment SET content = ?, published = "1" WHERE id = ?';
-        $this->sql($sql, [$content, $articleId]);
+        $this->sql($sql, [$content, $commentId]);
         $_SESSION['message'] = sprintf('Le commentaire a été publié avec succès');
     }
 

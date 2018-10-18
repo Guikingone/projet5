@@ -5,4 +5,3 @@ Pour installer le projet, télécharger le dans le repertoire 'www' de Wamp (ou 
 Pour la bdd, vous retrouverez toutes les tables à charger dans le dossier 'sql'.<br>
 Une fois téléchargé, vous devez creer un virtualhost qui pointe sur index.php dans le dossier public sinon il y aura un probleme avec les URL.<br>
 Ensuite pour les envoies de mail j'ai installé swiftmailer, vous devrez y mettre vos identifiants smtp dans les cases que j'ai modifié avec "votreQuelqueChose".
-
