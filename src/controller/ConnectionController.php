@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\controller;
 
 use App\DAO\UserDAO;
-use App\Model\View;
+use Framework\View;
 
 class ConnectionController
 {

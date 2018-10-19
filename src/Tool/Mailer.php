@@ -7,9 +7,10 @@ class Mailer
     public function sendMail($post, $token)
     {
         try {
-            $transport = (new \Swift_SmtpTransport('votresmtp', 465, 'ssl'))
-                ->setUsername('votre mail')
-                ->setPassword('votre mdp');
+            $config = require __DIR__ . '/../../config/mailerData.php';
+            $transport = (new \Swift_SmtpTransport($config['smtp'], 465, 'ssl'))
+                ->setUsername($config['mail'])
+                ->setPassword($config['password']);
          
             $mailer = new \Swift_Mailer($transport);
 
@@ -36,9 +37,10 @@ class Mailer
     public function sendMailContact($post)
     {
         try {
-            $transport = (new \Swift_SmtpTransport('votresmtp', 465, 'ssl'))
-                ->setUsername('votre mail')
-                ->setPassword('votre mdp');
+            $config = require __DIR__ . '/../../config/mailerData.php';
+            $transport = (new \Swift_SmtpTransport($config['smtp'], 465, 'ssl'))
+                ->setUsername($config['mail'])
+                ->setPassword($config['password']);
          
             $mailer = new \Swift_Mailer($transport);
 

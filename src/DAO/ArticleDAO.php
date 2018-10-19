@@ -3,6 +3,7 @@
 namespace App\DAO;
 
 use App\Model\Article;
+use Framework\DAO;
 
 class ArticleDAO extends DAO
 {

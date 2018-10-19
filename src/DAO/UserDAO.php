@@ -5,6 +5,7 @@ namespace App\DAO;
 use App\Model\User;
 use App\Tool\TokenGenerator;
 use App\Tool\Mailer;
+use Framework\DAO;
 
 class UserDAO extends DAO
 {
@@ -119,7 +120,7 @@ class UserDAO extends DAO
             return;
         }
 
-        $token = new TokenGenerator();
+        $token = (new TokenGenerator())->generateInt();
 
         extract($post);
         $sql = 'UPDATE user SET  token = ?, password_is_editing = 1 WHERE pseudo = ?';
@@ -154,8 +155,8 @@ class UserDAO extends DAO
         extract($post);
         $sql = "UPDATE user AS u SET  u.password = ? , u.token = null, u.password_is_editing = 0 WHERE u.token = ? && password_is_editing = 1 ";
         $this->sql($sql, [password_hash($post['password'], PASSWORD_DEFAULT), $post['token']]);
+
         $_SESSION['message'] = sprintf('Le mot de passe a été changé');
-        return;
     }
 
     private function buildObject(array $row)

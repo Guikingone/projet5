@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\controller;
 
-use App\Model\View;
+use Framework\View;
 
 class DisconnectController
 {

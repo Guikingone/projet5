@@ -3,6 +3,7 @@
 namespace App\DAO;
 
 use App\Model\Comment;
+use Framework\DAO;
 
 class CommentDAO extends DAO
 {
@@ -94,7 +95,7 @@ class CommentDAO extends DAO
         }
     }
 
-    public function getComment($commentId)
+    public function getComment($comment)
     {
         $sql = 'SELECT id, pseudo, content, published, date_added FROM comment WHERE id = ? && published = 1';
         $result = $this->sql($sql, [$commentId]);

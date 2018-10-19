@@ -6,7 +6,7 @@ namespace App\controller;
 
 use App\DAO\ArticleDAO;
 use App\DAO\CommentDAO;
-use App\Model\View;
+use Framework\View;
 
 class CreateCommentController
 {

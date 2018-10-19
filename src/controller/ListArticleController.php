@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\controller;
 
 use App\DAO\ArticleDAO;
-use App\Model\View;
+use Framework\View;
 
 class ListArticleController
 {
