@@ -20,7 +20,7 @@ class Mailer
          
             $message->setFrom([$post['email'] => $post['pseudo']]);
          
-            $message->addTo('votre mail','votre nom de site');
+            $message->addTo($config['mail'],'votre nom de site');
 
             $message->setBody('Bonjour : '.$post['pseudo'].'<br>
                             Voici le lien que vous devez suivre pour remplacer le mot de passe
@@ -29,8 +29,7 @@ class Mailer
             $mailer->send($message);
         } catch (Exception $e) {
 
-          echo htmlentities($e)->getMessage();
-
+          echo $e->getMessage();
         }
     }
 
@@ -50,16 +49,14 @@ class Mailer
          
             $message->setFrom([$post['email'] => $post['username']]);
          
-            $message->addTo('votre mail','votre nom de site');
+            $message->addTo($config['mail'],'votre nom de site');
 
             $message->setBody('Voici le message envoyé par le formulaire de contact : <br>'.$post['text'] .'', 'text/html');
-         
+
             $mailer->send($message);
         } catch (Exception $e) {
 
-          echo htmlentities($e)->getMessage();
-
+          echo $e->getMessage();
         }
     }
-
 }
