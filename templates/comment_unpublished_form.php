@@ -12,6 +12,7 @@ $this->title = "Publier un commentaire";
                     <textarea id="content" name="content"><?php echo htmlspecialchars($comment->getContent());?></textarea><br>
                 </div>
             </div>
+            <input type="text" id="csrfToken" name="csrfToken" value="<?php echo $csrfToken ?>" hidden><br>
             <input type="text" id="commentId" name="commentId" value="<?php echo htmlspecialchars($comment->getId());?>" hidden><br>
             <input type="submit" class="primary" value="Publier" id="submit" name="submit">
         </form> <br>

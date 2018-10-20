@@ -11,9 +11,13 @@ class DeleteArticleController
     public function __invoke()
     {
         if(isset($_POST['submit'])) {
-            $articleDAO = new ArticleDAO();
-            $articleDAO->deleteArticle($_POST);
-            header('Location:'.(new \Framework\UrlGenerator)->generate('admin'));
+            if ($_POST['csrfToken'] == $_SESSION['csrfToken']) {
+                $articleDAO = new ArticleDAO();
+                $articleDAO->deleteArticle($_POST);
+                header('Location:'.(new \Framework\UrlGenerator)->generate('admin'));
+            }
+
+            echo 'Probleme d\'authentification, essayez plus tard';
         }
     }
 }

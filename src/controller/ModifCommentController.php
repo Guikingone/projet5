@@ -21,8 +21,9 @@ class ModifCommentController
     public function __invoke(array $params = [])
     {
         $comment = $this->commentDAO->getComment($params['id']);
-        $this->view->render('comment', [
-            'comment' => $comment
+        $this->view->render('comment_modification_form', [
+            'comment' => $comment,
+            'csrfToken' => $_SESSION['csrfToken'] = (new \App\Tool\TokenGenerator)->generateCsrfToken()
         ]);
     }
 }

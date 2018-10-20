@@ -15,6 +15,6 @@ class AdminController
 
     public function __invoke()
     {
-        $this->view->render('admin');
+        $this->view->render('admin_page');
     }
 }

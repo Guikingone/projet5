@@ -95,7 +95,7 @@ class CommentDAO extends DAO
         }
     }
 
-    public function getComment($comment)
+    public function getComment($commentId)
     {
         $sql = 'SELECT id, pseudo, content, published, date_added FROM comment WHERE id = ? && published = 1';
         $result = $this->sql($sql, [$commentId]);

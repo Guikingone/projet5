@@ -25,7 +25,7 @@ class ArticleDetailsController
     {
         $article = $this->articleDAO->getArticle($params['id']);
         $comments = $this->commentDAO->getCommentsFromArticle($params['id']);
-        $this->view->render('single', [
+        $this->view->render('article_single_view', [
             'article' => $article,
             'comments' => $comments
         ]);

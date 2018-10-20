@@ -15,6 +15,6 @@ class DisconnectController
 
     public function __invoke()
     {
-        $this->view->render('disconnect');
+        $this->view->render('disconnect_page');
     }
 }

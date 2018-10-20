@@ -21,9 +21,11 @@ class SaveCommentController
     public function __invoke()
     {
         if(isset($_POST['submit'])) {
-            $commentDAO = new CommentDAO();
-            $commentDAO->saveComment($_POST);
-            header('Location:'.(new \Framework\UrlGenerator)->generate('home'));
+            if ($_POST['csrfToken'] == $_SESSION['csrfToken']) {
+                $commentDAO = new CommentDAO();
+                $commentDAO->saveComment($_POST);
+                header('Location:'.(new \Framework\UrlGenerator)->generate('home'));
+            }
         }
     }
 }

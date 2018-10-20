@@ -11,9 +11,13 @@ class PublishCommentController
     public function __invoke()
     {
         if(isset($_POST['submit'])) {
-            $commentDAO = new CommentDAO();
-            $commentDAO->publishComment($_POST);
-            header('Location:'.(new \Framework\UrlGenerator)->generate('admin'));
+            if ($_POST['csrfToken'] == $_SESSION['csrfToken']) {
+                $commentDAO = new CommentDAO();
+                $commentDAO->publishComment($_POST);
+                header('Location:'.(new \Framework\UrlGenerator)->generate('admin'));
+            }
+
+            echo 'Il y a eu un probleme, réessayez ultérieurement';
         }
     }
 }

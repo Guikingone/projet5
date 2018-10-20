@@ -21,8 +21,9 @@ class ModifArticleController
     public function __invoke(array $params = [])
     {
         $article = $this->articleDAO->getArticle($params['id']);
-        $this->view->render('articleModify', [
-            'article' => $article
+        $this->view->render('article_modification_form', [
+            'article' => $article,
+            'csrfToken' => $_SESSION['csrfToken'] = (new \App\Tool\TokenGenerator)->generateCsrfToken()
         ]);
     }
 }

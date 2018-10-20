@@ -22,6 +22,7 @@ $this->title = "Mot de passe oublié";
                     ?>" placeholder="Email" required>
                 </div>
             </div>
+            <input type="text" id="csrfToken" name="csrfToken" value="<?php echo $csrfToken ?>" hidden><br>
             <ul class="actions">
                 <li><input type="submit" class="primary" value="Envoyer" id="submit" name="submit"></li>
             </ul>

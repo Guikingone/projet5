@@ -21,7 +21,7 @@ class ListArticleController
     public function __invoke()
     {
         $articles = $this->articleDAO->getArticles();
-        $this->view->render('postModif', [
+        $this->view->render('article_modification_list', [
             'articles' => $articles
         ]);
     }

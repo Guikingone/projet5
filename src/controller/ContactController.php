@@ -26,7 +26,7 @@ class ContactController
                 echo 'Un probleme d\'authentification est survenue';
             }
         }
-        $this->view->render('contact',[
+        $this->view->render('contact_form',[
             'csrfToken' => $_SESSION['csrfToken'] = (new \App\Tool\TokenGenerator)->generateCsrfToken()
         ]);
         

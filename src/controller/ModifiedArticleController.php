@@ -11,9 +11,13 @@ class ModifiedArticleController
     public function __invoke()
     {
         if(isset($_POST['submit'])) {
-            $articleDAO = new ArticleDAO();
-            $articleDAO->modifyArticle($_POST);
-            header('Location:'.(new \Framework\UrlGenerator)->generate('admin'));
+            if ($_POST['csrfToken'] == $_SESSION['csrfToken']) {
+                $articleDAO = new ArticleDAO();
+                $articleDAO->modifyArticle($_POST);
+                header('Location:'.(new \Framework\UrlGenerator)->generate('admin'));
+            }
+
+            echo 'Un probleme est survenu, essayez plus tard';
         }
     }
 }

@@ -11,9 +11,13 @@ class DeleteCommentController
     public function __invoke()
     {
         if(isset($_POST['submit'])) {
-            $commentDAO = new CommentDAO();
-            $commentDAO->deleteComment($_POST);
-            header('Location:'.(new \Framework\UrlGenerator)->generate('admin'));
+            if ($_POST['csrfToken'] == $_SESSION['csrfToken']) {
+                $commentDAO = new CommentDAO();
+                $commentDAO->deleteComment($_POST);
+                header('Location:'.(new \Framework\UrlGenerator)->generate('admin'));
+            }
+
+            echo 'Un probleme est apparu, essayez plus tard';
         }
     }
 }

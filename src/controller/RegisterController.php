@@ -18,10 +18,16 @@ class RegisterController
     public function __invoke()
     {
         if(isset($_POST['submit'])) {
-            $userDAO = new UserDAO();
-            $userDAO->register($_POST);
-            header('Location:'.(new \Framework\UrlGenerator)->generate('home'));
+            if ($_POST['csrfToken'] == $_SESSION['csrfToken']) {
+                $userDAO = new UserDAO();
+                $userDAO->register($_POST);
+                header('Location:'.(new \Framework\UrlGenerator)->generate('home'));
+            }
+
+            echo 'Un probleme est apparu, recommencez plus tard !';
         }
-        $this->view->render('register');
+        $this->view->render('register_page', [
+            'csrfToken' => $_SESSION['csrfToken'] = (new \App\Tool\TokenGenerator)->generateCsrfToken()
+        ]);
     }
 }

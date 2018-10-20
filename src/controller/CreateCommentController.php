@@ -22,8 +22,9 @@ class CreateCommentController
     public function __invoke(array $params = [])
     {
         $article = $this->articleDAO->getArticle($params['id']);
-        $this->view->render('form_comment', [
+        $this->view->render('comment_creation_form', [
             'article' => $article,
+            'csrfToken' => $_SESSION['csrfToken'] = (new \App\Tool\TokenGenerator)->generateCsrfToken()
         ]);
     }
 }

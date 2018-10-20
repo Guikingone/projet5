@@ -21,10 +21,16 @@ class SaveArticleController
     public function __invoke()
     {
         if(isset($_POST['submit'])) {
-            $articleDAO = new ArticleDAO();
-            $articleDAO->saveArticle($_POST);
-            header('Location:'.(new \Framework\UrlGenerator)->generate('admin'));
+            if ($_POST['csrfToken'] == $_SESSION['csrfToken']) {
+                $articleDAO = new ArticleDAO();
+                $articleDAO->saveArticle($_POST);
+                header('Location:'.(new \Framework\UrlGenerator)->generate('admin'));
+            }
+
+            echo 'Il y a eu un probleme d\'authentification, réessayez plus tard';
         }
-        $this->view->render('form_article');
+        $this->view->render('article_creation_form', [
+            'csrfToken' => $_SESSION['csrfToken'] = (new \App\Tool\TokenGenerator)->generateCsrfToken()
+        ]);
     }
 }

@@ -21,7 +21,7 @@ class UnpublishedCommentListController
     public function __invoke()
     {
         $comments = $this->commentDAO->getUnpublishedComments();
-        $this->view->render('unpublishedCommentList', [
+        $this->view->render('comment_unpublished_list', [
             'comments' => $comments
         ]);
     }

@@ -42,6 +42,7 @@ $this->title = "S'enregistrer sur le site !";
                 <input type="password" id="password2" name="password2" placeholder="Confirmer mdp" required>
                 </div>
             </div><br>
+            <input type="text" id="csrfToken" name="csrfToken" value="<?php echo $csrfToken ?>" hidden><br>
             <ul class="actions">
                 <li><input type="submit" class="primary" value="Envoyer" id="submit" name="submit"></li>
             </ul>

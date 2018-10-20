@@ -31,6 +31,7 @@ $this->title = "modifier un article";
                 </div>
             </div>
             <input type="text" id="articleId" name="articleId" value="<?php echo htmlspecialchars($article->getId());?>" hidden><br>
+            <input type="text" id="csrfToken" name="csrfToken" value="<?php echo $csrfToken ?>" hidden><br>
             <ul class="actions">
                 <li><input type="submit" class="primary" value="Modifier" id="submit" name="submit"></li>
             </ul>
@@ -39,6 +40,7 @@ $this->title = "modifier un article";
             <div class="fields">
                 <div class="field half">
                     <input type="text" id="articleId" name="articleId" value="<?php echo htmlspecialchars($article->getId());?>" hidden><br>
+                    <input type="text" id="csrfToken" name="csrfToken" value="<?php echo $csrfToken ?>" hidden><br>
                     <input type="submit" class="btn btn-danger" value="Supprimer" id="submit" name="submit">                
                 </div>
             </div>

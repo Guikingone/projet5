@@ -30,7 +30,8 @@ $this->title = "Poster un commentaire";
                     <div class="field half">                     
                     <input type="text" id="articleId" name="articleId" value="<?= htmlspecialchars($article->getId());?>" hidden>
                     </div>
-                </div>                  
+                </div>    
+                <input type="text" id="csrfToken" name="csrfToken" value="<?php echo $csrfToken ?>" hidden><br>              
                     <input type="submit" class="primary" value="Envoyer" id="submit" name="submit">
                 </form>
             <div>

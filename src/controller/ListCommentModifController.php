@@ -21,7 +21,7 @@ class ListCommentModifController
     public function __invoke()
     {
         $comments = $this->commentDAO->getComments();
-        $this->view->render('commentModif', [
+        $this->view->render('comment_modification_list', [
             'comments' => $comments
         ]);
     }

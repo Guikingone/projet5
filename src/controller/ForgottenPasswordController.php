@@ -18,10 +18,14 @@ class ForgottenPasswordController
     public function __invoke()
     {
         if(isset($_POST['submit'])) {
-            $userDAO = new UserDAO();
-            $userDAO->forgottenPassword($_POST);
-            header('Location:'.(new \Framework\UrlGenerator)->generate('home'));
+            if ($_POST['csrfToken'] == $_SESSION['csrfToken']) {
+                $userDAO = new UserDAO();
+                $userDAO->forgottenPassword($_POST);
+                header('Location:'.(new \Framework\UrlGenerator)->generate('home'));
+            }
         }
-        $this->view->render('forgotten_password');
+        $this->view->render('forgotten_password_form',[
+            'csrfToken' => $_SESSION['csrfToken'] = (new \App\Tool\TokenGenerator)->generateCsrfToken()
+        ]);
     }
 }

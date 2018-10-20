@@ -21,8 +21,9 @@ class UnpublishedCommentController
     public function __invoke(array $params = [])
     {
         $comment = $this->commentDAO->getUnpublishedComment($params['id']);
-        $this->view->render('unpublishedComment', [
-            'comment' => $comment
+        $this->view->render('comment_unpublished_form', [
+            'comment' => $comment,
+            'csrfToken' => $_SESSION['csrfToken'] = (new \App\Tool\TokenGenerator)->generateCsrfToken()
         ]);
     }
 }

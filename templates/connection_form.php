@@ -27,7 +27,8 @@ $this->title = "Connexion au site !";
                             echo $post['password'];}
                     ?>" placeholder="Votre mot de passe" required>
                 </div>
-            </div><br>
+            </div>
+            <input type="text" id="csrfToken" name="csrfToken" value="<?php echo $csrfToken ?>" hidden><br>
             <ul class="actions">
                 <li><input type="submit" class="primary" value="Envoyer" id="submit" name="submit"></li>
             </ul>

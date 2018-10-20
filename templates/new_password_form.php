@@ -21,6 +21,7 @@ $this->title = "Mot de passe oublié";
                     ?>" placeholder="Confirmer mdp" required>
                 </div>
             </div>
+            <input type="text" id="csrfToken" name="csrfToken" value="<?php echo $csrfToken ?>" hidden><br>
             <input type="text" id="token" name="token" value="<?php echo htmlspecialchars($_GET['token']);?>" hidden><br>
             <ul class="actions">
                 <li><input type="submit" class="primary" value="Modifier" id="submit" name="submit"></li>
