@@ -20,9 +20,13 @@ class ListCommentModifController
 
     public function __invoke()
     {
-        $comments = $this->commentDAO->getComments();
-        $this->view->render('comment_modification_list', [
-            'comments' => $comments
-        ]);
+        if (isset($_SESSION['user']['admin']) && $_SESSION['user']['admin'] == 1) {
+            $comments = $this->commentDAO->getComments();
+            $this->view->render('comment_modification_list', [
+                'comments' => $comments
+            ]);
+        }
+
+        header('Location:' .(new \Framework\UrlGenerator)->generate('home'));
     }
 }

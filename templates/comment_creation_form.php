@@ -4,10 +4,10 @@ $this->title = "Poster un commentaire";
 <div class="inner">
     <h2>Poster un commentaire</h2>
     <h3>Article selectionné</h3>
-    <h1><?= htmlspecialchars($article->getTitle());?></h1>
-    <p>Sujet : <?= htmlspecialchars($article->getChapeau());?></p>
-    <p><?= htmlspecialchars($article->getContent());?></p><hr>
-    <p>Créé par : <?= htmlspecialchars($article->getAuthor());?> | <?= htmlspecialchars($article->getDateAdded());?> | <?php if (htmlspecialchars($article->getEdited()) != NULL) { ?> <em>(Modifié le <?php echo htmlspecialchars($article->getEdited()); ?> ) <?php } ?></em></p>
+    <h1><?= htmlspecialchars(htmlentities(strip_tags($article->getTitle())));?></h1>
+    <p>Sujet : <?= htmlspecialchars(htmlentities(strip_tags($article->getChapeau())));?></p>
+    <p><?= htmlspecialchars(htmlentities(strip_tags($article->getContent())));?></p><hr>
+    <p>Créé par : <?= htmlspecialchars(htmlentities(strip_tags($article->getAuthor())));?> | <?= htmlspecialchars(htmlentities(strip_tags($article->getDateAdded())));?> | <?php if (\is_null(htmlspecialchars(htmlentities(strip_tags($article->getEdited()))))) { ?> <em>(Modifié le <?php echo htmlspecialchars(htmlentities(strip_tags($article->getEdited()))); ?> ) <?php } ?></em></p>
     <br>
     <section>
             <?php if (isset($_SESSION['user']['pseudo'])) { ?>
@@ -28,7 +28,7 @@ $this->title = "Poster un commentaire";
                 </div>
                 <div class="fields">
                     <div class="field half">                     
-                    <input type="text" id="articleId" name="articleId" value="<?= htmlspecialchars($article->getId());?>" hidden>
+                    <input type="text" id="articleId" name="articleId" value="<?= htmlspecialchars(htmlentities(strip_tags($article->getId())));?>" hidden>
                     </div>
                 </div>    
                 <input type="text" id="csrfToken" name="csrfToken" value="<?php echo $csrfToken ?>" hidden><br>              

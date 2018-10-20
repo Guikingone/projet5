@@ -20,9 +20,14 @@ class UnpublishedCommentListController
 
     public function __invoke()
     {
-        $comments = $this->commentDAO->getUnpublishedComments();
-        $this->view->render('comment_unpublished_list', [
-            'comments' => $comments
-        ]);
+        if (isset($_SESSION['user']['admin']) && $_SESSION['user']['admin'] == 1) {
+            $comments = $this->commentDAO->getUnpublishedComments();
+            $this->view->render('comment_unpublished_list', [
+                'comments' => $comments
+            ]);
+        }
+        
+        header('Location:' .(new \Framework\UrlGenerator)->generate('home'));
+
     }
 }

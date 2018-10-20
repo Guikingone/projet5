@@ -2,10 +2,10 @@
 $this->title = "Article";
 ?>
 <div class="inner">
-    <h1><?= htmlspecialchars($article->getTitle());?></h1>
-    <p>Sujet : <?= htmlspecialchars($article->getChapeau());?></p>
-    <p><?= htmlspecialchars($article->getContent());?></p><hr>
-    <p>Créé par : <?= htmlspecialchars($article->getAuthor());?> | <?= htmlspecialchars($article->getDateAdded());?> | <?php if (htmlspecialchars($article->getEdited()) != NULL) { ?> <em>(Modifié le <?php echo htmlspecialchars($article->getEdited()); ?> ) <?php } ?></em></p>
+    <h1><?= htmlspecialchars(htmlentities(strip_tags($article->getTitle())));?></h1>
+    <p>Sujet : <?= htmlspecialchars(htmlentities(strip_tags($article->getChapeau())));?></p>
+    <p><?= htmlspecialchars(htmlentities(strip_tags($article->getContent())));?></p><hr>
+    <p>Créé par : <?= htmlspecialchars(htmlentities(strip_tags($article->getAuthor())));?> | <?= htmlspecialchars(htmlentities(strip_tags($article->getDateAdded())));?> | <?php if (\is_null(htmlspecialchars(htmlentities(strip_tags($article->getEdited()))))) { ?> <em>(Modifié le <?php echo htmlspecialchars(htmlentities(strip_tags($article->getEdited()))); ?> ) <?php } ?></em></p>
     <br>
     <a href="<?= (new Framework\UrlGenerator)->generate('articles') ?>"><button class="primary">Retour à la liste des articles</button></a><hr>
 </div>
@@ -17,9 +17,9 @@ $this->title = "Article";
             foreach ($comments as $comment)
             {
                 ?>
-                <h4><?= htmlspecialchars($comment->getPseudo());?></h4>
-                <p><?= htmlspecialchars($comment->getContent());?></p>
-                <p>Posté le <?= htmlspecialchars($comment->getDateAdded());?></p><hr>
+                <h4><?= htmlspecialchars(htmlentities(strip_tags($comment->getPseudo())));?></h4>
+                <p><?= htmlspecialchars(htmlentities(strip_tags($comment->getContent())));?></p>
+                <p>Posté le <?= htmlspecialchars(htmlentities(strip_tags($comment->getDateAdded())));?></p><hr>
                 <?php
             }
             if (isset($_SESSION['user']['pseudo'])) { ?>

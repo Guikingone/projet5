@@ -20,10 +20,14 @@ class ModifCommentController
 
     public function __invoke(array $params = [])
     {
-        $comment = $this->commentDAO->getComment($params['id']);
-        $this->view->render('comment_modification_form', [
-            'comment' => $comment,
-            'csrfToken' => $_SESSION['csrfToken'] = (new \App\Tool\TokenGenerator)->generateCsrfToken()
-        ]);
+        if (isset($_SESSION['user']['admin']) && $_SESSION['user']['admin'] == 1) {
+            $comment = $this->commentDAO->getComment($params['id']);
+            $this->view->render('comment_modification_form', [
+                'comment' => $comment,
+                'csrfToken' => $_SESSION['csrfToken'] = (new \App\Tool\TokenGenerator)->generateCsrfToken()
+            ]);
+        }
+
+        header('Location:' .(new \Framework\UrlGenerator)->generate('home'));
     }
 }

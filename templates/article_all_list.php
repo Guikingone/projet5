@@ -12,11 +12,11 @@ $this->title = "Tous les articles";
                 <img src="/img/pic20.jpg" alt="Article" />
             </span>
             <a href="<?= (new Framework\UrlGenerator)->generate('article_details', ['id' => $article->getId()]); ?>">
-                <h2><?= htmlspecialchars($article->getTitle());?></h2>
+                <h2><?= htmlspecialchars(htmlentities(strip_tags($article->getTitle())));?></h2>
                 <div class="content">
-                    <p>Sujet : <?= htmlspecialchars($article->getChapeau());?></p>
-                    <p>Ajouté le : <?= htmlspecialchars($article->getDateAdded());?></p>
-                    <p><?php if (htmlspecialchars($article->getEdited()) != NULL) { ?> <em>(Modifié le <?php echo htmlspecialchars($article->getEdited()); ?> ) <?php } ?></em></p>
+                    <p>Sujet : <?= htmlspecialchars(htmlentities(strip_tags($article->getChapeau())));?></p>
+                    <p>Ajouté le : <?= htmlspecialchars(htmlentities(strip_tags($article->getDateAdded())));?></p>
+                    <p><?php if (\is_null(htmlspecialchars(htmlentities(strip_tags($article->getEdited()))))) { ?> <em>(Modifié le <?php echo htmlspecialchars(htmlentities(strip_tags($article->getEdited()))); ?> ) <?php } ?></em></p>
                 </div>
             </a>
         </article><?php } ?>

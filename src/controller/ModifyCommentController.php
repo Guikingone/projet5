@@ -10,14 +10,18 @@ class ModifyCommentController
 {
     public function __invoke()
     {
-        if(isset($_POST['submit'])) {
-            if ($_POST['csrfToken'] == $_SESSION['csrfToken']) {
-                $commentDAO = new CommentDAO();
-                $commentDAO->modifyComment($_POST);
-                header('Location:'.(new \Framework\UrlGenerator)->generate('admin'));
-            } else {
-                echo 'une erreur est survenue';
+        if (isset($_SESSION['user']['admin']) && $_SESSION['user']['admin'] == 1) {
+            if(isset($_POST['submit'])) {
+                if ($_POST['csrfToken'] == $_SESSION['csrfToken']) {
+                    $commentDAO = new CommentDAO();
+                    $commentDAO->modifyComment($_POST);
+                    header('Location:'.(new \Framework\UrlGenerator)->generate('admin'));
+                } else {
+                    echo 'une erreur est survenue';
+                }
             }
         }
+        
+        header('Location:' .(new \Framework\UrlGenerator)->generate('home'));
     }
 }

@@ -14,7 +14,11 @@ class AdminController
     }
 
     public function __invoke()
-    {
-        $this->view->render('admin_page');
+    {   
+        if (isset($_SESSION['user']['admin']) && $_SESSION['user']['admin'] == 1) {
+           $this->view->render('admin_page');
+        }
+
+        header('Location:' .(new \Framework\UrlGenerator)->generate('home'));
     }
 }

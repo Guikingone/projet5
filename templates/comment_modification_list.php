@@ -9,11 +9,11 @@ $this->title = "Modification commentaire";
         {
         ?>
         <article class="style2">
-            <h4><?= htmlspecialchars($comment->getId());?>
+            <h4><?= htmlspecialchars(htmlentities(strip_tags($comment->getId())));?>
             <a href="<?= (new Framework\UrlGenerator)->generate('modif_comment', ['id' => $comment->getId()]); ?>">
-            <?= htmlspecialchars($comment->getContent());?></a></h4>
-            <p>Par : <?= htmlspecialchars($comment->getPseudo());?>
-            | Créé le : <?= htmlspecialchars($comment->getDateAdded());?></p>
+            <?= htmlspecialchars(htmlentities(strip_tags($comment->getContent())));?></a></h4>
+            <p>Par : <?= htmlspecialchars(htmlentities(strip_tags($comment->getPseudo())));?>
+            | Créé le : <?= htmlspecialchars(htmlentities(strip_tags($comment->getDateAdded())));?></p>
         </article><br>
         <?php } ?> 
     </section>
