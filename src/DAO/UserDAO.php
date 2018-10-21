@@ -50,7 +50,7 @@ class UserDAO extends DAO
             return;
         }
 
-        extract($user);
+        extract($post);
         $sql = 'INSERT INTO user (name, pseudo, email, password, date_inscription) VALUES (?, ?, ?, ?, NOW())';
         $this->sql($sql, [$post['name'], $post['pseudo'], $post['email'], password_hash($post['password'], PASSWORD_DEFAULT)]);
         $_SESSION['message'] = sprintf('Enregistrement fait avec succès, vous pouvez vous connecter.');
@@ -157,18 +157,5 @@ class UserDAO extends DAO
         $this->sql($sql, [password_hash($post['password'], PASSWORD_DEFAULT), $post['token']]);
 
         $_SESSION['message'] = sprintf('Le mot de passe a été changé');
-    }
-
-    private function buildObject(array $row)
-    {
-        $user = new User();
-        $user->setId($row['id']);
-        $user->setName($row['name']);
-        $user->setPseudo($row['pseudo']);
-        $user->setEmail($row['email']);
-        $user->setPassword($row['password']);
-        $user->setDateInscription($row['date_inscription']);
-        $user->setAdmin($row['admin']);
-        return $user;
     }
 }
