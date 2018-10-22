@@ -33,8 +33,8 @@ class Router
     private function catchParams(array $params, string $request, Route &$route)
     {
         if (isset($params) && !empty($params)) {
-        foreach ($params as $key => $regex) {
-            preg_match(sprintf('#%s#', $regex), $request, $result);
+            foreach ($params as $key => $regex) {
+                preg_match(sprintf('#%s#', $regex), $request, $result);
                 if (!empty($result)) {
                     $route->addParam($key, $result[0]);
                     $route->setPath(strtr($route->getPath(), [sprintf('{%s}', $key) => $result[0]]));
@@ -45,7 +45,7 @@ class Router
 
     private function loadRoutes()
     {
-        $routes = require __DIR__ . '/../config/routes.php';
+        $routes = include __DIR__ . '/../config/routes.php';
 
         if (is_array($routes)) {
             foreach ($routes as $route) {

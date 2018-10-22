@@ -28,8 +28,8 @@ class EmailValidator
     }
 
     /**
-     * @param                 $email
-     * @param EmailValidation $emailValidation
+     * @param  $email
+     * @param  EmailValidation $emailValidation
      * @return bool
      */
     public function isValid($email, EmailValidation $emailValidation)

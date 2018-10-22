@@ -24,8 +24,10 @@ class ConnectionController
                 header('Location:'.(new \Framework\UrlGenerator)->generate('home'));
             }
         }
-        $this->view->render('connection_form', [
+        $this->view->render(
+            'connection_form', [
             'csrfToken' => $_SESSION['csrfToken'] = (new \App\Tool\TokenGenerator)->generateCsrfToken()
-        ]);
+            ]
+        );
     }
 }

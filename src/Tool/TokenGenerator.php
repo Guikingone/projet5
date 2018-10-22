@@ -2,7 +2,7 @@
 
 namespace App\Tool;
 
-class TokenGenerator 
+class TokenGenerator
 {
     public function generateInt() 
     {

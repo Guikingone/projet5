@@ -30,9 +30,11 @@ class SaveArticleController
 
                 echo 'Il y a eu un probleme d\'authentification, réessayez plus tard';
             }
-            $this->view->render('article_creation_form', [
+            $this->view->render(
+                'article_creation_form', [
                 'csrfToken' => $_SESSION['csrfToken'] = (new \App\Tool\TokenGenerator)->generateCsrfToken()
-            ]);
+                ]
+            );
         }
         
         header('Location:' .(new \Framework\UrlGenerator)->generate('home'));

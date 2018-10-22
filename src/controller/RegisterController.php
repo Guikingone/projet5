@@ -26,8 +26,10 @@ class RegisterController
 
             echo 'Un probleme est apparu, recommencez plus tard !';
         }
-        $this->view->render('register_page', [
+        $this->view->render(
+            'register_page', [
             'csrfToken' => $_SESSION['csrfToken'] = (new \App\Tool\TokenGenerator)->generateCsrfToken()
-        ]);
+            ]
+        );
     }
 }

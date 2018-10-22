@@ -11,19 +11,21 @@ class View
     {
         $this->file = '../templates/'.$template.'.php';
         $content  = $this->renderFile($this->file, $data);
-        $view = $this->renderFile('../templates/base.php', [
+        $view = $this->renderFile(
+            '../templates/base.php', [
             'title' => $this->title,
             'content' => $content
-        ]);
+            ]
+        );
         echo $view;
     }
 
     private function renderFile($file, $data)
     {
-        if(file_exists($file)){
+        if(file_exists($file)) {
             extract($data);
             ob_start();
-            require $file;
+            include $file;
             return ob_get_clean();
         }
     }

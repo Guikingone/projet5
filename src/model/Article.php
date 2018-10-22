@@ -115,8 +115,8 @@ class Article
     }
 
     /**
-    * @return mixed
-    */
+     * @return mixed
+     */
     public function getEdited()
     {
         return $this->edited;

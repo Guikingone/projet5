@@ -18,7 +18,7 @@ class User implements \Serializable
 
     private $admin;
 
-   /**
+    /**
      * @return mixed
      */
     public function getId()
@@ -67,8 +67,8 @@ class User implements \Serializable
     }
 
         /**
-     * @return mixed
-     */
+         * @return mixed
+         */
     public function getEmail()
     {
         return $this->email;
@@ -115,8 +115,8 @@ class User implements \Serializable
     }
 
         /**
-     * @return mixed
-     */
+         * @return mixed
+         */
     public function getAdmin()
     {
         return $this->admin;
@@ -132,13 +132,15 @@ class User implements \Serializable
 
     public function serialize()
     {
-        return serialize([
+        return serialize(
+            [
             'id'=> $this->id,
             'name'=>$this->name,
             'pseudo'=>$this->pseudo,
             'email'=>$this->email,
             'admin'=>$this->admin
-        ]);
+            ]
+        );
     }
 
     public function unserialize($serialized)

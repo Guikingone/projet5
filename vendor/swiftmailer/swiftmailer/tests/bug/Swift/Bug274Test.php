@@ -3,7 +3,7 @@
 class Swift_Bug274Test extends \PHPUnit\Framework\TestCase
 {
     /**
-     * @expectedException \Swift_IoException
+     * @expectedException        \Swift_IoException
      * @expectedMessageException The path cannot be empty
      */
     public function testEmptyFileNameAsAttachment()

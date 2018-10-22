@@ -22,10 +22,12 @@ class ModifArticleController
     {
         if (isset($_SESSION['user']['admin']) && $_SESSION['user']['admin'] == 1) {
             $article = $this->articleDAO->getArticle($params['id']);
-            $this->view->render('article_modification_form', [
+            $this->view->render(
+                'article_modification_form', [
                 'article' => $article,
                 'csrfToken' => $_SESSION['csrfToken'] = (new \App\Tool\TokenGenerator)->generateCsrfToken()
-            ]);
+                ]
+            );
         }
 
         header('Location:' .(new \Framework\UrlGenerator)->generate('home'));

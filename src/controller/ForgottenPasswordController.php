@@ -24,8 +24,10 @@ class ForgottenPasswordController
                 header('Location:'.(new \Framework\UrlGenerator)->generate('home'));
             }
         }
-        $this->view->render('forgotten_password_form',[
+        $this->view->render(
+            'forgotten_password_form', [
             'csrfToken' => $_SESSION['csrfToken'] = (new \App\Tool\TokenGenerator)->generateCsrfToken()
-        ]);
+            ]
+        );
     }
 }

@@ -21,8 +21,10 @@ class HomeController
     public function __invoke()
     {
         $articles = $this->articleDAO->getNewArticles();
-        $this->view->render('home', [
+        $this->view->render(
+            'home', [
             'articles' => $articles
-        ]);
+            ]
+        );
     }
 }

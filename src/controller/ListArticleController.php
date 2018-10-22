@@ -22,9 +22,11 @@ class ListArticleController
     {
         if (isset($_SESSION['user']['admin']) && $_SESSION['user']['admin'] == 1) {
             $articles = $this->articleDAO->getArticles();
-            $this->view->render('article_modification_list', [
+            $this->view->render(
+                'article_modification_list', [
                 'articles' => $articles
-            ]);
+                ]
+            );
         }
         
         header('Location:' .(new \Framework\UrlGenerator)->generate('home'));

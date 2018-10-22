@@ -20,7 +20,7 @@ abstract class DAO
     private function getConnection()
     {
         try {
-            $config = require __DIR__ . '/../config/database.php';
+            $config = include __DIR__ . '/../config/database.php';
             $this->connection = new PDO($config['host'], $config['username'], $config['password']);
             $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $this->connection;

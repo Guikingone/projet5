@@ -106,9 +106,9 @@ class UserDAO extends DAO
         $_SESSION['message'] = sprintf('Vous êtes maintenant connecté en tant que "%s"', $post['pseudo']);
     }
 
-    public function forgottenPassword ($post)
+    public function forgottenPassword($post)
     {
-        $result = $this->sql('SELECT pseudo, email FROM user AS u WHERE u.email = :email', [':email' => $post['email']],' && u.pseudo = :pseudo', [':pseudo' => $post['pseudo']])->fetch();
+        $result = $this->sql('SELECT pseudo, email FROM user AS u WHERE u.email = :email', [':email' => $post['email']], ' && u.pseudo = :pseudo', [':pseudo' => $post['pseudo']])->fetch();
 
         if (empty($result)) {
             $_SESSION['message'] = sprintf('Les identifiants sont invalides', $post['pseudo']);
@@ -131,7 +131,7 @@ class UserDAO extends DAO
         $mail->sendMail($post, $token);
     }
 
-    public function changePassword ($post)
+    public function changePassword($post)
     {
         if (!preg_match("#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).{6,12}$#", $post['password'])) {
             $_SESSION['message'] = sprintf('Le mot de passe %s n\'est pas valide, veuillez en soumettre un valide avec une majuscule et un caractère spécial', $post['password']);
@@ -143,9 +143,11 @@ class UserDAO extends DAO
             return;
         }
 
-        $result = $this->sql('SELECT token, password_is_editing FROM user AS u 
-        WHERE u.token = :token', [':token' =>  $post['token']],' 
-        && u.password_is_editing = 1')->fetch();
+        $result = $this->sql(
+            'SELECT token, password_is_editing FROM user AS u 
+        WHERE u.token = :token', [':token' =>  $post['token']], ' 
+        && u.password_is_editing = 1'
+        )->fetch();
 
         if ($result['password_is_editing'] == 0) {
             $_SESSION['message'] = sprintf('Vous ne pouvez changer de mot de passe qu\'une fois avec cet email');

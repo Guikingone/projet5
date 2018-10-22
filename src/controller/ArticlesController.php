@@ -21,8 +21,10 @@ class ArticlesController
     public function __invoke()
     {
         $articles = $this->articleDAO->getArticles();
-        $this->view->render('article_all_list', [
+        $this->view->render(
+            'article_all_list', [
             'articles' => $articles
-        ]);
+            ]
+        );
     }
 }

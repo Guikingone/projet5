@@ -5,7 +5,7 @@ $this->title = "modifier un article";
     <h2>Modification d'un article</h2>
     <section>
     <p>L'article a été publié par "<?php echo htmlspecialchars($article->getAuthor());?>" le <?php echo htmlspecialchars($article->getDateAdded());?></p>
-        <form method="post" action="<?= (new Framework\UrlGenerator)->generate('modified_article') ?>">
+        <form method="post" action="<?php echo (new Framework\UrlGenerator)->generate('modified_article') ?>">
             <div class="fields">
                 <div class="field half">
                     <label for="title">Titre de l'article :</label>
@@ -36,7 +36,7 @@ $this->title = "modifier un article";
                 <li><input type="submit" class="primary" value="Modifier" id="submit" name="submit"></li>
             </ul>
         </form>
-        <form method="post" action="<?= (new Framework\UrlGenerator)->generate('delete_article') ?>">
+        <form method="post" action="<?php echo (new Framework\UrlGenerator)->generate('delete_article') ?>">
             <div class="fields">
                 <div class="field half">
                     <input type="text" id="articleId" name="articleId" value="<?php echo htmlspecialchars($article->getId());?>" hidden><br>
@@ -45,6 +45,6 @@ $this->title = "modifier un article";
                 </div>
             </div>
         </form>
-        <a href="<?= (new Framework\UrlGenerator)->generate('admin') ?>"><button class="btn btn-success"> Retour à l'administration</button></a><br>
+        <a href="<?php echo (new Framework\UrlGenerator)->generate('admin') ?>"><button class="btn btn-success"> Retour à l'administration</button></a><br>
     </section>
 </div>

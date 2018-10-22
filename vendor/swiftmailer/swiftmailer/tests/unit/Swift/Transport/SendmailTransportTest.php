@@ -41,11 +41,11 @@ class Swift_Transport_SendmailTransportTest extends Swift_Transport_AbstractSmtp
         $message = $this->createMessage();
 
         $message->shouldReceive('getTo')
-                ->zeroOrMoreTimes()
-                ->andReturn(array('foo@bar' => 'Foobar', 'zip@button' => 'Zippy'));
+            ->zeroOrMoreTimes()
+            ->andReturn(array('foo@bar' => 'Foobar', 'zip@button' => 'Zippy'));
         $message->shouldReceive('toByteStream')
-                ->once()
-                ->with($buf);
+            ->once()
+            ->with($buf);
         $buf->shouldReceive('initialize')
             ->once();
         $buf->shouldReceive('terminate')
@@ -68,11 +68,11 @@ class Swift_Transport_SendmailTransportTest extends Swift_Transport_AbstractSmtp
         $message = $this->createMessage();
 
         $message->shouldReceive('getTo')
-                ->zeroOrMoreTimes()
-                ->andReturn(array('foo@bar' => 'Foobar', 'zip@button' => 'Zippy'));
+            ->zeroOrMoreTimes()
+            ->andReturn(array('foo@bar' => 'Foobar', 'zip@button' => 'Zippy'));
         $message->shouldReceive('toByteStream')
-                ->once()
-                ->with($buf);
+            ->once()
+            ->with($buf);
         $buf->shouldReceive('initialize')
             ->once();
         $buf->shouldReceive('terminate')
@@ -95,11 +95,11 @@ class Swift_Transport_SendmailTransportTest extends Swift_Transport_AbstractSmtp
         $message = $this->createMessage();
 
         $message->shouldReceive('getTo')
-                ->zeroOrMoreTimes()
-                ->andReturn(array('foo@bar' => 'Foobar', 'zip@button' => 'Zippy'));
+            ->zeroOrMoreTimes()
+            ->andReturn(array('foo@bar' => 'Foobar', 'zip@button' => 'Zippy'));
         $message->shouldReceive('toByteStream')
-                ->once()
-                ->with($buf);
+            ->once()
+            ->with($buf);
         $buf->shouldReceive('initialize')
             ->once();
         $buf->shouldReceive('terminate')
@@ -122,8 +122,8 @@ class Swift_Transport_SendmailTransportTest extends Swift_Transport_AbstractSmtp
         $message = $this->createMessage();
 
         $message->shouldReceive('getTo')
-                ->zeroOrMoreTimes()
-                ->andReturn(array('foo@bar' => 'Foobar', 'zip@button' => 'Zippy'));
+            ->zeroOrMoreTimes()
+            ->andReturn(array('foo@bar' => 'Foobar', 'zip@button' => 'Zippy'));
         $message->shouldReceive('generateId');
         $buf->shouldReceive('initialize')
             ->once();

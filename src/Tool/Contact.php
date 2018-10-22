@@ -6,7 +6,7 @@ use App\Tool\Mailer;
 
 class Contact
 {
-    public function buildContact ($post)
+    public function buildContact($post)
     {
         if (!preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $post['email'])) {
             $_SESSION['message'] = sprintf('L\'adresse mail %s n\'est pas valide, veuillez en soumettre une valide', $post['email']);

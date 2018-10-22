@@ -35,7 +35,7 @@ class UrlGenerator
      */
     private function loadRoutes()
     {
-        $this->routes = require __DIR__ .'/../config/routes.php';
+        $this->routes = include __DIR__ .'/../config/routes.php';
     }
 
     private function addParams($params, $path, $defaultParams = [])

@@ -79,8 +79,8 @@ class Comment
     }
 
         /**
-     * @return mixed
-     */
+         * @return mixed
+         */
     public function getPublished()
     {
         return $this->published;
