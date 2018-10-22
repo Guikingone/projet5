@@ -64,21 +64,25 @@
       <?= $content ?>
       </div>
      <!-- Footer -->
-     <footer id="footer">
-						<div class="inner">
-							<section>
-								<h2>Réseaux sociaux</h2>
-								<ul class="icons">
-									<li><a href="https://www.linkedin.com/in/dimitri-subrini-b48848156/" class="icon style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
-									<li><a href="https://www.facebook.com/profile.php?id=1152429246" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
-									<li><a href="https://github.com/avenir2point0/projet5" class="icon style2 fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
-							</section>
-							<ul class="copyright">
-								<li>&copy; Avenir2point0. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</footer>
+    <footer id="footer">
+		  <div class="inner">
+				<section>
+          <h2>Réseaux sociaux</h2>
+          <ul class="icons">
+            <li><a href="https://www.linkedin.com/in/dimitri-subrini-b48848156/" class="icon style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=1152429246" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
+            <li><a href="https://github.com/avenir2point0/projet5" class="icon style2 fa-github"><span class="label">GitHub</span></a></li>
+          </ul>
+        </section>
+        <section>
+          <img src="https://insight.symfony.com/projects/cd09a53e-343c-44cd-a569-ff4b1a5ffb1d/big.svg" alt="SymfonyInsight">
+          <ul class="copyright">
+            <li>&copy; Avenir2point0. All rights reserved</li>
+            <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+          </ul>
+        </section>
+			</div>
+		</footer>
     </div>
      <!-- Scripts -->
 			<script src="/js/jquery.min.js"></script>

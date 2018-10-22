@@ -17,6 +17,7 @@ class AdminController
     {   
         if (isset($_SESSION['user']['admin']) && $_SESSION['user']['admin'] == 1) {
            $this->view->render('admin_page');
+           return;
         }
 
         header('Location:' .(new \Framework\UrlGenerator)->generate('home'));

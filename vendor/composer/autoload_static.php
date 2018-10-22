@@ -7,10 +7,23 @@ namespace Composer\Autoload;
 class ComposerStaticInit466f39c37b349e741968af6d0f2c098b
 {
     public static $files = array (
+        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
     );
 
     public static $prefixLengthsPsr4 = array (
+        'S' => 
+        array (
+            'Symfony\\Polyfill\\Ctype\\' => 23,
+            'Symfony\\Component\\Filesystem\\' => 29,
+            'Symfony\\Component\\DependencyInjection\\' => 38,
+            'Symfony\\Component\\Config\\' => 25,
+        ),
+        'P' => 
+        array (
+            'Psr\\Container\\' => 14,
+            'PDepend\\' => 8,
+        ),
         'F' => 
         array (
             'Framework\\' => 10,
@@ -30,6 +43,30 @@ class ComposerStaticInit466f39c37b349e741968af6d0f2c098b
     );
 
     public static $prefixDirsPsr4 = array (
+        'Symfony\\Polyfill\\Ctype\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
+        ),
+        'Symfony\\Component\\Filesystem\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/filesystem',
+        ),
+        'Symfony\\Component\\DependencyInjection\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/dependency-injection',
+        ),
+        'Symfony\\Component\\Config\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/config',
+        ),
+        'Psr\\Container\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/container/src',
+        ),
+        'PDepend\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/pdepend/pdepend/src/main/php/PDepend',
+        ),
         'Framework\\' => 
         array (
             0 => __DIR__ . '/../..' . '/etc',
@@ -61,6 +98,13 @@ class ComposerStaticInit466f39c37b349e741968af6d0f2c098b
     );
 
     public static $prefixesPsr0 = array (
+        'P' => 
+        array (
+            'PHPMD\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/phpmd/phpmd/src/main/php',
+            ),
+        ),
         'D' => 
         array (
             'Doctrine\\Common\\Lexer\\' => 

@@ -57,7 +57,7 @@ class CommentDAO extends DAO
     {
         extract($comment);
         $sql = 'DELETE FROM comment WHERE id = ?';
-        $this->sql($sql, [$commentId]);
+        $this->sql($sql, [$comment['commentId']]);
         $_SESSION['message'] = sprintf('Le commentaire a été supprimé avec succès');
     }
 
