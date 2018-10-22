@@ -2,10 +2,10 @@
 $this->title = "Article";
 ?>
 <div class="inner">
-    <h1><?php echo htmlspecialchars(htmlentities(strip_tags($article->getTitle())));?></h1>
-    <p>Sujet : <?php echo htmlspecialchars(htmlentities(strip_tags($article->getChapeau())));?></p>
-    <p><?php echo htmlspecialchars(htmlentities(strip_tags($article->getContent())));?></p><hr>
-    <p>Créé par : <?php echo htmlspecialchars(htmlentities(strip_tags($article->getAuthor())));?> | <?php echo htmlspecialchars(htmlentities(strip_tags($article->getDateAdded())));?> | <?php if (\is_null(htmlspecialchars(htmlentities(strip_tags($article->getEdited()))))) { ?> <em>(Modifié le <?php echo htmlspecialchars(htmlentities(strip_tags($article->getEdited()))); ?> ) <?php 
+    <h1><?php echo htmlspecialchars($article->getTitle());?></h1>
+    <p>Sujet : <?php echo htmlspecialchars($article->getChapeau());?></p>
+    <p><?php echo htmlspecialchars($article->getContent());?></p><hr>
+    <p>Créé par : <?php echo htmlspecialchars($article->getAuthor());?> | <?php echo htmlspecialchars($article->getDateAdded());?> | <?php if (\is_null(htmlspecialchars($article->getEdited()))) { ?> <em>(Modifié le <?php echo htmlspecialchars($article->getEdited()); ?> ) <?php 
    } ?></em></p>
     <br>
     <a href="<?php echo (new Framework\UrlGenerator)->generate('articles') ?>"><button class="primary">Retour à la liste des articles</button></a><hr>
@@ -18,9 +18,9 @@ $this->title = "Article";
             foreach ($comments as $comment)
             {
                 ?>
-                <h4><?php echo htmlspecialchars(htmlentities(strip_tags($comment->getPseudo())));?></h4>
-                <p><?php echo htmlspecialchars(htmlentities(strip_tags($comment->getContent())));?></p>
-                <p>Posté le <?php echo htmlspecialchars(htmlentities(strip_tags($comment->getDateAdded())));?></p><hr>
+                <h4><?php echo htmlspecialchars($comment->getPseudo());?></h4>
+                <p><?php echo htmlspecialchars($comment->getContent());?></p>
+                <p>Posté le <?php echo htmlspecialchars($comment->getDateAdded());?></p><hr>
                 <?php
             }
             if (isset($_SESSION['user']['pseudo'])) { ?>

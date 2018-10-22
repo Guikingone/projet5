@@ -9,11 +9,11 @@ if (!\is_null($comments)) { ?>
             {
                 ?>
             <article class="style2">
-                <h4><?php echo htmlspecialchars(htmlentities(strip_tags($comment->getId())));?>
+                <h4><?php echo htmlspecialchars($comment->getId());?>
                 <a href="<?php echo (new Framework\UrlGenerator)->generate('modif_unpublishedComment', ['id' => $comment->getId()]); ?>">
-                <?php echo htmlspecialchars(htmlentities(strip_tags($comment->getContent())));?></a></h4>
-                <p>Par : <?php echo htmlspecialchars(htmlentities(strip_tags($comment->getPseudo())));?>
-                | Créé le : <?php echo htmlspecialchars(htmlentities(strip_tags($comment->getDateAdded())));?></p>
+                <?php echo htmlspecialchars($comment->getContent());?></a></h4>
+                <p>Par : <?php echo htmlspecialchars($comment->getPseudo());?>
+                | Créé le : <?php echo htmlspecialchars($comment->getDateAdded());?></p>
             </article><br>
             <?php } ?> 
         </section>

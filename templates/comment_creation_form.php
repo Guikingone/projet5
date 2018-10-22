@@ -4,10 +4,10 @@ $this->title = "Poster un commentaire";
 <div class="inner">
     <h2>Poster un commentaire</h2>
     <h3>Article selectionné</h3>
-    <h1><?php echo htmlspecialchars(htmlentities(strip_tags($article->getTitle())));?></h1>
-    <p>Sujet : <?php echo htmlspecialchars(htmlentities(strip_tags($article->getChapeau())));?></p>
-    <p><?php echo htmlspecialchars(htmlentities(strip_tags($article->getContent())));?></p><hr>
-    <p>Créé par : <?php echo htmlspecialchars(htmlentities(strip_tags($article->getAuthor())));?> | <?php echo htmlspecialchars(htmlentities(strip_tags($article->getDateAdded())));?> | <?php if (\is_null(htmlspecialchars(htmlentities(strip_tags($article->getEdited()))))) { ?> <em>(Modifié le <?php echo htmlspecialchars(htmlentities(strip_tags($article->getEdited()))); ?> ) <?php 
+    <h1><?php echo htmlspecialchars($article->getTitle());?></h1>
+    <p>Sujet : <?php echo htmlspecialchars($article->getChapeau());?></p>
+    <p><?php echo htmlspecialchars($article->getContent());?></p><hr>
+    <p>Créé par : <?php echo htmlspecialchars($article->getAuthor());?> | <?php echo htmlspecialchars($article->getDateAdded());?> | <?php if (\is_null(htmlspecialchars($article->getEdited()))) { ?> <em>(Modifié le <?php echo htmlspecialchars($article->getEdited()); ?> ) <?php 
    } ?></em></p>
     <br>
     <section>
@@ -31,7 +31,7 @@ $this->title = "Poster un commentaire";
                 </div>
                 <div class="fields">
                     <div class="field half">                     
-                    <input type="text" id="articleId" name="articleId" value="<?php echo htmlspecialchars(htmlentities(strip_tags($article->getId())));?>" hidden>
+                    <input type="text" id="articleId" name="articleId" value="<?php echo htmlspecialchars($article->getId());?>" hidden>
                     </div>
                 </div>    
                 <input type="text" id="csrfToken" name="csrfToken" value="<?php echo $csrfToken ?>" hidden><br>              
