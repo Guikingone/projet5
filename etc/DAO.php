@@ -1,6 +1,7 @@
 <?php
 
 namespace Framework;
+
 use PDO;
 use Exception;
 
