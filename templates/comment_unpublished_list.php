@@ -1,6 +1,6 @@
 <?php
 $this->title = "Commentaires non publié";
-if ($comments != null) { ?>
+if (!\is_null($comments)) { ?>
     <div class="inner">
         <h2>Liste des commentaires en attente de publication</h2>
         <section class="tiles">
