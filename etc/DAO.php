@@ -2,6 +2,7 @@
 
 namespace Framework;
 use PDO;
+use Exception;
 
 abstract class DAO
 {
