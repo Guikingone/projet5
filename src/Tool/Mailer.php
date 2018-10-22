@@ -2,6 +2,11 @@
 
 namespace App\Tool;
 
+use \Swift_Mailer;
+use \Swift_Message;
+use Swift_SmtpTransport;
+use Exception;
+
 class Mailer 
 {
     public function sendMail($post, $token)
