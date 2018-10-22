@@ -16,9 +16,9 @@ class ModifyCommentController
                     $commentDAO = new CommentDAO();
                     $commentDAO->modifyComment($_POST);
                     header('Location:'.(new \Framework\UrlGenerator)->generate('admin'));
-                } else {
-                    echo 'une erreur est survenue';
                 }
+                
+                echo 'une erreur est survenue';
             }
         }
         
