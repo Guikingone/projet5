@@ -19,7 +19,6 @@
         }
     },
     "require": {
-        "swiftmailer/swiftmailer": "6.0",
-        "phpmd/phpmd": "^2.6"
+        "swiftmailer/swiftmailer": "6.0"
     }
 }
