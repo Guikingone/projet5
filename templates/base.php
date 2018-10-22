@@ -19,13 +19,12 @@
                             <!-- Logo -->
                                 <a href="<?php echo (new Framework\UrlGenerator)->generate('home') ?>" class="logo">
                                     <span class="symbol"><img src="/img/logo.svg" alt="" /></span><span class="title">Blog Avenir2point0</span>
-                </a>
-                <p>Message du system : <?php if (isset($_SESSION['message'])) {
-                    echo $_SESSION['message'];
-                
-               } else { ?>
-<em>Pas de message pour le moment...</em> <?php } ?>
-                </p>
+                                </a>
+                                <p>Message du system : <?php if (isset($_SESSION['message'])) {
+                                    echo $_SESSION['message'];
+                                } else { ?>
+                                  <em>Pas de message pour le moment...</em> <?php } ?>
+                                  </p>
                             <!-- Nav -->
                                 <nav>
                                     <ul>
@@ -52,11 +51,11 @@
                   <li><a href="<?php echo (new Framework\UrlGenerator)->generate('register') ?>">Enregistrement</a></li>
                   <li><a href="<?php echo (new Framework\UrlGenerator)->generate('connection') ?>">Se connecter</a></li>
                 <?php }
-if (isset($_SESSION['user']['admin']) && ($adminPass = $_SESSION['user']['admin']) && ($adminPass == 1)) { ?>
+                  if (isset($_SESSION['user']['admin']) && ($adminPass = $_SESSION['user']['admin']) && ($adminPass == 1)) { ?>
                   <li>
                     <a href="<?php echo (new Framework\UrlGenerator)->generate('admin') ?>">Administration</a>
                   </li>
-<?php } ?>
+                  <?php } ?>
               </ul>
             </nav>
           </header>
@@ -75,7 +74,7 @@ if (isset($_SESSION['user']['admin']) && ($adminPass = $_SESSION['user']['admin'
           </ul>
         </section>
         <section>
-          <img src="https://insight.symfony.com/projects/cd09a53e-343c-44cd-a569-ff4b1a5ffb1d/big.svg" alt="SymfonyInsight">
+          <img src="#" alt="SymfonyInsight">
           <ul class="copyright">
             <li>&copy; Avenir2point0. All rights reserved</li>
             <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
