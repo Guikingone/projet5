@@ -18,9 +18,24 @@ class Contact
             return;
         }
 
-        if (empty($post['username'] OR $post['email'] OR $post['subject'] OR $post['text'])) {
+        if (empty($post['username'])) {
+            if (empty($post['email'])) {
+                if (empty($post['subject'])) {
+                    if (empty($post['text'])) {
+                        $_SESSION['message'] = sprintf('Vous devez remplir tous les champs');
+                        return; 
+                    }
+
+                    $_SESSION['message'] = sprintf('Vous devez remplir tous les champs');
+                    return; 
+                }
+
+                $_SESSION['message'] = sprintf('Vous devez remplir tous les champs');
+                return; 
+            }
+        } else {
             $_SESSION['message'] = sprintf('Vous devez remplir tous les champs');
-            return;
+            return; 
         }
         
         extract($post);
