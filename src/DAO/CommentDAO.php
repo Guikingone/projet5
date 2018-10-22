@@ -33,7 +33,7 @@ class CommentDAO extends DAO
     {
         extract($comment);
         $sql = 'INSERT INTO comment (pseudo, content, article_id, date_added) VALUES (?, ?, ?, NOW())';
-        $this->sql($sql, [$pseudo, $content, $articleId]);
+        $this->sql($sql, [$comment['pseudo'], $comment['content'], $comment['commentId']]);
         $_SESSION['message'] = sprintf('Votre message a été enregistré, et est en attente de publication');
     }
 
@@ -41,7 +41,7 @@ class CommentDAO extends DAO
     {
         extract($comment);
         $sql = 'UPDATE comment SET content = ?, published = "1" WHERE id = ?';
-        $this->sql($sql, [$content, $commentId]);
+        $this->sql($sql, [$comment['content'], $comment['commentId']]);
         $_SESSION['message'] = sprintf('Le commentaire a été publié avec succès');
     }
 
@@ -49,7 +49,7 @@ class CommentDAO extends DAO
     {
         extract($comment);
         $sql = 'UPDATE comment SET content = ? WHERE id = ?';
-        $this->sql($sql, [$content, $commentId]);
+        $this->sql($sql, [$comment['content'], $comment['commentId']]);
         $_SESSION['message'] = sprintf('Le commentaire a été modifié avec succès');
     }
 

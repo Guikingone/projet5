@@ -45,7 +45,7 @@ class ArticleDAO extends DAO
     {
         extract($article);
         $sql = 'INSERT INTO article (title, chapeau, content, author, date_added) VALUES (?, ?, ?, ?, NOW())';
-        $this->sql($sql, [$title, $chapeau, $content, $author]);
+        $this->sql($sql, [$article['title'], $article['chapeau'], $article['content'], $article['author']]);
         $_SESSION['message'] = sprintf('L\'article a été enregistré avec succès');
     }
 
@@ -53,7 +53,7 @@ class ArticleDAO extends DAO
     {
         extract($article);
         $sql = 'UPDATE article SET  title = ?, author = ?, chapeau = ?, content = ?,edited = NOW() WHERE id = ?';
-        $this->sql($sql, [$title, $author, $chapeau, $content, $articleId]);
+        $this->sql($sql, [$article['title'], $article['author'], $article['chapeau'], $article['content'], $article['articleId']]);
         $_SESSION['message'] = sprintf('L\'article a été modifié avec succès');
     }
 
@@ -61,7 +61,7 @@ class ArticleDAO extends DAO
     {
         extract($article);
         $sql = 'DELETE FROM article WHERE id = ?';
-        $this->sql($sql, [$articleId]);
+        $this->sql($sql, [$article['articleId']]);
         $_SESSION['message'] = sprintf('L\'article a été supprimé avec succès');
     }
 
