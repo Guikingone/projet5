@@ -36,5 +36,5 @@ $this->title = "Connexion au site !";
                 <li><input type="submit" class="primary" value="Envoyer" id="submit" name="submit"></li>
             </ul>
     </form>
-    <a href="<?php echo (new Framework\UrlGenerator)->generate('password_forgotten') ?>">Mot de passe oublié ?</a>
+    <a href="<?php echo (new Framework\UrlGenerator)->generate('forgotten_password') ?>">Mot de passe oublié ?</a>
 </div>

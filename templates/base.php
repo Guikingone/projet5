@@ -74,7 +74,7 @@
           </ul>
         </section>
         <section>
-          <img src="#" alt="SymfonyInsight">
+          <img src="https://insight.symfony.com/projects/7f51288b-cebb-45d0-8699-1a09071c7668/big.svg" alt="SymfonyInsight">
           <ul class="copyright">
             <li>&copy; Avenir2point0. All rights reserved</li>
             <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>

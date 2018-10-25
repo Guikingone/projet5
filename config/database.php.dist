@@ -1,7 +1,0 @@
-<?php
-
-return [
-    'host' => 'mysql:host=toto;dbname=toto;charset=utf8',
-    'username' => 'toto',
-    'password' => 'toto'
-];

@@ -18,10 +18,14 @@ class NewPasswordFormController
     public function __invoke()
     {
         if(isset($_POST['submit'])) {
-            $userDAO = new UserDAO();
-            $userDAO->changePassword($_POST);
-            header('Location:'.(new \Framework\UrlGenerator)->generate('home'));
+            if ($_POST['csrfToken'] == $_SESSION['csrfToken']) {
+                $userDAO = new UserDAO();
+                $userDAO->changePassword($_POST);
+                header('Location:'.(new \Framework\UrlGenerator)->generate('home'));
+            }
         }
-        $this->view->render('new_password_form');
+        $this->view->render('new_password_form', [
+            'csrfToken' => $_SESSION['csrfToken'] = (new \App\Tool\TokenGenerator)->generateCsrfToken()
+        ]);
     }
 }
